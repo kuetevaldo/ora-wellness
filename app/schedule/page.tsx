@@ -6,9 +6,9 @@ import ScheduleCTA from "@/component/schedule/schedule-cta";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Schedule",
+  title: "Programme Schedule",
   description:
-    "Find where ORA class days and times for Pilates, Yoga, Studio and Fitness will be published once the official timetable is available.",
+    "View published weekly times for ORA adult and kids Padel academies and the 2026/27 Dance Academy in Douala.",
   path: "/schedule",
 });
 

@@ -1,9 +1,11 @@
 import {
   MapPin,
   Clock,
-  MessageCircle,
+  Phone,
   Camera,
 } from "lucide-react";
+
+import { programmeEnquiryPhone } from "@/lib/programmes";
 
 export default function ContactDetails() {
   return (
@@ -35,12 +37,18 @@ export default function ContactDetails() {
           </div>
 
           <div className="border-t border-(--ora-burgundy)/15 pt-6">
-            <MessageCircle size={20} strokeWidth={1.5} />
+            <Phone size={20} strokeWidth={1.5} />
             <h2 className="mt-5 text-lg font-medium">
-              Enquiries
+              Programme enquiries
             </h2>
-            <p className="mt-2 text-sm leading-6 text-(--ora-muted)">
-              Bookings, memberships and general questions.
+            <a
+              href={programmeEnquiryPhone.href}
+              className="mt-2 inline-flex text-sm font-semibold text-(--ora-burgundy)"
+            >
+              {programmeEnquiryPhone.display} →
+            </a>
+            <p className="mt-2 text-xs leading-5 text-(--ora-muted)">
+              Padel and Dance Academy availability.
             </p>
           </div>
 

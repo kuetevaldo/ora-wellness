@@ -8,10 +8,10 @@ export default function ContactForm() {
         <div className="grid gap-14 lg:grid-cols-[0.65fr_1.35fr]">
           <div>
             <p className="text-xs font-semibold text-(--ora-burgundy)">
-              Send a message
+              Plan your visit
             </p>
             <h2 className="font-display mt-5 max-w-md text-5xl font-normal leading-[0.96] tracking-[-0.04em] sm:text-6xl">
-              How can ORA help?
+              Tell ORA what you want to join.
             </h2>
           </div>
 

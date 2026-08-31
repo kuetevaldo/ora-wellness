@@ -8,7 +8,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Events & Community",
   description:
-    "Discover ORA wellness experiences, Padel activities, group movement and community moments in Douala.",
+    "Discover ORA academies, Padel tournaments, Fitness challenges and community experiences in Douala.",
   path: "/events",
 });
 

@@ -9,10 +9,8 @@ export default function GymHero() {
         kind="video"
         label="FITNESS VIDEO"
         src="/video/ora-fitness.MP4"
-        poster="/images/hero-image/fitness.JPG"
-        priority
         tone="ink"
-        className="absolute inset-3 top-20 min-h-[calc(100dvh-6rem)] rounded-[1.75rem] md:inset-5 md:top-22"
+        className="absolute inset-3 top-20 min-h-[calc(100dvh-6rem)] rounded-(--ora-radius-media) md:inset-5 md:top-22"
         desktopPosition="62% center"
         mobilePosition="64% center"
         desktopFocus={{ x: "72%", y: "42%" }}

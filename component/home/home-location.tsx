@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import MediaPlaceholder from "@/component/shared/media-placeholder";
 
 export default function HomeLocation() {
   return (
@@ -66,15 +65,6 @@ export default function HomeLocation() {
           </div>
         </div>
 
-        <MediaPlaceholder
-          label="ORA ARRIVAL PHOTOGRAPHY"
-          tone="cream"
-          desktopPosition="center 52%"
-          mobilePosition="center 44%"
-          desktopFocus={{ x: "72%", y: "48%" }}
-          mobileFocus={{ x: "50%", y: "46%" }}
-          className="mt-12 aspect-[4/3] md:aspect-[16/7]"
-        />
       </div>
     </section>
   );

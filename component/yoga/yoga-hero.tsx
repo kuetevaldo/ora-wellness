@@ -1,70 +1,46 @@
 import Link from "next/link";
-import { ArrowDownRight } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 import ExperienceMedia from "@/component/shared/experience-media";
 
 export default function YogaHero() {
   return (
-    <section className="relative overflow-hidden bg-(--ora-cream) pt-24 text-(--ora-burgundy-dark) md:pt-28 lg:min-h-[calc(100svh-4.5rem)]">
-      <div className="ora-container relative z-10 grid gap-12 pb-20 lg:grid-cols-12 lg:items-center lg:gap-8">
-        <div className="ora-experience-intro lg:col-span-5 lg:pr-8">
-          <p className="text-sm font-medium text-(--ora-text-secondary)">
+    <section className="relative min-h-dvh overflow-hidden bg-(--ora-ink) text-white [--experience-intro-duration:420ms]">
+      <ExperienceMedia
+        kind="photo"
+        label="ORA Yoga practice"
+        poster="/images/hero-image/yoga1.jpg"
+        priority
+        tone="sage"
+        className="absolute inset-3 top-20 min-h-[calc(100dvh-6rem)] rounded-(--ora-radius-media) md:inset-5 md:top-22"
+        desktopPosition="center center"
+        mobilePosition="63% center"
+        overlay="strong"
+        sizes="100vw"
+        layout="absolute"
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-28 bg-linear-to-b from-(--ora-cream)/80 via-(--ora-cream)/20 to-transparent"
+      />
+
+      <div className="ora-container relative z-10 flex min-h-dvh items-end pb-12 pt-32 md:pb-16 lg:pb-20">
+        <div className="ora-experience-intro max-w-3xl">
+          <p className="text-xs font-semibold tracking-[0.12em] text-white/88">
             ORA Yoga, Douala
           </p>
-          <h1 className="font-display mt-5 text-[clamp(4rem,7.6vw,7.7rem)] leading-[0.88] tracking-[-0.055em]">
-            Breathe.
-            <br />
-            Move.
-            <br />
-            Reset.
+          <h1 className="font-display mt-5 text-[clamp(3.5rem,8vw,7.5rem)] leading-[0.88] tracking-[-0.055em]">
+            Breathe. Move. Reset.
           </h1>
-          <p className="mt-7 max-w-md text-base leading-7 text-(--ora-text-secondary)">
-            A quieter space for movement, breath and balance, designed to help
-            you reconnect with your body and your rhythm.
+          <p className="mt-7 max-w-lg text-[0.9375rem] leading-7 text-white/88 md:text-base">
+            Guided movement and breath designed to restore balance, mobility
+            and calm.
           </p>
-          <Link
-            href="#yoga"
-            className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-(--ora-burgundy) underline decoration-(--ora-sage) decoration-2 underline-offset-8"
-          >
+          <Link href="#yoga" className="ora-button ora-button-light mt-8">
             Discover Yoga
-            <ArrowDownRight size={17} aria-hidden="true" />
+            <ArrowDown size={15} strokeWidth={1.5} aria-hidden="true" />
           </Link>
-        </div>
-
-        <div className="ora-experience-intro-delayed relative h-[38rem] lg:col-span-7 lg:h-[calc(100svh-10.5rem)] lg:min-h-[34rem] lg:max-h-[44rem]">
-          <div className="absolute top-0 right-0 h-[31rem] w-[88%] lg:h-full lg:w-[82%]">
-            <ExperienceMedia
-              kind="photo"
-              label="YOGA GROUP PHOTOGRAPHY"
-              poster="/images/hero-image/yoga1.jpg"
-              priority
-              tone="sage"
-              className="h-full rounded-[2rem]"
-              desktopPosition="58% center"
-              mobilePosition="center 38%"
-              desktopFocus={{ x: "68%", y: "30%" }}
-              mobileFocus={{ x: "52%", y: "32%" }}
-              overlay="soft"
-              labelPosition="right"
-              sizes="(max-width: 1024px) 88vw, 48vw"
-            />
-          </div>
-
-          <div className="absolute bottom-0 left-0 h-52 w-[47%] lg:bottom-6 lg:h-64 lg:w-[38%]">
-            <ExperienceMedia
-              kind="photo"
-              label="YOGA ENVIRONMENT PHOTOGRAPHY"
-              poster="/images/hero-image/yoga2.png"
-              tone="cream"
-              className="h-full rounded-[1.5rem] border border-(--ora-border-strong)"
-              desktopPosition="center center"
-              mobilePosition="center center"
-              desktopFocus={{ x: "58%", y: "45%" }}
-              mobileFocus={{ x: "50%", y: "45%" }}
-              overlay="none"
-              sizes="(max-width: 1024px) 47vw, 23vw"
-            />
-          </div>
         </div>
       </div>
     </section>

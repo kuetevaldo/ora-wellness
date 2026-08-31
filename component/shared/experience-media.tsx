@@ -54,7 +54,6 @@ export default function ExperienceMedia({
   layout = "flow",
 }: ExperienceMediaProps) {
   const palette = tones[tone];
-  const posterUrl = typeof poster === "string" ? poster : poster?.src;
   const hasMedia = kind === "photo" ? Boolean(poster) : Boolean(src);
   const isDecorativeVideo = kind === "video" && hasMedia;
   const style = {
@@ -91,7 +90,7 @@ export default function ExperienceMedia({
       }
       role={isDecorativeVideo ? undefined : "img"}
     >
-      {poster ? (
+      {kind === "photo" && poster ? (
         <Image
           src={poster}
           alt=""
@@ -110,7 +109,6 @@ export default function ExperienceMedia({
           loop
           playsInline
           preload={preload}
-          poster={posterUrl}
           aria-hidden="true"
           tabIndex={-1}
         >

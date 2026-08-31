@@ -1,19 +1,20 @@
 export default function ScheduleHero() {
   return (
-    <section className="relative overflow-hidden bg-(--ora-cream) px-6 pb-20 pt-36 text-(--ora-burgundy-dark) md:px-10 md:pb-28 lg:px-14">
-      <div className="relative z-10 mx-auto max-w-375">
-        <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-(--ora-burgundy)">
-          ORA Schedule
+    <section className="relative overflow-hidden bg-(--ora-cream) pt-36 text-(--ora-burgundy-dark)">
+      <div className="ora-container relative z-10 pb-20 md:pb-28">
+        <p className="text-xs font-semibold text-(--ora-burgundy)">
+          ORA programmes
         </p>
 
-        <h1 className="mt-7 max-w-5xl text-[clamp(4rem,8vw,8rem)] font-normal leading-[0.9] tracking-tighter">
-          Find your
+        <h1 className="font-display mt-6 max-w-5xl text-[clamp(4rem,8vw,8rem)] font-normal leading-[0.9] tracking-[-0.055em]">
+          Find your rhythm.
           <br />
-          next session.
+          Keep your week moving.
         </h1>
 
-        <p className="mt-8 max-w-xl text-[15px] leading-7 text-(--ora-muted)">
-          Explore ORA classes and movement experiences in one place.
+        <p className="mt-8 max-w-2xl text-base leading-7 text-(--ora-text-secondary)">
+          Explore published weekly sessions for ORA&apos;s Padel academies and
+          2026/27 Dance Academy, with clear age groups, days and times.
         </p>
       </div>
     </section>

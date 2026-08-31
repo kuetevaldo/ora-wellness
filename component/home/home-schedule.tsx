@@ -1,11 +1,22 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-const movementTypes = [
-  ["Pilates", "Controlled movement, balance and focused strength."],
-  ["Yoga", "Breath, mobility and a calmer movement practice."],
-  ["Studio", "Guided group movement built around energy and community."],
-  ["Fitness", "Strength, cardio and focused training."],
+const programmeHighlights = [
+  {
+    title: "Adult Padel Academy",
+    detail: "Monday & Friday",
+    time: "17:00–18:30",
+  },
+  {
+    title: "Kids Padel Academy",
+    detail: "Weekly groups",
+    time: "Ages 4–13",
+  },
+  {
+    title: "Dance Academy",
+    detail: "2026/27 programme",
+    time: "Ages 2–11",
+  },
 ];
 
 export default function HomeSchedule() {
@@ -20,8 +31,9 @@ export default function HomeSchedule() {
             Find the way you want to move.
           </h2>
           <p className="mt-6 max-w-lg text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
-            The official class days and times will be published when the ORA
-            timetable is confirmed.
+            Published academy times now make it easier to plan Padel and Dance
+            into the week. Contact ORA to confirm your place and ask about other
+            class timetables.
           </p>
           <Link href="/schedule" className="ora-text-link mt-6">
             View schedule
@@ -30,17 +42,28 @@ export default function HomeSchedule() {
         </div>
 
         <div className="rounded-(--ora-radius-panel) bg-(--ora-sage-light) p-5 sm:p-8 md:p-10">
-          <p className="font-display text-3xl text-(--ora-burgundy-dark) sm:text-4xl">
-            Schedule coming soon.
+          <p className="text-xs font-semibold text-(--ora-burgundy)">
+            Programme highlights
           </p>
-          <div className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2">
-            {movementTypes.map(([title, description]) => (
-              <article key={title}>
-                <h3 className="text-base font-semibold text-(--ora-burgundy-dark)">
-                  {title}
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-(--ora-text-secondary)">
-                  {description}
+          <h3 className="font-display mt-3 text-3xl tracking-[-0.035em] text-(--ora-burgundy-dark) sm:text-4xl">
+            A week with more ways to move.
+          </h3>
+          <div className="mt-8 border-t border-(--ora-border-strong)">
+            {programmeHighlights.map((programme) => (
+              <article
+                key={programme.title}
+                className="grid gap-2 border-b border-(--ora-border) py-5 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-6"
+              >
+                <div>
+                  <h4 className="text-sm font-semibold text-(--ora-burgundy-dark)">
+                    {programme.title}
+                  </h4>
+                  <p className="mt-1 text-xs text-(--ora-text-secondary)">
+                    {programme.detail}
+                  </p>
+                </div>
+                <p className="text-sm font-semibold tabular-nums text-(--ora-burgundy-dark)">
+                  {programme.time}
                 </p>
               </article>
             ))}

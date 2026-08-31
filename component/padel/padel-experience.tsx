@@ -19,7 +19,7 @@ export default function PadelExperience() {
   return (
     <section className="bg-(--ora-pink-light) text-(--ora-burgundy-dark)">
       <div className="ora-container grid gap-12 py-20 md:py-28 lg:grid-cols-12 lg:gap-8">
-        <div className="relative h-96 overflow-hidden rounded-[2rem] lg:col-span-5 lg:h-[34rem]">
+        <div className="relative h-96 overflow-hidden rounded-(--ora-radius-media) lg:col-span-5 lg:h-[34rem]">
           <Image
             src="/images/IMG_5206.JPG"
             alt="ORA Padel gathering details"

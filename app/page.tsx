@@ -3,10 +3,8 @@ import Footer from "@/component/layout/footer";
 import HomeHero from "@/component/home/home-hero-full";
 import HomeUtility from "@/component/home/home-utility";
 import ExperiencesGrid from "@/component/home/experiences-grid";
-import HomePhilosophy from "@/component/home/home-philosophy";
 import HomeSchedule from "@/component/home/home-schedule";
 import HomeMembership from "@/component/home/home-membership";
-import HomeCommunity from "@/component/home/home-community";
 import HomeLocation from "@/component/home/home-location";
 import {
   createPageMetadata,
@@ -34,10 +32,8 @@ export default function HomePage() {
       <HomeHero />
       <HomeUtility />
       <ExperiencesGrid />
-      <HomePhilosophy />
       <HomeSchedule />
       <HomeMembership />
-      <HomeCommunity />
       <HomeLocation />
       <Footer />
     </main>

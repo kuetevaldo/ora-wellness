@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-import MediaPlaceholder from "@/component/shared/media-placeholder";
-
 const experiences = {
   fitness: {
     title: "Fitness",
@@ -99,7 +97,7 @@ export default function ExperiencesGrid() {
           href={experiences.fitness.href}
           className="group ora-editorial-link mt-14 grid gap-6 rounded-(--ora-radius-panel) bg-(--ora-surface-raised) p-4 sm:p-6 md:grid-cols-[1.35fr_0.65fr] md:items-stretch lg:mt-18 lg:gap-10 lg:p-8"
         >
-          <div className="relative aspect-4/3 min-h-56 overflow-hidden rounded-(--ora-radius-panel) md:aspect-16/10">
+          <div className="relative aspect-4/3 min-h-44 overflow-hidden rounded-(--ora-radius-media) sm:min-h-56 md:aspect-16/10">
             <Image
               src="/images/hero-image/fitness.jpg"
               alt="ORA Fitness"
@@ -127,7 +125,7 @@ export default function ExperiencesGrid() {
             href={experiences.cafe.href}
             className="ora-editorial-link grid grid-cols-[0.9fr_1.1fr] items-center gap-5 border-t border-(--ora-border) pt-6 sm:grid-cols-[0.95fr_1.05fr] md:col-span-7 md:border-0 md:bg-(--ora-sage-light) md:p-6"
           >
-  <div className="relative aspect-4/5 overflow-hidden sm:aspect-square">
+  <div className="relative aspect-4/5 overflow-hidden rounded-(--ora-radius-media) sm:aspect-square">
   <Image
     src="/images/cafe.png"
     alt="ORA Café"
@@ -148,7 +146,7 @@ export default function ExperiencesGrid() {
             href={experiences.padel.href}
             className="ora-editorial-link grid grid-cols-[0.9fr_1.1fr] items-center gap-5 border-t border-(--ora-border) pt-6 sm:grid-cols-[0.9fr_1.1fr] md:col-span-5 md:border-0 md:pt-0"
           >
-            <div className="relative aspect-4/5 overflow-hidden rounded-(--ora-radius-panel) sm:aspect-square">
+            <div className="relative aspect-4/5 overflow-hidden rounded-(--ora-radius-media) sm:aspect-square">
   <Image
     src="/images/hero-image/padel1.webp"
     alt="ORA Padel"
@@ -172,7 +170,7 @@ export default function ExperiencesGrid() {
             href={experiences.pilates.href}
             className="ora-editorial-link grid grid-cols-[0.9fr_1.1fr] items-center gap-5 border-t border-(--ora-border) pt-6 sm:grid-cols-[0.9fr_1.1fr] md:border-0 md:pt-0"
           >
-            <div className="relative aspect-4/5 overflow-hidden sm:aspect-square">
+            <div className="relative aspect-4/5 overflow-hidden rounded-(--ora-radius-media) sm:aspect-square">
   <Image
     src="/images/hero-image/pilates.jpg"
     alt="ORA Pilates"
@@ -192,7 +190,7 @@ export default function ExperiencesGrid() {
             href={experiences.yoga.href}
             className="ora-editorial-link grid grid-cols-[0.9fr_1.1fr] items-center gap-5 border-t border-(--ora-border) pt-6 sm:grid-cols-[0.95fr_1.05fr] md:border-0 md:bg-(--ora-pink-light) md:p-6"
           >
-            <div className="relative aspect-4/5 overflow-hidden sm:aspect-square">
+            <div className="relative aspect-4/5 overflow-hidden rounded-(--ora-radius-media) sm:aspect-square">
   <Image
     src="/images/hero-image/yoga1.jpg"
     alt="ORA Yoga"
@@ -220,22 +218,24 @@ export default function ExperiencesGrid() {
             />
           </div>
 
-          <MediaPlaceholder
-            label="STUDIO PHOTOGRAPHY"
-            tone="burgundy"
-            desktopPosition="center 36%"
-            mobilePosition="center 34%"
-            desktopFocus={{
-              x: "70%",
-              y: "34%",
-            }}
-            mobileFocus={{
-              x: "52%",
-              y: "36%",
-            }}
-            overlay="soft"
-            className="order-1 aspect-4/5 sm:aspect-16/7 md:order-2"
-          />
+          <div className="relative order-1 aspect-4/5 overflow-hidden rounded-(--ora-radius-media) bg-(--ora-burgundy) sm:aspect-16/7 md:order-2">
+            <video
+              className="h-full w-full object-cover motion-reduce:hidden"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden="true"
+              tabIndex={-1}
+            >
+              <source src="/video/studio.MP4" type="video/mp4" />
+            </video>
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent"
+            />
+          </div>
         </Link>
       </div>
     </section>

@@ -1,78 +1,121 @@
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+
 const eventTypes = [
   {
     number: "01",
-    title: "Padel",
+    title: "Academies",
     description:
-      "Matches, tournaments and social padel experiences.",
+      "Recurring Padel and Dance programmes create a clear path for children, adults and families.",
   },
   {
     number: "02",
-    title: "Movement",
+    title: "Tournaments",
     description:
-      "Group sessions, challenges and wellness-focused activities.",
+      "ORA has hosted organised Padel competition across levels, formats and player communities.",
   },
   {
     number: "03",
-    title: "Community",
+    title: "Challenges",
     description:
-      "Social experiences designed to bring the ORA community together.",
+      "Team-based Fitness challenges turn individual training into shared energy and friendly competition.",
+  },
+  {
+    number: "04",
+    title: "Social moments",
+    description:
+      "The Café and wider ORA spaces help each match or movement session become a community occasion.",
+  },
+];
+
+const eventSystem = [
+  {
+    label: "Learn",
+    copy: "Weekly, age-based academies make participation easier to understand and plan.",
+  },
+  {
+    label: "Compete",
+    copy: "Past formats have included group stages, guaranteed play and structured knockout draws.",
+  },
+  {
+    label: "Gather",
+    copy: "Players, families and visitors can stay connected beyond the court or studio.",
   },
 ];
 
 export default function EventsList() {
   return (
-    <section className="bg-(--ora-pink-light) px-6 py-24 text-(--ora-burgundy-dark) md:px-10 md:py-32 lg:px-14">
-      <div className="mx-auto max-w-375">
-        <div className="grid gap-12 lg:grid-cols-[0.55fr_1.45fr]">
-          <div>
-            <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-(--ora-muted)">
-              Events & Community
+    <section className="bg-(--ora-pink-light) text-(--ora-burgundy-dark)">
+      <div className="ora-container py-20 md:py-28">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-4">
+            <p className="text-xs font-semibold text-(--ora-burgundy)">
+              Events & community
             </p>
-          </div>
-
-          <div>
-            <h2 className="max-w-4xl text-4xl font-normal leading-[1.03] tracking-[-0.035em] sm:text-5xl md:text-6xl">
-              More ways to
-              <br />
-              experience ORA.
+            <h2 className="font-display mt-4 max-w-lg text-4xl leading-[1.02] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+              ORA works as a living programme, not just a place.
             </h2>
-
-            <div className="mt-14 grid gap-8 md:grid-cols-3">
-              {eventTypes.map((item) => (
-                <article
-                  key={item.number}
-                  className="border-t border-(--ora-burgundy)/15 pt-6"
-                >
-                  <p className="text-[10px] font-medium tracking-[0.18em] text-(--ora-burgundy)">
-                    {item.number}
-                  </p>
-
-                  <h3 className="mt-5 text-2xl font-normal tracking-tight">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-4 text-sm leading-6 text-(--ora-burgundy-dark)/60">
-                    {item.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-
-            <div className="mt-16 border-t border-(--ora-burgundy)/15 pt-10">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-(--ora-muted)">
-                Upcoming events
-              </p>
-
-              <h3 className="mt-5 text-4xl font-normal tracking-[-0.035em]">
-                Event calendar coming soon.
-              </h3>
-
-              <p className="mt-5 max-w-xl text-[15px] leading-7 text-(--ora-muted)">
-                ORA&apos;s official upcoming event dates and registrations
-                will appear here once available.
-              </p>
-            </div>
           </div>
+
+          <div className="grid gap-x-8 gap-y-9 sm:grid-cols-2 lg:col-span-7 lg:col-start-6">
+            {eventTypes.map((item) => (
+              <article
+                key={item.number}
+                className="border-t border-(--ora-border-strong) pt-6"
+              >
+                <p className="text-xs font-semibold text-(--ora-burgundy)">
+                  {item.number}
+                </p>
+                <h3 className="font-display mt-4 text-3xl tracking-[-0.03em]">
+                  {item.title}
+                </h3>
+                <p className="mt-3 max-w-sm text-sm leading-6 text-(--ora-text-secondary)">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-20 rounded-[1.75rem] bg-(--ora-burgundy-dark) p-6 text-white sm:p-9 md:p-12">
+          <div className="grid gap-8 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <p className="text-xs font-semibold text-(--ora-pink-light)">
+                The ORA event system
+              </p>
+              <h3 className="font-display mt-4 text-4xl leading-none tracking-[-0.04em] sm:text-5xl">
+                Learn. Compete. Gather.
+              </h3>
+            </div>
+            <ol className="grid gap-6 md:grid-cols-3 lg:col-span-7 lg:col-start-6">
+              {eventSystem.map((step, index) => (
+                <li key={step.label} className="border-t border-white/20 pt-5">
+                  <span className="text-xs font-semibold text-white/55">
+                    0{index + 1}
+                  </span>
+                  <h4 className="font-display mt-3 text-2xl">{step.label}</h4>
+                  <p className="mt-3 text-sm leading-6 text-white/70">
+                    {step.copy}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+
+        <div className="mt-12 flex flex-col gap-6 border-t border-(--ora-border-strong) pt-7 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-xs font-semibold text-(--ora-burgundy)">
+              What&apos;s next
+            </p>
+            <h3 className="font-display mt-3 text-3xl tracking-[-0.035em] sm:text-4xl">
+              Confirmed event dates are published as they become available.
+            </h3>
+          </div>
+          <Link href="/schedule" className="ora-button ora-button-primary">
+            View weekly programmes
+            <ArrowUpRight size={16} strokeWidth={1.6} aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>
