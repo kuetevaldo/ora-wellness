@@ -88,8 +88,11 @@ export default function CafeMenu() {
           </div>
         </div>
 
-        <div className="sticky top-18 z-30 -mx-5 overflow-x-auto border-b border-(--ora-border) bg-(--ora-cream)/95 px-5 py-5 backdrop-blur md:-mx-8 md:px-8 lg:-mx-12 lg:px-12">
-          <div className="mx-auto flex max-w-375 gap-2 whitespace-nowrap">
+        <div
+          className="sticky top-18 z-30 -mx-5 overflow-x-auto overscroll-x-contain border-b border-(--ora-border) bg-(--ora-cream)/95 px-5 py-5 backdrop-blur md:-mx-8 md:px-8 lg:-mx-12 lg:px-12"
+          aria-label="Café menu sections"
+        >
+          <div className="mx-auto flex w-max min-w-full max-w-375 snap-x snap-mandatory scroll-px-5 gap-2 whitespace-nowrap">
             {groups.map((group) => {
               const active = activeGroup === group.id;
 
@@ -99,7 +102,7 @@ export default function CafeMenu() {
                   type="button"
                   onClick={() => setActiveGroup(group.id)}
                   aria-pressed={active}
-                  className={`min-h-11 rounded-full px-5 py-2.5 text-sm transition-[color,background-color,border-color] duration-180 ${
+                  className={`min-h-11 shrink-0 snap-start rounded-full px-5 py-2.5 text-sm transition-[color,background-color,border-color] duration-180 ${
                     active
                       ? "bg-(--ora-burgundy) text-white"
                       : "border border-(--ora-burgundy)/20 text-(--ora-burgundy) hover:border-(--ora-burgundy)"

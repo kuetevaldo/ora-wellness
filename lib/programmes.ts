@@ -1,4 +1,4 @@
-export type ProgrammeCategory = "padel" | "studio";
+export type ProgrammeCategory = "padel" | "pilates" | "yoga" | "studio";
 
 export type ProgrammeScheduleEntry = {
   group: string;
@@ -17,11 +17,6 @@ export type OraProgramme = {
   availabilityNote: string;
   href: string;
   schedule: ProgrammeScheduleEntry[];
-};
-
-export const programmeEnquiryPhone = {
-  display: "+237 6 97 00 90 75",
-  href: "tel:+237697009075",
 };
 
 export const padelProgrammes: OraProgramme[] = [
@@ -120,4 +115,85 @@ export const studioProgrammes: OraProgramme[] = [
   },
 ];
 
-export const programmes = [...padelProgrammes, ...studioProgrammes];
+export const pilatesProgrammes: OraProgramme[] = [
+  {
+    id: "mat-pilates-and-stretching",
+    category: "pilates",
+    eyebrow: "Weekly movement",
+    title: "Mat Pilates & Stretching",
+    description:
+      "Mat Pilates builds control and core strength, with a dedicated weekly stretching session for mobility and recovery.",
+    status: "Published weekly timetable",
+    availabilityNote:
+      "Class capacity and times can change. Book your place with ORA before attending.",
+    href: "/experiences/pilates",
+    schedule: [
+      {
+        group: "Mat Pilates",
+        age: "All levels",
+        day: "Monday",
+        time: "08:30",
+      },
+      {
+        group: "Mat Pilates",
+        age: "All levels",
+        day: "Tuesday",
+        time: "09:00",
+      },
+      {
+        group: "Mat Pilates",
+        age: "All levels",
+        day: "Thursday",
+        time: "18:00",
+      },
+      {
+        group: "Stretching",
+        age: "All levels",
+        day: "Thursday",
+        time: "19:15",
+      },
+    ],
+  },
+];
+
+export const yogaProgrammes: OraProgramme[] = [
+  {
+    id: "weekly-yoga-with-despina",
+    category: "yoga",
+    eyebrow: "Weekly practice",
+    title: "Yoga with Despina",
+    description:
+      "A welcoming weekly programme blending alignment, breathwork and relaxation across beginner-friendly, Vinyasa and mindful-flow sessions.",
+    status: "Published weekly timetable",
+    availabilityNote:
+      "Class capacity and times can change. Confirm your place with ORA before attending.",
+    href: "/experiences/yoga",
+    schedule: [
+      {
+        group: "Beginner Friendly Yoga",
+        age: "Beginner friendly",
+        day: "Wednesday",
+        time: "10:00",
+      },
+      {
+        group: "Vinyasa Yoga",
+        age: "All levels",
+        day: "Friday",
+        time: "18:30",
+      },
+      {
+        group: "Mindful Flow",
+        age: "All levels",
+        day: "Saturday",
+        time: "17:30",
+      },
+    ],
+  },
+];
+
+export const programmes = [
+  ...padelProgrammes,
+  ...pilatesProgrammes,
+  ...yogaProgrammes,
+  ...studioProgrammes,
+];

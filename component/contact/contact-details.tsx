@@ -5,7 +5,7 @@ import {
   Camera,
 } from "lucide-react";
 
-import { programmeEnquiryPhone } from "@/lib/programmes";
+import { oraBookingPhone } from "@/lib/contact";
 
 export default function ContactDetails() {
   return (
@@ -39,16 +39,16 @@ export default function ContactDetails() {
           <div className="border-t border-(--ora-burgundy)/15 pt-6">
             <Phone size={20} strokeWidth={1.5} />
             <h2 className="mt-5 text-lg font-medium">
-              Programme enquiries
+              Bookings and enquiries
             </h2>
             <a
-              href={programmeEnquiryPhone.href}
+              href={oraBookingPhone.href}
               className="mt-2 inline-flex text-sm font-semibold text-(--ora-burgundy)"
             >
-              {programmeEnquiryPhone.display} →
+              {oraBookingPhone.display} →
             </a>
             <p className="mt-2 text-xs leading-5 text-(--ora-muted)">
-              Padel and Dance Academy availability.
+              Café, classes, courts and membership visits.
             </p>
           </div>
 

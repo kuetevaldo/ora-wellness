@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { bookingHref } from "@/lib/contact";
+
 export default function ScheduleCTA() {
   return (
     <section className="bg-(--ora-sage) px-6 py-24 text-(--ora-burgundy-dark) md:px-10 md:py-32 lg:px-14">
@@ -19,10 +21,10 @@ export default function ScheduleCTA() {
         </p>
 
         <Link
-          href="/contact"
+          href={bookingHref}
           className="mt-10 inline-flex rounded-full bg-(--ora-burgundy) px-7 py-3.5 text-[13px] font-medium text-white transition hover:bg-(--ora-burgundy-dark)"
         >
-          Contact ORA
+          Reserve your place
         </Link>
       </div>
     </section>

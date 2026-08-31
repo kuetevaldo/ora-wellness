@@ -1,7 +1,7 @@
 import Header from "@/component/layout/header";
 import Footer from "@/component/layout/footer";
 import YogaHero from "@/component/yoga/yoga-hero";
-import YogaExperience from "@/component/yoga/yoga-experience";
+import YogaProgramme from "@/component/yoga/yoga-programme";
 import YogaCTA from "@/component/yoga/yoga-cta";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -10,7 +10,7 @@ export const metadata = createPageMetadata({
   description:
     "Discover movement, breath and balance designed to help you reset at ORA Yoga in Douala.",
   path: "/experiences/yoga",
-  imagePath: "/images/hero-image/yoga1.jpg",
+  imagePath: "/images/hero-image/yoga-image.JPG",
 });
 
 export default function YogaPage() {
@@ -18,7 +18,7 @@ export default function YogaPage() {
     <main>
       <Header />
       <YogaHero />
-      <YogaExperience />
+      <YogaProgramme />
       <YogaCTA />
       <Footer />
     </main>

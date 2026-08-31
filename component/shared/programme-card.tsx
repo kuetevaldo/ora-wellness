@@ -8,6 +8,13 @@ type ProgrammeCardProps = {
   showLink?: boolean;
 };
 
+const categoryLabels: Record<OraProgramme["category"], string> = {
+  padel: "Padel",
+  pilates: "Pilates",
+  yoga: "Yoga",
+  studio: "Studio",
+};
+
 export default function ProgrammeCard({
   programme,
   showLink = true,
@@ -114,7 +121,7 @@ export default function ProgrammeCard({
         </p>
         {showLink ? (
           <Link href={programme.href} className="ora-text-link mt-4">
-            Explore {programme.category === "padel" ? "Padel" : "Studio"}
+            Explore {categoryLabels[programme.category]}
             <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
           </Link>
         ) : null}

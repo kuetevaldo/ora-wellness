@@ -1,116 +1,81 @@
-const fieldClassName =
-  "min-h-12 rounded-xl border border-(--ora-border-strong) bg-(--ora-surface-raised) px-4 py-3 text-(--ora-ink) transition-[border-color,box-shadow] duration-180 focus:border-(--ora-burgundy) focus:shadow-[0_0_0_3px_rgba(139,72,91,0.12)]";
+import Link from "next/link";
+import { ArrowUpRight, Check, Phone } from "lucide-react";
+
+import { oraBookingPhone } from "@/lib/contact";
+
+const bookingSteps = [
+  "Choose the experience you want to try.",
+  "Share your preferred day and time.",
+  "Let the ORA team confirm availability.",
+];
 
 export default function ContactForm() {
   return (
-    <section className="bg-(--ora-cream) px-6 py-24 text-(--ora-burgundy-dark) md:px-10 md:py-32 lg:px-14">
+    <section
+      id="booking"
+      className="scroll-mt-18 bg-(--ora-cream) px-6 py-24 text-(--ora-burgundy-dark) md:px-10 md:py-32 lg:px-14"
+    >
       <div className="mx-auto max-w-375">
         <div className="grid gap-14 lg:grid-cols-[0.65fr_1.35fr]">
           <div>
             <p className="text-xs font-semibold text-(--ora-burgundy)">
-              Plan your visit
+              Book your visit
             </p>
             <h2 className="font-display mt-5 max-w-md text-5xl font-normal leading-[0.96] tracking-[-0.04em] sm:text-6xl">
-              Tell ORA what you want to join.
+              Make your first step simple.
             </h2>
+            <p className="mt-6 max-w-md text-base leading-7 text-(--ora-text-secondary)">
+              You do not need to know the perfect programme before you call.
+              Tell the team what you want from your visit and they will guide
+              you to the right ORA experience.
+            </p>
           </div>
 
-          <form className="grid gap-7" aria-describedby="contact-production-note">
-            <div className="grid gap-7 md:grid-cols-2">
-              <div className="grid gap-2">
-                <label htmlFor="contact-name" className="text-sm font-semibold">
-                  Name <span className="font-normal text-(--ora-text-secondary)">(required)</span>
-                </label>
-                <input
-                  id="contact-name"
-                  name="name"
-                  type="text"
-                  autoComplete="name"
-                  required
-                  aria-required="true"
-                  className={fieldClassName}
-                />
-              </div>
+          <div className="rounded-(--ora-radius-panel) border border-(--ora-border) bg-(--ora-surface-raised) p-6 sm:p-9 md:p-11">
+            <p className="text-xs font-semibold text-(--ora-burgundy)">
+              Fastest way to confirm a place
+            </p>
+            <h3 className="font-display mt-4 max-w-2xl text-4xl leading-[1] tracking-[-0.04em] sm:text-5xl">
+              Speak with ORA and plan the right visit.
+            </h3>
 
-              <div className="grid gap-2">
-                <label htmlFor="contact-phone" className="text-sm font-semibold">
-                  Phone <span className="font-normal text-(--ora-text-secondary)">(required)</span>
-                </label>
-                <input
-                  id="contact-phone"
-                  name="phone"
-                  type="tel"
-                  inputMode="tel"
-                  autoComplete="tel"
-                  required
-                  aria-required="true"
-                  className={fieldClassName}
-                />
-              </div>
-            </div>
+            <ol className="mt-8 grid gap-4">
+              {bookingSteps.map((step, index) => (
+                <li key={step} className="flex items-start gap-4">
+                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-(--ora-sage-light) text-xs font-semibold text-(--ora-burgundy-dark)">
+                    {index + 1}
+                  </span>
+                  <span className="pt-1 text-sm leading-6 text-(--ora-text-secondary)">
+                    {step}
+                  </span>
+                </li>
+              ))}
+            </ol>
 
-            <div className="grid gap-2">
-              <label htmlFor="contact-experience" className="text-sm font-semibold">
-                Experience <span className="font-normal text-(--ora-text-secondary)">(required)</span>
-              </label>
-              <select
-                id="contact-experience"
-                name="experience"
-                required
-                aria-required="true"
-                defaultValue=""
-                className={fieldClassName}
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a
+                href={oraBookingPhone.href}
+                className="ora-button ora-button-primary"
               >
-                <option value="" disabled>
-                  Choose an experience
-                </option>
-                <option value="cafe">Café</option>
-                <option value="fitness">Fitness</option>
-                <option value="padel">Padel</option>
-                <option value="pilates">Pilates</option>
-                <option value="yoga">Yoga</option>
-                <option value="studio">Studio</option>
-                <option value="membership">Membership</option>
-                <option value="other">Other</option>
-              </select>
+                <Phone size={16} strokeWidth={1.6} aria-hidden="true" />
+                Call {oraBookingPhone.display}
+              </a>
+              <Link href="/schedule" className="ora-button ora-button-secondary">
+                Check class times
+                <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
+              </Link>
             </div>
 
-            <div className="grid gap-2">
-              <label htmlFor="contact-message" className="text-sm font-semibold">
-                Message <span className="font-normal text-(--ora-text-secondary)">(required)</span>
-              </label>
-              <textarea
-                id="contact-message"
-                name="message"
-                rows={5}
-                minLength={10}
-                required
-                aria-required="true"
-                className={`${fieldClassName} resize-y`}
+            <p className="mt-7 flex items-start gap-2 text-xs leading-5 text-(--ora-text-secondary)">
+              <Check
+                size={15}
+                strokeWidth={1.8}
+                className="mt-0.5 shrink-0 text-(--ora-burgundy)"
+                aria-hidden="true"
               />
-              <p className="text-xs leading-5 text-(--ora-text-secondary)">
-                Include the experience and preferred time you are enquiring about.
-              </p>
-            </div>
-
-            <div>
-              <button
-                type="submit"
-                disabled
-                aria-describedby="contact-production-note"
-                className="ora-button cursor-not-allowed bg-(--ora-burgundy-dark) text-(--ora-white)"
-              >
-                Send enquiry
-              </button>
-              <p
-                id="contact-production-note"
-                role="note"
-                className="mt-3 max-w-lg text-sm leading-6 text-(--ora-text-secondary)"
-              >
-                Contact destination still required before production.
-              </p>
-            </div>
-          </form>
+              The ORA team confirms current availability before you visit.
+            </p>
+          </div>
         </div>
       </div>
     </section>

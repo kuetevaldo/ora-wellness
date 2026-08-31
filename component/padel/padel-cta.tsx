@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+import { bookingHref } from "@/lib/contact";
+
 export default function PadelCTA() {
   return (
     <section className="relative overflow-hidden bg-(--ora-burgundy-dark) text-white">
@@ -16,8 +18,8 @@ export default function PadelCTA() {
             Contact ORA to learn more about the Padel experience and current court
             availability.
           </p>
-          <Link href="/contact" className="ora-button ora-button-light mt-7">
-            Contact ORA
+          <Link href={bookingHref} className="ora-button ora-button-light mt-7">
+            Book your Padel visit
             <ArrowUpRight size={17} aria-hidden="true" />
           </Link>
         </div>

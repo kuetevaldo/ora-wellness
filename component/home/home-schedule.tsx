@@ -1,7 +1,19 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+import { bookingHref } from "@/lib/contact";
+
 const programmeHighlights = [
+  {
+    title: "Yoga with Despina",
+    detail: "Wednesday, Friday & Saturday",
+    time: "Three weekly flows",
+  },
+  {
+    title: "Mat Pilates",
+    detail: "Monday, Tuesday & Thursday",
+    time: "Three weekly classes",
+  },
   {
     title: "Adult Padel Academy",
     detail: "Monday & Friday",
@@ -31,14 +43,18 @@ export default function HomeSchedule() {
             Find the way you want to move.
           </h2>
           <p className="mt-6 max-w-lg text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
-            Published academy times now make it easier to plan Padel and Dance
-            into the week. Contact ORA to confirm your place and ask about other
-            class timetables.
+            Published Yoga, Mat Pilates, Padel and Dance times make it easier to
+            plan movement into the week. Contact ORA to confirm your place.
           </p>
-          <Link href="/schedule" className="ora-text-link mt-6">
-            View schedule
-            <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
-          </Link>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link href={bookingHref} className="ora-button ora-button-primary">
+              Reserve your place
+              <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
+            </Link>
+            <Link href="/schedule" className="ora-button ora-button-secondary">
+              View all times
+            </Link>
+          </div>
         </div>
 
         <div className="rounded-(--ora-radius-panel) bg-(--ora-sage-light) p-5 sm:p-8 md:p-10">

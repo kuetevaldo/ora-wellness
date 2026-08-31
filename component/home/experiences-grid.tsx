@@ -2,51 +2,61 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+import { bookingHref } from "@/lib/contact";
+
 const experiences = {
   fitness: {
     title: "Fitness",
     description:
       "Strength, cardio and focused training designed around consistent progress.",
     href: "/experiences/gym",
+    cta: "See Fitness and join",
   },
   cafe: {
     title: "Café",
     description:
       "Breakfast, specialty coffee, nourishing meals, fresh juices and protein shakes.",
     href: "/cafe",
+    cta: "See the menu and visit",
   },
   padel: {
     title: "Padel",
     description:
       "Social sport, competition and movement brought together in one experience.",
     href: "/experiences/padel",
+    cta: "See Padel and book",
   },
   pilates: {
     title: "Pilates",
     description:
       "Controlled movement, balance, mobility and focused strength.",
     href: "/experiences/pilates",
+    cta: "See classes and book",
   },
   yoga: {
     title: "Yoga",
     description:
       "Breath, mobility and a calmer approach to movement and balance.",
     href: "/experiences/yoga",
+    cta: "See classes and book",
   },
   studio: {
     title: "Studio",
     description:
       "Guided group classes built around energy, variety and community.",
     href: "/experiences/studio",
+    cta: "See classes and book",
   },
 };
 
 function ExperienceCopy({
   title,
   description,
+  cta,
 }: {
   title: string;
   description: string;
+  cta: string;
 }) {
   return (
     <div className="flex h-full flex-col justify-between gap-6">
@@ -64,7 +74,7 @@ function ExperienceCopy({
         className="ora-text-link w-fit"
         aria-hidden="true"
       >
-        Explore {title}
+        {cta}
 
         <ArrowUpRight
           size={15}
@@ -88,8 +98,12 @@ export default function ExperiencesGrid() {
           </p>
 
           <h2 className="font-display mt-4 text-[clamp(3.25rem,7vw,6.75rem)] font-normal leading-[0.9] tracking-tighter text-(--ora-burgundy-dark)">
-            Six ways to find your rhythm.
+            Start with what brings you in.
           </h2>
+          <p className="mt-6 max-w-2xl text-base leading-7 text-(--ora-text-secondary)">
+            Choose one experience for today. ORA makes it easy to add another
+            when you are ready.
+          </p>
         </div>
 
         {/* Fitness */}
@@ -237,6 +251,25 @@ export default function ExperiencesGrid() {
             />
           </div>
         </Link>
+
+        <div className="mt-12 grid gap-7 rounded-(--ora-radius-panel) bg-(--ora-burgundy) px-6 py-9 text-white sm:px-9 md:grid-cols-[1fr_auto] md:items-end md:px-12 md:py-12">
+          <div>
+            <p className="text-xs font-semibold text-(--ora-pink-light)">
+              Need a recommendation?
+            </p>
+            <h3 className="font-display mt-3 max-w-2xl text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl">
+              Tell us your goal. We will help you choose where to start.
+            </h3>
+            <p className="mt-5 max-w-xl text-sm leading-6 text-white/78">
+              Share the experience you want and your preferred time. The ORA
+              team will confirm the best available option for your visit.
+            </p>
+          </div>
+          <Link href={bookingHref} className="ora-button ora-button-light">
+            Get guidance and book
+            <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
+          </Link>
+        </div>
       </div>
     </section>
   );

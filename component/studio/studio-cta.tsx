@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+import { bookingHref } from "@/lib/contact";
+
 export default function StudioCTA() {
   return (
     <section className="bg-(--ora-burgundy-dark) text-white">
@@ -15,8 +17,8 @@ export default function StudioCTA() {
           <p className="text-base leading-7 text-white/72">
             Contact ORA to learn more about current Studio classes and availability.
           </p>
-          <Link href="/contact" className="ora-button ora-button-light mt-7">
-            Contact ORA
+          <Link href={bookingHref} className="ora-button ora-button-light mt-7">
+            Reserve a Studio class
             <ArrowUpRight size={17} aria-hidden="true" />
           </Link>
         </div>

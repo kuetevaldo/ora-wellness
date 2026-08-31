@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight, Camera, Clock, MapPin, MessageCircle } from "lucide-react";
 
+import { bookingHref } from "@/lib/contact";
+
 const details = [
   {
     title: "Location",
@@ -29,10 +31,10 @@ const details = [
     icon: MessageCircle,
     content: (
       <Link
-        href="/contact"
+        href={bookingHref}
         className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-(--ora-burgundy)"
       >
-        Contact ORA
+        Plan your visit
         <ArrowUpRight size={16} aria-hidden="true" />
       </Link>
     ),

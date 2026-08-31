@@ -3,8 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+
+import { bookingHref, oraBookingPhone } from "@/lib/contact";
 
 const mainNavigation = [
   { label: "Café", href: "/cafe" },
@@ -20,7 +22,6 @@ const secondaryNavigation = [
   { label: "Memberships", href: "/memberships" },
   { label: "Events", href: "/events" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
 ];
 
 const headerLogos: Record<string, { src: string; alt: string }> = {
@@ -275,8 +276,8 @@ export default function Header() {
               </div>
             </div>
 
-            <Link href="/contact" className="ora-button ora-button-primary ml-1">
-              Book now
+            <Link href={bookingHref} className="ora-button ora-button-primary ml-1">
+              Book a visit
             </Link>
           </nav>
 
@@ -320,7 +321,12 @@ export default function Header() {
           }`}
         >
           <div className="flex h-18 shrink-0 items-center justify-between border-b border-(--ora-border) px-5 sm:px-7">
-            <Link href="/" onClick={() => setMobileOpen(false)} className="block">
+            <Link
+              href="/"
+              onClick={() => setMobileOpen(false)}
+              className="block rounded-sm"
+              aria-label={headerLogo ? `${headerLogo.alt}, home` : "ORA, home"}
+            >
               <HeaderBrand logo={headerLogo} />
             </Link>
 
@@ -340,7 +346,7 @@ export default function Header() {
               Experiences
             </p>
 
-            <div className="grid grid-cols-2 gap-x-5 border-t border-(--ora-border)">
+            <div className="grid grid-cols-2 gap-x-3 border-t border-(--ora-border) sm:gap-x-5">
               {mainNavigation.map((item) => {
                 const active = isActiveRoute(pathname, item.href);
 
@@ -350,7 +356,7 @@ export default function Header() {
                     href={item.href}
                     aria-current={active ? "page" : undefined}
                     onClick={() => setMobileOpen(false)}
-                    className={`font-display flex min-h-15 items-center border-b border-(--ora-border) text-[1.45rem] leading-none transition-colors duration-180 ${
+                    className={`font-display flex min-h-15 items-center border-b border-(--ora-border) px-0.5 text-[clamp(1.1rem,6vw,1.45rem)] leading-none transition-colors duration-180 ${
                       active
                         ? "font-medium text-(--ora-burgundy)"
                         : "text-(--ora-burgundy-dark)"
@@ -390,11 +396,11 @@ export default function Header() {
 
             <div className="mt-auto pt-8">
               <Link
-                href="/contact"
+                href={bookingHref}
                 onClick={() => setMobileOpen(false)}
                 className="ora-button ora-button-primary w-full"
               >
-                Book now
+                Book your visit
               </Link>
               <p className="mt-5 text-xs text-(--ora-text-secondary)">
                 Hydrocarbures, Douala
@@ -403,6 +409,29 @@ export default function Header() {
           </nav>
         </aside>
       </div>
+
+      <nav
+        aria-label="Quick booking actions"
+        className={`fixed inset-x-4 bottom-4 z-40 flex items-center gap-2 rounded-full border border-white/65 bg-[rgba(246,243,238,0.94)] p-1.5 shadow-[0_18px_55px_rgba(48,42,43,0.2)] backdrop-blur-md transition-[opacity,transform] duration-200 md:hidden ${
+          mobileOpen
+            ? "pointer-events-none translate-y-3 opacity-0"
+            : "translate-y-0 opacity-100"
+        }`}
+      >
+        <Link
+          href={bookingHref}
+          className="ora-button ora-button-primary min-w-0 flex-1"
+        >
+          Book your visit
+        </Link>
+        <a
+          href={oraBookingPhone.href}
+          aria-label={`Call ORA at ${oraBookingPhone.display}`}
+          className="flex size-11 shrink-0 items-center justify-center rounded-full border border-(--ora-border-strong) text-(--ora-burgundy-dark)"
+        >
+          <Phone size={18} strokeWidth={1.6} aria-hidden="true" />
+        </a>
+      </nav>
     </>
   );
 }

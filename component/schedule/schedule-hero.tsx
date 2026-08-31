@@ -13,8 +13,8 @@ export default function ScheduleHero() {
         </h1>
 
         <p className="mt-8 max-w-2xl text-base leading-7 text-(--ora-text-secondary)">
-          Explore published weekly sessions for ORA&apos;s Padel academies and
-          2026/27 Dance Academy, with clear age groups, days and times.
+          Explore published weekly sessions for Yoga, Mat Pilates, Padel and
+          the 2026/27 Dance Academy, with clear groups, days and times.
         </p>
       </div>
     </section>

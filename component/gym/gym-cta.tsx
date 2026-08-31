@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { bookingHref } from "@/lib/contact";
+
 export default function GymCTA() {
   return (
     <section className="relative overflow-hidden bg-(--ora-burgundy) text-(--ora-cream)">
@@ -12,8 +14,8 @@ export default function GymCTA() {
           your goals.
         </p>
         <div className="mt-9 flex flex-wrap gap-3">
-          <Link href="/contact" className="ora-button ora-button-light">
-            Visit ORA
+          <Link href={bookingHref} className="ora-button ora-button-light">
+            Book a Fitness visit
           </Link>
           <Link href="/memberships" className="ora-button ora-button-outline-light">
             Memberships

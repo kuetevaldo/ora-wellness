@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import ProgrammeCard from "@/component/shared/programme-card";
+import { bookingHref } from "@/lib/contact";
 import {
   programmes,
   type ProgrammeCategory,
@@ -15,10 +16,12 @@ type ProgrammeFilter = "all" | ProgrammeCategory;
 const filters: { value: ProgrammeFilter; label: string }[] = [
   { value: "all", label: "All programmes" },
   { value: "padel", label: "Padel" },
+  { value: "pilates", label: "Pilates" },
+  { value: "yoga", label: "Yoga" },
   { value: "studio", label: "Dance & Studio" },
 ];
 
-const enquiryExperiences = ["Fitness", "Pilates", "Yoga", "Studio classes"];
+const enquiryExperiences = ["Fitness", "Reformer Pilates", "Studio classes"];
 
 export default function ScheduleGrid() {
   const [activeFilter, setActiveFilter] = useState<ProgrammeFilter>("all");
@@ -48,7 +51,7 @@ export default function ScheduleGrid() {
         </div>
 
         <div
-          className="mt-10 flex flex-wrap gap-3"
+          className="mt-10 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-3"
           role="group"
           aria-label="Filter programmes"
         >
@@ -59,7 +62,9 @@ export default function ScheduleGrid() {
               onClick={() => setActiveFilter(filter.value)}
               aria-pressed={activeFilter === filter.value}
               aria-controls="programme-results"
-              className={`min-h-11 rounded-full px-5 py-2.5 text-sm font-semibold transition ${
+              className={`min-h-11 rounded-full px-3 py-2.5 text-[0.8125rem] font-semibold transition sm:w-auto sm:px-5 sm:text-sm ${
+                filter.value === "all" ? "col-span-2" : ""
+              } ${
                 activeFilter === filter.value
                   ? "bg-(--ora-burgundy) text-white"
                   : "border border-(--ora-border-strong) text-(--ora-burgundy) hover:border-(--ora-burgundy)"
@@ -106,8 +111,8 @@ export default function ScheduleGrid() {
               ))}
             </ul>
           </div>
-          <Link href="/contact" className="ora-button ora-button-primary mt-7 md:mt-0">
-            Check availability
+          <Link href={bookingHref} className="ora-button ora-button-primary mt-7 md:mt-0">
+            Reserve your place
             <ArrowUpRight size={16} strokeWidth={1.6} aria-hidden="true" />
           </Link>
         </div>

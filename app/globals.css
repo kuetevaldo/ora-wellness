@@ -452,6 +452,10 @@ textarea {
 }
 
 @media (max-width: 767px) {
+  body {
+    padding-bottom: 5rem;
+  }
+
   .ora-media-placeholder {
     --media-focus-x: var(--media-mobile-focus-x) !important;
     --media-focus-y: var(--media-mobile-focus-y) !important;

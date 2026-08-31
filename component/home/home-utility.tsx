@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+import { bookingHref } from "@/lib/contact";
+
 const utilityItems = [
   {
     label: "Open daily",
     value: "6:00 AM - 10:00 PM",
+  },
+  {
+    label: "All in one place",
+    value: "Six ORA experiences",
   },
   {
     label: "Find us",
@@ -15,7 +21,7 @@ const utilityItems = [
 export default function HomeUtility() {
   return (
     <section aria-label="Visit information" className="border-y border-(--ora-border) bg-(--ora-surface-raised)">
-      <div className="ora-container grid sm:grid-cols-3">
+      <div className="ora-container grid sm:grid-cols-2 lg:grid-cols-4">
         {utilityItems.map((item) => (
           <div
             key={item.label}
@@ -30,9 +36,9 @@ export default function HomeUtility() {
           </div>
         ))}
 
-        <div className="flex min-h-24 items-center py-5 sm:pl-6">
-          <Link href="/contact" className="ora-text-link">
-            Plan your visit
+        <div className="flex min-h-24 items-center py-5 lg:pl-6">
+          <Link href={bookingHref} className="ora-text-link">
+            Book your first visit
             <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
           </Link>
         </div>

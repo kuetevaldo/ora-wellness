@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowDownRight } from "lucide-react";
 
 import ExperienceMedia from "@/component/shared/experience-media";
+import { bookingHref } from "@/lib/contact";
 
 export default function CafeHero() {
   return (
@@ -40,8 +41,8 @@ export default function CafeHero() {
             <Link href="#menu" className="ora-button ora-button-light">
               Explore the menu
             </Link>
-            <Link href="/contact" className="ora-button ora-button-outline-light">
-              Visit ORA
+            <Link href={bookingHref} className="ora-button ora-button-outline-light">
+              Plan your visit
               <ArrowDownRight size={16} aria-hidden="true" />
             </Link>
           </div>

@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+import { bookingHref } from "@/lib/contact";
+
 const membershipFocus = [
-  ["Train", "Fitness and performance."],
-  ["Move", "Pilates, Yoga and Studio."],
-  ["Belong", "Community and events."],
+  ["Try", "Start with one experience."],
+  ["Feel", "Find the routine that suits you."],
+  ["Return", "Turn a good visit into a habit."],
 ];
 
 export default function HomeMembership() {
@@ -16,17 +18,22 @@ export default function HomeMembership() {
             Membership
           </p>
           <h2 className="font-display mt-4 text-[clamp(3.5rem,7vw,7rem)] font-normal leading-[0.88] tracking-[-0.05em]">
-            Make ORA part of your routine.
+            One visit can become your best routine.
           </h2>
           <p className="mt-7 max-w-2xl text-base leading-7 text-(--ora-text-secondary)">
-            Whether your focus is training, movement, recovery or a more
-            balanced routine, ORA brings different experiences together in
-            one place.
+            Begin with the experience that fits today. Once you know the space,
+            the people and the feeling, choose the membership direction that
+            makes ORA easier to return to.
           </p>
-          <Link href="/memberships" className="ora-button ora-button-primary mt-8">
-            Explore memberships
-            <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
-          </Link>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href={bookingHref} className="ora-button ora-button-primary">
+              Start with a visit
+              <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
+            </Link>
+            <Link href="/memberships" className="ora-button ora-button-secondary">
+              Compare memberships
+            </Link>
+          </div>
         </div>
 
         <div className="mt-14 grid gap-8 border-t border-(--ora-border-strong) pt-8 sm:grid-cols-[1fr_0.8fr_1.2fr]">

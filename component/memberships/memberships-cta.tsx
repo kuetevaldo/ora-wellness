@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { bookingHref } from "@/lib/contact";
+
 export default function MembershipsCTA() {
   return (
     <section className="relative overflow-hidden bg-(--ora-burgundy) px-6 py-24 text-(--ora-cream) md:px-10 md:py-32 lg:px-14">
@@ -20,7 +22,7 @@ export default function MembershipsCTA() {
         </p>
 
         <Link
-          href="/contact"
+          href={bookingHref}
           className="mt-10 inline-flex rounded-full bg-(--ora-cream) px-7 py-3.5 text-[13px] font-medium text-(--ora-burgundy-dark) transition hover:bg-(--ora-pink-light)"
         >
           Ask about memberships

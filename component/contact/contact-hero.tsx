@@ -17,8 +17,9 @@ export default function ContactHero() {
         </h1>
 
         <p className="mt-8 max-w-xl text-[15px] leading-7 text-(--ora-muted)">
-          Questions about Café, Fitness, Padel, Pilates, Yoga, Studio or
-          memberships? Reach out to the ORA team.
+          Tell us what you would like to try and when you want to visit. The ORA
+          team will help you choose the right experience and confirm current
+          availability.
         </p>
       </div>
     </section>

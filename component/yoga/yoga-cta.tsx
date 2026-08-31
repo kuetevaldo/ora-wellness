@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+import { bookingHref } from "@/lib/contact";
+
 export default function YogaCTA() {
   return (
     <section className="relative overflow-hidden bg-(--ora-burgundy) text-white">
@@ -12,8 +14,8 @@ export default function YogaCTA() {
         <p className="mx-auto mt-7 max-w-xl text-base leading-7 text-white/82">
           Contact ORA to learn more about Yoga sessions and current availability.
         </p>
-        <Link href="/contact" className="ora-button ora-button-light mt-8">
-          Contact ORA
+        <Link href={bookingHref} className="ora-button ora-button-light mt-8">
+          Book a Yoga class
           <ArrowUpRight size={17} aria-hidden="true" />
         </Link>
       </div>

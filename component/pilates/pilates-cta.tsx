@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+import { bookingHref } from "@/lib/contact";
+
 export default function PilatesCTA() {
   return (
     <section className="bg-(--ora-burgundy) text-white">
@@ -16,8 +18,8 @@ export default function PilatesCTA() {
             Contact ORA to learn more about Pilates sessions, availability and the
             best place to begin.
           </p>
-          <Link href="/contact" className="ora-button ora-button-light mt-7">
-            Contact ORA
+          <Link href={bookingHref} className="ora-button ora-button-light mt-7">
+            Book a Pilates session
             <ArrowUpRight size={17} aria-hidden="true" />
           </Link>
         </div>
