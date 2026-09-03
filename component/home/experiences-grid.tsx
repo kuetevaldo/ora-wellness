@@ -29,7 +29,7 @@ export default function ExperiencesGrid() {
             href="/experiences/gym"
             className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-ink) text-white shadow-sm transition-transform duration-300 hover:shadow-md motion-reduce:transition-none"
           >
-            <div className="relative aspect-[16/10] sm:aspect-[21/9] w-full overflow-hidden">
+            <div className="relative aspect-16/10 sm:aspect-21/9 w-full overflow-hidden">
               <Image
                 src="/images/hero-image/fitness.jpg"
                 alt="ORA Fitness strength and cardio floor"
@@ -39,7 +39,7 @@ export default function ExperiencesGrid() {
               />
               <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10"
+                className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-black/10"
               />
               <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 lg:p-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div>
@@ -65,7 +65,7 @@ export default function ExperiencesGrid() {
               href="/cafe"
               className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-surface-raised) p-6 sm:p-8 md:col-span-7 transition-colors hover:border-(--ora-border-strong)"
             >
-              <div className="relative aspect-[16/11] w-full overflow-hidden rounded-xl bg-(--ora-cream)">
+              <div className="relative aspect-16/11 w-full overflow-hidden rounded-xl bg-(--ora-cream)">
                 <Image
                   src="/images/hero-image/cafe-ora.JPG"
                   alt="ORA Café breakfast and specialty coffee"
@@ -95,7 +95,7 @@ export default function ExperiencesGrid() {
               href="/experiences/padel"
               className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-surface-raised) p-6 sm:p-8 md:col-span-5 transition-colors hover:border-(--ora-border-strong)"
             >
-              <div className="relative aspect-[16/11] w-full overflow-hidden rounded-xl bg-(--ora-cream)">
+              <div className="relative aspect-16/11 w-full overflow-hidden rounded-xl bg-(--ora-cream)">
                 <Image
                   src="/images/hero-image/padel-image.jpg"
                   alt="ORA Padel courts in Douala"
@@ -128,7 +128,7 @@ export default function ExperiencesGrid() {
               href="/experiences/pilates"
               className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-surface-raised) p-6 sm:p-8 md:col-span-5 transition-colors hover:border-(--ora-border-strong)"
             >
-              <div className="relative aspect-[16/11] w-full overflow-hidden rounded-xl bg-(--ora-pink-light)/40">
+              <div className="relative aspect-16/11 w-full overflow-hidden rounded-xl bg-(--ora-pink-light)/40">
                 <video
                   className="h-full w-full object-cover motion-reduce:hidden"
                   autoPlay
@@ -170,7 +170,7 @@ export default function ExperiencesGrid() {
               href="/experiences/yoga"
               className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-surface-raised) p-6 sm:p-8 md:col-span-7 transition-colors hover:border-(--ora-border-strong)"
             >
-              <div className="relative aspect-[16/11] w-full overflow-hidden rounded-xl bg-(--ora-cream)">
+              <div className="relative aspect-16/11 w-full overflow-hidden rounded-xl bg-(--ora-cream)">
                 <Image
                   src="/images/hero-image/yoga1.jpg"
                   alt="ORA Yoga guided practice"
@@ -201,7 +201,7 @@ export default function ExperiencesGrid() {
             href="/experiences/studio"
             className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-ink) text-white shadow-sm transition-transform duration-300 hover:shadow-md motion-reduce:transition-none"
           >
-            <div className="relative aspect-[16/10] sm:aspect-[21/9] w-full overflow-hidden">
+            <div className="relative aspect-16/10 sm:aspect-21/9 w-full overflow-hidden">
               <video
                 className="h-full w-full object-cover motion-reduce:hidden"
                 autoPlay
@@ -216,7 +216,7 @@ export default function ExperiencesGrid() {
               </video>
               <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/10"
+                className="absolute inset-0 bg-linear-to-t from-black/80 via-black/35 to-black/10"
               />
               <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 lg:p-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div>
