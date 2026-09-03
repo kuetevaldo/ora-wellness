@@ -9,10 +9,7 @@ export default function StudioCTA() {
       <div className="ora-container py-16 md:py-24">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/20 pb-8">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-white/60">
-              ORA Studio
-            </p>
-            <h2 className="font-display mt-3 max-w-2xl text-4xl leading-[0.98] tracking-tight sm:text-5xl md:text-6xl">
+            <h2 className="font-display max-w-2xl text-4xl leading-[0.98] tracking-tight sm:text-5xl md:text-6xl">
               Join the energy.
             </h2>
             <p className="mt-3 text-sm sm:text-base text-white/80 max-w-lg">
@@ -40,6 +37,7 @@ export default function StudioCTA() {
             </div>
             <Link href="/experiences/gym" className="ora-button ora-button-outline-light shrink-0">
               Explore Fitness
+              <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
           </div>
         </div>

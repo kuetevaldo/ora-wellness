@@ -24,6 +24,7 @@ export default function CafeClosing() {
             </Link>
             <Link href="/experiences/padel" className="ora-button ora-button-outline-light">
               Explore Padel
+              <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
           </div>
         </div>

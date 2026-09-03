@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-
-import { bookingHref } from "@/lib/contact";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 export default function HomeHero() {
   return (
@@ -49,12 +47,12 @@ export default function HomeHero() {
           </p>
 
           <div className="ora-home-hero__actions ora-page-intro ora-page-intro-delay-2 mt-7 flex flex-wrap items-center gap-3 md:mt-8">
-            <Link href={bookingHref} className="ora-button ora-button-light">
-              Book a visit
-              <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
-            </Link>
-            <Link href="#experiences" className="ora-button ora-button-outline-light">
+            <Link href="#experiences" className="ora-button ora-button-light">
               Explore experiences
+              <ArrowDown size={15} strokeWidth={1.5} aria-hidden="true" />
+            </Link>
+            <Link href="/schedule" className="ora-button ora-button-outline-light">
+              View schedule
               <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
           </div>

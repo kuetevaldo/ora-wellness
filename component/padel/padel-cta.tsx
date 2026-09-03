@@ -39,6 +39,7 @@ export default function PadelCTA() {
             </div>
             <Link href="/cafe" className="ora-button ora-button-outline-light shrink-0">
               View Café
+              <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
           </div>
         </div>

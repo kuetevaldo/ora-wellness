@@ -6,6 +6,7 @@ import ExperiencesGrid from "@/component/home/experiences-grid";
 import HomeSchedule from "@/component/home/home-schedule";
 import HomeMembership from "@/component/home/home-membership";
 import HomeLocation from "@/component/home/home-location";
+import HomeActionBlock from "@/component/home/home-action-block";
 import {
   createPageMetadata,
   serializeJsonLd,
@@ -35,6 +36,7 @@ export default function HomePage() {
       <HomeSchedule />
       <HomeMembership />
       <HomeLocation />
+      <HomeActionBlock />
       <Footer />
     </main>
   );

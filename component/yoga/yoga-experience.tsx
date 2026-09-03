@@ -21,10 +21,7 @@ export default function YogaExperience() {
     <section className="bg-(--ora-sage-light) text-(--ora-burgundy-dark)">
       <div className="ora-container grid gap-12 py-20 md:py-28 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-5">
-          <p className="text-sm font-medium text-(--ora-text-secondary)">
-            Find your centre
-          </p>
-          <h2 className="font-display mt-5 max-w-lg text-4xl leading-[1.02] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+          <h2 className="font-display max-w-lg text-4xl leading-[1.02] tracking-[-0.04em] sm:text-5xl md:text-6xl">
             Find balance through movement.
           </h2>
         </div>

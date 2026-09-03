@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 import { bookingHref } from "@/lib/contact";
 
@@ -23,9 +24,10 @@ export default function MembershipsCTA() {
 
         <Link
           href={bookingHref}
-          className="mt-10 inline-flex rounded-full bg-(--ora-cream) px-7 py-3.5 text-[13px] font-medium text-(--ora-burgundy-dark) transition hover:bg-(--ora-pink-light)"
+          className="ora-button ora-button-light mt-10"
         >
-          Ask about memberships
+          Enquire about memberships
+          <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
         </Link>
       </div>
     </section>

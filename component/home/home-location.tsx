@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-import { bookingHref } from "@/lib/contact";
-
 export default function HomeLocation() {
   return (
     <section aria-labelledby="location-heading" className="ora-section bg-(--ora-pink-light) text-(--ora-burgundy-dark)">
@@ -19,8 +17,8 @@ export default function HomeLocation() {
               Daily access in the heart of Douala.
             </p>
           </div>
-          <Link href={bookingHref} className="ora-button ora-button-primary shrink-0">
-            Book a visit
+          <Link href="/contact" className="ora-button ora-button-primary shrink-0">
+            Contact ORA
             <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
           </Link>
         </div>
@@ -49,8 +47,8 @@ export default function HomeLocation() {
             <p className="mt-2 text-sm leading-6 text-(--ora-text-secondary)">
               Questions, bookings and enquiries.
             </p>
-            <Link href={bookingHref} className="ora-text-link mt-2">
-              Book your visit
+            <Link href="/contact" className="ora-text-link mt-2">
+              Get in touch
               <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
           </div>

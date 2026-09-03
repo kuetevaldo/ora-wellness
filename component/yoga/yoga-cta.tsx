@@ -40,6 +40,7 @@ export default function YogaCTA() {
             </div>
             <Link href="/experiences/pilates" className="ora-button ora-button-outline-light shrink-0">
               Explore Pilates
+              <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
           </div>
         </div>

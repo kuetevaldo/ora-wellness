@@ -33,10 +33,10 @@ export default function HomeMembership() {
                 id="membership-heading"
                 className="font-display mt-3 text-3xl sm:text-4xl lg:text-5xl tracking-tight"
               >
-                Built around your rhythm.
+                Commit to your routine.
               </h2>
               <p className="mt-3 text-sm text-(--ora-text-secondary) max-w-md">
-                Choose the direction that fits your weekly movement and recovery goals.
+                Structured access for consistent training, movement and recovery in Douala.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3 shrink-0">

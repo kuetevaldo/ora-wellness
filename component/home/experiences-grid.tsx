@@ -27,7 +27,7 @@ export default function ExperiencesGrid() {
           {/* 1. LARGE FITNESS BLOCK */}
           <Link
             href="/experiences/gym"
-            className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-ink) text-white shadow-sm transition-transform duration-300 hover:shadow-md motion-reduce:transition-none"
+            className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-ink) text-white shadow-sm transition-all duration-200 hover:shadow-md active:scale-[0.99] motion-reduce:transition-none motion-reduce:active:scale-100"
           >
             <div className="relative aspect-16/10 sm:aspect-21/9 w-full overflow-hidden">
               <Image
@@ -35,7 +35,7 @@ export default function ExperiencesGrid() {
                 alt="ORA Fitness strength and cardio floor"
                 fill
                 sizes="(max-width: 1024px) 100vw, 90rem"
-                className="object-cover object-[center_35%] transition-transform duration-700 ease-out group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                className="object-cover object-[center_35%] transition-transform duration-500 ease-out group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
               />
               <div
                 aria-hidden="true"
@@ -50,7 +50,7 @@ export default function ExperiencesGrid() {
                     Strength, cardio and focused conditioning designed for progressive performance.
                   </p>
                 </div>
-                <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs sm:text-sm font-semibold text-(--ora-burgundy-dark) transition-transform duration-200 group-hover:translate-x-0.5">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs sm:text-sm font-semibold text-(--ora-burgundy-dark) transition-transform duration-160 group-hover:translate-x-0.5">
                   Explore Fitness
                   <ArrowUpRight size={16} strokeWidth={1.75} aria-hidden="true" />
                 </span>
@@ -63,7 +63,7 @@ export default function ExperiencesGrid() {
             {/* Café Block */}
             <Link
               href="/cafe"
-              className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-surface-raised) p-6 sm:p-8 md:col-span-7 transition-colors hover:border-(--ora-border-strong)"
+              className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-surface-raised) p-6 sm:p-8 md:col-span-7 transition-all duration-200 hover:border-(--ora-border-strong) active:scale-[0.99] motion-reduce:transition-none motion-reduce:active:scale-100"
             >
               <div className="relative aspect-16/11 w-full overflow-hidden rounded-xl bg-(--ora-cream)">
                 <Image
@@ -71,7 +71,7 @@ export default function ExperiencesGrid() {
                   alt="ORA Café breakfast and specialty coffee"
                   fill
                   sizes="(max-width: 768px) 100vw, 55vw"
-                  className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                  className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                 />
               </div>
               <div className="mt-6 flex items-end justify-between gap-4">
@@ -84,7 +84,7 @@ export default function ExperiencesGrid() {
                   </p>
                 </div>
                 <span className="ora-text-link shrink-0">
-                  View Café
+                  View menu
                   <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
                 </span>
               </div>
@@ -93,7 +93,7 @@ export default function ExperiencesGrid() {
             {/* Padel Block */}
             <Link
               href="/experiences/padel"
-              className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-surface-raised) p-6 sm:p-8 md:col-span-5 transition-colors hover:border-(--ora-border-strong)"
+              className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-surface-raised) p-6 sm:p-8 md:col-span-5 transition-all duration-200 hover:border-(--ora-border-strong) active:scale-[0.99] motion-reduce:transition-none motion-reduce:active:scale-100"
             >
               <div className="relative aspect-16/11 w-full overflow-hidden rounded-xl bg-(--ora-cream)">
                 <Image
@@ -101,7 +101,7 @@ export default function ExperiencesGrid() {
                   alt="ORA Padel courts in Douala"
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                  className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                 />
               </div>
               <div className="mt-6 flex items-end justify-between gap-4">
@@ -126,7 +126,7 @@ export default function ExperiencesGrid() {
             {/* Pilates Block */}
             <Link
               href="/experiences/pilates"
-              className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-surface-raised) p-6 sm:p-8 md:col-span-5 transition-colors hover:border-(--ora-border-strong)"
+              className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-surface-raised) p-6 sm:p-8 md:col-span-5 transition-all duration-200 hover:border-(--ora-border-strong) active:scale-[0.99] motion-reduce:transition-none motion-reduce:active:scale-100"
             >
               <div className="relative aspect-16/11 w-full overflow-hidden rounded-xl bg-(--ora-pink-light)/40">
                 <video
@@ -168,7 +168,7 @@ export default function ExperiencesGrid() {
             {/* Yoga Block */}
             <Link
               href="/experiences/yoga"
-              className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-surface-raised) p-6 sm:p-8 md:col-span-7 transition-colors hover:border-(--ora-border-strong)"
+              className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-surface-raised) p-6 sm:p-8 md:col-span-7 transition-all duration-200 hover:border-(--ora-border-strong) active:scale-[0.99] motion-reduce:transition-none motion-reduce:active:scale-100"
             >
               <div className="relative aspect-16/11 w-full overflow-hidden rounded-xl bg-(--ora-cream)">
                 <Image
@@ -176,7 +176,7 @@ export default function ExperiencesGrid() {
                   alt="ORA Yoga guided practice"
                   fill
                   sizes="(max-width: 768px) 100vw, 55vw"
-                  className="object-cover object-[50%_40%] transition-transform duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                  className="object-cover object-[50%_40%] transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                 />
               </div>
               <div className="mt-6 flex items-end justify-between gap-4">
@@ -199,7 +199,7 @@ export default function ExperiencesGrid() {
           {/* 6. LARGE STUDIO BLOCK */}
           <Link
             href="/experiences/studio"
-            className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-ink) text-white shadow-sm transition-transform duration-300 hover:shadow-md motion-reduce:transition-none"
+            className="group relative block overflow-hidden rounded-(--ora-radius-media) border border-(--ora-border) bg-(--ora-ink) text-white shadow-sm transition-all duration-200 hover:shadow-md active:scale-[0.99] motion-reduce:transition-none motion-reduce:active:scale-100"
           >
             <div className="relative aspect-16/10 sm:aspect-21/9 w-full overflow-hidden">
               <video
@@ -227,7 +227,7 @@ export default function ExperiencesGrid() {
                     High-energy group training, dance academy and community movement.
                   </p>
                 </div>
-                <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs sm:text-sm font-semibold text-(--ora-burgundy-dark) transition-transform duration-200 group-hover:translate-x-0.5">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs sm:text-sm font-semibold text-(--ora-burgundy-dark) transition-transform duration-160 group-hover:translate-x-0.5">
                   Explore Studio
                   <ArrowUpRight size={16} strokeWidth={1.75} aria-hidden="true" />
                 </span>

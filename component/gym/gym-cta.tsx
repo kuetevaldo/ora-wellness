@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 import { bookingHref } from "@/lib/contact";
 
@@ -16,9 +17,11 @@ export default function GymCTA() {
         <div className="mt-9 flex flex-wrap gap-3">
           <Link href={bookingHref} className="ora-button ora-button-light">
             Book a Fitness visit
+            <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
           </Link>
           <Link href="/memberships" className="ora-button ora-button-outline-light">
-            Memberships
+            Explore memberships
+            <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
           </Link>
         </div>
 
@@ -37,6 +40,7 @@ export default function GymCTA() {
             </div>
             <Link href="/cafe" className="ora-button ora-button-outline-light shrink-0">
               View Café
+              <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
           </div>
         </div>
