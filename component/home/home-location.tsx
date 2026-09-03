@@ -5,22 +5,27 @@ import { bookingHref } from "@/lib/contact";
 
 export default function HomeLocation() {
   return (
-    <section className="ora-section bg-(--ora-pink-light) text-(--ora-burgundy-dark)">
+    <section aria-labelledby="location-heading" className="ora-section bg-(--ora-pink-light) text-(--ora-burgundy-dark)">
       <div className="ora-container">
-        <div className="max-w-4xl">
-          <p className="text-xs font-semibold text-(--ora-burgundy)">
-            Visit ORA
-          </p>
-          <h2 className="font-display mt-4 text-[clamp(3.5rem,7vw,7rem)] font-normal leading-[0.88] tracking-[-0.05em]">
-            Everything starts here.
-          </h2>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-(--ora-text-secondary)">
-            Discover Café, Fitness, Padel, Pilates, Yoga and Studio in one
-            wellness destination in Douala.
-          </p>
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-(--ora-border-strong) pb-6">
+          <div>
+            <h2
+              id="location-heading"
+              className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-tight"
+            >
+              Visit ORA
+            </h2>
+            <p className="mt-2 text-sm text-(--ora-text-secondary)">
+              Daily access in the heart of Douala.
+            </p>
+          </div>
+          <Link href={bookingHref} className="ora-button ora-button-primary shrink-0">
+            Book a visit
+            <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
+          </Link>
         </div>
 
-        <div className="mt-12 grid gap-8 border-t border-(--ora-border-strong) pt-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <h3 className="text-sm font-semibold">Location</h3>
             <p className="mt-2 text-sm leading-6 text-(--ora-text-secondary)">
@@ -59,6 +64,7 @@ export default function HomeLocation() {
               href="https://www.instagram.com/ora.cameroon"
               target="_blank"
               rel="noreferrer"
+              aria-label="@ora.cameroon on Instagram (opens in new tab)"
               className="ora-text-link mt-2"
             >
               @ora.cameroon

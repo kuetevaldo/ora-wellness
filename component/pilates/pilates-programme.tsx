@@ -28,16 +28,14 @@ export default function PilatesProgramme() {
           </div>
 
           <div className="lg:col-span-7 lg:pl-6">
-            <p className="text-xs font-semibold text-(--ora-burgundy)">
+            <span className="text-xs font-semibold uppercase tracking-wider text-(--ora-burgundy)">
               Mat work and recovery
-            </p>
-            <h2 className="font-display mt-4 max-w-3xl text-4xl leading-[1.02] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              A weekly rhythm for control and mobility.
+            </span>
+            <h2 className="font-display mt-3 max-w-3xl text-3xl sm:text-4xl lg:text-5xl tracking-tight">
+              Control, balance and mobility.
             </h2>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-(--ora-text-secondary)">
-              Mat Pilates now has a clear place in the ORA week, with morning
-              and evening options plus a dedicated stretching session for
-              mobility and recovery.
+            <p className="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-(--ora-text-secondary)">
+              Morning and evening mat sessions plus dedicated mobility and recovery flows.
             </p>
 
             <div className="mt-10">

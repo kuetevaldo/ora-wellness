@@ -23,6 +23,25 @@ export default function PadelCTA() {
             <ArrowUpRight size={17} aria-hidden="true" />
           </Link>
         </div>
+
+        <div className="lg:col-span-12 mt-12 border-t border-white/18 pt-8">
+          <p className="text-xs uppercase tracking-wider text-white/60">
+            Next experience
+          </p>
+          <div className="mt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h3 className="font-display text-2xl text-white">
+                ORA Café
+              </h3>
+              <p className="mt-1 text-sm text-white/75">
+                Cool down with fresh juices, specialty coffee and post-match meals.
+              </p>
+            </div>
+            <Link href="/cafe" className="ora-button ora-button-outline-light shrink-0">
+              View Café
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

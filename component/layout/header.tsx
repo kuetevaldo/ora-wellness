@@ -226,6 +226,7 @@ export default function Header() {
                 type="button"
                 aria-expanded={moreOpen}
                 aria-controls="ora-more-navigation"
+                aria-haspopup="true"
                 onClick={() => setMoreOpen((open) => !open)}
                 className={`flex min-h-11 items-center gap-1.5 border-b-2 px-0.5 text-[0.8125rem] font-medium transition-[color,border-color] duration-180 ${
                   secondaryActive || moreOpen
@@ -246,6 +247,7 @@ export default function Header() {
 
               <div
                 id="ora-more-navigation"
+                role="menu"
                 className={`absolute right-0 top-[calc(100%+0.5rem)] w-52 origin-top-right rounded-(--ora-radius-panel) border border-(--ora-border) bg-(--ora-surface-raised) p-2 shadow-[0_24px_60px_rgba(99,51,65,0.14)] transition-[opacity,transform] duration-200 ease-(--ora-ease-out) ${
                   moreOpen
                     ? "pointer-events-auto translate-y-0 scale-100 opacity-100"
@@ -260,6 +262,7 @@ export default function Header() {
                     <Link
                       key={item.label}
                       href={item.href}
+                      role="menuitem"
                       tabIndex={moreOpen ? 0 : -1}
                       aria-current={active ? "page" : undefined}
                       onClick={() => setMoreOpen(false)}
@@ -342,9 +345,9 @@ export default function Header() {
           </div>
 
           <nav className="flex flex-1 flex-col overflow-y-auto px-5 pb-7 pt-7 sm:px-7" aria-label="Mobile navigation">
-            <p className="mb-3 text-xs font-semibold text-(--ora-text-secondary)">
+            <h2 className="mb-3 text-xs font-semibold text-(--ora-text-secondary)">
               Experiences
-            </p>
+            </h2>
 
             <div className="grid grid-cols-2 gap-x-3 border-t border-(--ora-border) sm:gap-x-5">
               {mainNavigation.map((item) => {
@@ -368,9 +371,9 @@ export default function Header() {
               })}
             </div>
 
-            <p className="mb-3 mt-8 text-xs font-semibold text-(--ora-text-secondary)">
+            <h2 className="mb-3 mt-8 text-xs font-semibold text-(--ora-text-secondary)">
               Explore
-            </p>
+            </h2>
 
             <div className="grid border-t border-(--ora-border)">
               {secondaryNavigation.map((item) => {

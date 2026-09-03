@@ -34,15 +34,14 @@ export default function GymHero() {
           <h1 className="font-display mt-5 text-[clamp(3.5rem,8vw,7.5rem)] leading-[0.88] tracking-[-0.055em]">
             Train with purpose.
           </h1>
-          <p className="mt-7 max-w-lg text-[0.9375rem] leading-7 text-white/88 md:text-base">
-            A focused environment for strength, consistency and performance,
-            balanced within the wider ORA experience.
+          <p className="mt-6 max-w-lg text-[0.9375rem] leading-7 text-white/88 md:text-base">
+            Dedicated space for strength, cardio and progressive conditioning.
           </p>
           <Link
             href="#training"
             className="ora-button ora-button-light mt-8"
           >
-            Explore Fitness
+            Explore training space
             <ArrowDown size={15} strokeWidth={1.5} aria-hidden="true" />
           </Link>
         </div>

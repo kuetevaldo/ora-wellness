@@ -33,9 +33,8 @@ export default function CafeHero() {
           <h1 className="font-display mt-5 text-[clamp(3.5rem,8vw,7.5rem)] leading-[0.88] tracking-[-0.055em]">
             A refined pause in your day.
           </h1>
-          <p className="mt-7 max-w-xl text-[0.9375rem] leading-7 text-white/88 md:text-base">
-            Breakfast, specialty coffee, nourishing meals, fresh juices and
-            protein shakes, all part of the ORA experience.
+          <p className="mt-6 max-w-xl text-[0.9375rem] leading-7 text-white/88 md:text-base">
+            Specialty coffee, fresh breakfast, nourishing bowls and protein shakes in Douala.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="#menu" className="ora-button ora-button-light">

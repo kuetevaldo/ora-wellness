@@ -3,21 +3,25 @@ import Image from "next/image";
 const moments = [
   {
     title: "Play",
-    copy: "A dedicated padel environment for matches, practice and social play.",
+    copy: "Court booking for friendly matches, practice and social rallies.",
   },
   {
     title: "Compete",
-    copy: "A setting for friendly competition and organised matches.",
+    copy: "Organised tournaments and competitive ladders across all levels.",
   },
   {
     title: "Connect",
-    copy: "A social game that belongs naturally within ORA's wider community.",
+    copy: "Post-match drinks and a welcoming community on and off court.",
   },
 ];
 
 export default function PadelExperience() {
   return (
-    <section className="bg-(--ora-pink-light) text-(--ora-burgundy-dark)">
+    <section
+      id="padel"
+      aria-labelledby="padel-experience-heading"
+      className="bg-(--ora-pink-light) text-(--ora-burgundy-dark)"
+    >
       <div className="ora-container grid gap-12 py-20 md:py-28 lg:grid-cols-12 lg:gap-8">
         <div className="relative h-96 overflow-hidden rounded-(--ora-radius-media) lg:col-span-5 lg:h-[34rem]">
           <Image

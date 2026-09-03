@@ -51,9 +51,9 @@ export default function RootLayout({
         <a className="ora-skip-link" href="#main-content">
           Skip to content
         </a>
-        <div id="main-content" tabIndex={-1}>
+        <main id="main-content" tabIndex={-1}>
           {children}
-        </div>
+        </main>
       </body>
     </html>
   );

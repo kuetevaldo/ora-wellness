@@ -47,6 +47,7 @@ const details = [
         href="https://www.instagram.com/ora.cameroon"
         target="_blank"
         rel="noreferrer"
+        aria-label="@ora.cameroon on Instagram (opens in new tab)"
         className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-(--ora-burgundy)"
       >
         @ora.cameroon

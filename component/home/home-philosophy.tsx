@@ -19,7 +19,7 @@ const rhythm = [
 
 export default function HomePhilosophy() {
   return (
-    <section className="bg-(--ora-cream) pb-(--ora-section-space)">
+    <section aria-labelledby="philosophy-heading" className="bg-(--ora-cream) pb-(--ora-section-space)">
       <div className="ora-container">
         <div className="relative overflow-hidden rounded-(--ora-radius-panel) bg-(--ora-burgundy) px-6 py-14 text-(--ora-cream) sm:px-9 md:px-12 md:py-18 lg:px-16 lg:py-22">
           <div className="relative grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-18">
@@ -27,7 +27,7 @@ export default function HomePhilosophy() {
               <p className="text-xs font-semibold text-(--ora-pink-light)">
                 The ORA philosophy
               </p>
-              <h2 className="font-display mt-5 max-w-xl text-[clamp(3.5rem,7vw,7rem)] font-normal leading-[0.88] tracking-[-0.05em]">
+              <h2 id="philosophy-heading" className="font-display mt-5 max-w-xl text-[clamp(3.5rem,7vw,7rem)] font-normal leading-[0.88] tracking-[-0.05em]">
                 ORA, in rhythm.
               </h2>
             </div>

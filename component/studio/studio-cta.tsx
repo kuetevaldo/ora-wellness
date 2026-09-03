@@ -6,21 +6,42 @@ import { bookingHref } from "@/lib/contact";
 export default function StudioCTA() {
   return (
     <section className="bg-(--ora-burgundy-dark) text-white">
-      <div className="ora-container flex flex-col items-start justify-between gap-9 py-20 md:flex-row md:items-end md:py-28">
-        <div>
-          <p className="text-sm font-medium text-white/65">ORA Studio</p>
-          <h2 className="font-display mt-5 max-w-3xl text-5xl leading-[0.96] tracking-[-0.045em] sm:text-6xl md:text-7xl">
-            Join the energy.
-          </h2>
-        </div>
-        <div className="max-w-md md:pb-1">
-          <p className="text-base leading-7 text-white/72">
-            Contact ORA to learn more about current Studio classes and availability.
-          </p>
-          <Link href={bookingHref} className="ora-button ora-button-light mt-7">
+      <div className="ora-container py-16 md:py-24">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/20 pb-8">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-white/60">
+              ORA Studio
+            </p>
+            <h2 className="font-display mt-3 max-w-2xl text-4xl leading-[0.98] tracking-tight sm:text-5xl md:text-6xl">
+              Join the energy.
+            </h2>
+            <p className="mt-3 text-sm sm:text-base text-white/80 max-w-lg">
+              Reserve your spot in group classes or enquire about the Dance Academy.
+            </p>
+          </div>
+          <Link href={bookingHref} className="ora-button ora-button-light shrink-0">
             Reserve a Studio class
-            <ArrowUpRight size={17} aria-hidden="true" />
+            <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
+        </div>
+
+        <div className="mt-12">
+          <p className="text-xs uppercase tracking-wider text-white/60">
+            Next experience
+          </p>
+          <div className="mt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h3 className="font-display text-2xl text-white">
+                ORA Fitness
+              </h3>
+              <p className="mt-1 text-sm text-white/75">
+                Targeted strength, cardio and individual conditioning.
+              </p>
+            </div>
+            <Link href="/experiences/gym" className="ora-button ora-button-outline-light shrink-0">
+              Explore Fitness
+            </Link>
+          </div>
         </div>
       </div>
     </section>

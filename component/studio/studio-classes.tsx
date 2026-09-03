@@ -18,7 +18,11 @@ const classes = [
 
 export default function StudioClasses() {
   return (
-    <section className="relative overflow-hidden bg-(--ora-pink-light) text-(--ora-burgundy-dark)">
+    <section
+      id="studio"
+      aria-labelledby="studio-classes-heading"
+      className="relative overflow-hidden bg-(--ora-pink-light) text-(--ora-burgundy-dark)"
+    >
       <div className="ora-container relative z-10 py-20 md:py-28">
         <div className="grid gap-7 lg:grid-cols-12">
           <div className="lg:col-span-5">

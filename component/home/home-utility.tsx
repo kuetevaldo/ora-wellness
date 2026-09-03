@@ -3,45 +3,70 @@ import { ArrowUpRight } from "lucide-react";
 
 import { bookingHref } from "@/lib/contact";
 
-const utilityItems = [
+const practicalItems = [
   {
-    label: "Open daily",
-    value: "6:00 AM - 10:00 PM",
+    label: "Hours",
+    value: "Daily · 6:00 AM – 10:00 PM",
+    href: undefined,
   },
   {
-    label: "All in one place",
-    value: "Six ORA experiences",
-  },
-  {
-    label: "Find us",
+    label: "Location",
     value: "Hydrocarbures, Douala",
+    href: "/contact",
+  },
+  {
+    label: "Schedule",
+    value: "View class & court times",
+    href: "/schedule",
+  },
+  {
+    label: "Book",
+    value: "Reserve your visit",
+    href: bookingHref,
   },
 ];
 
 export default function HomeUtility() {
   return (
-    <section aria-label="Visit information" className="border-y border-(--ora-border) bg-(--ora-surface-raised)">
-      <div className="ora-container grid sm:grid-cols-2 lg:grid-cols-4">
-        {utilityItems.map((item) => (
-          <div
-            key={item.label}
-            className="flex min-h-24 flex-col justify-center border-b border-(--ora-border) py-5 last:border-b-0 sm:border-b-0 sm:border-r sm:pr-6 sm:last:border-r-0 sm:last:pr-0"
-          >
-            <p className="text-xs font-semibold text-(--ora-burgundy)">
-              {item.label}
-            </p>
-            <p className="mt-1 text-sm text-(--ora-text-secondary)">
-              {item.value}
-            </p>
-          </div>
-        ))}
+    <section
+      aria-label="Practical information"
+      className="border-y border-(--ora-border) bg-(--ora-surface-raised)"
+    >
+      <div className="ora-container grid grid-cols-2 divide-y divide-(--ora-border) sm:grid-cols-4 sm:divide-x sm:divide-y-0">
+        {practicalItems.map((item) => {
+          const content = (
+            <div className="flex flex-col justify-center py-5 sm:px-4 lg:px-6">
+              <span className="text-[11px] font-semibold tracking-wider text-(--ora-burgundy) uppercase">
+                {item.label}
+              </span>
+              <span className="mt-1 flex items-center gap-1.5 text-sm font-medium text-(--ora-burgundy-dark)">
+                {item.value}
+                {item.href && (
+                  <ArrowUpRight
+                    size={14}
+                    strokeWidth={1.5}
+                    className="shrink-0 text-(--ora-burgundy)"
+                    aria-hidden="true"
+                  />
+                )}
+              </span>
+            </div>
+          );
 
-        <div className="flex min-h-24 items-center py-5 lg:pl-6">
-          <Link href={bookingHref} className="ora-text-link">
-            Book your first visit
-            <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
-          </Link>
-        </div>
+          if (item.href) {
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="group transition-colors hover:bg-(--ora-pink-light)/30"
+              >
+                {content}
+              </Link>
+            );
+          }
+
+          return <div key={item.label}>{content}</div>;
+        })}
       </div>
     </section>
   );

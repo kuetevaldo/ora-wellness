@@ -2,34 +2,41 @@ const facilities = [
   {
     title: "Strength",
     description:
-      "A dedicated environment for resistance training, controlled movement and progressive strength work.",
+      "Free weights, resistance machines and progressive strength training equipment.",
     className: "md:col-span-7",
   },
   {
     title: "Cardio",
     description:
-      "Cardio-focused training designed to support endurance, conditioning and everyday performance.",
+      "Treadmills, rowers, bikes and conditioning equipment for endurance work.",
     className: "md:col-span-5",
   },
   {
     title: "Functional training",
     description:
-      "Space for mobility, functional movement and dynamic training sessions.",
+      "Open turf and equipment for agility, core stability and dynamic movement.",
     className: "md:col-span-5 md:ml-10",
   },
   {
     title: "Coaching",
     description:
-      "A training environment that can support guided sessions and more personalized fitness goals.",
+      "Tailored personal training and technique guidance aligned with your goals.",
     className: "md:col-span-7",
   },
 ];
 
 export default function GymFacilities() {
   return (
-    <section className="bg-(--ora-sage) text-(--ora-burgundy-dark)">
+    <section
+      id="training"
+      aria-labelledby="training-heading"
+      className="bg-(--ora-sage) text-(--ora-burgundy-dark)"
+    >
       <div className="ora-container ora-section">
-        <h2 className="font-display max-w-3xl text-4xl leading-[1.02] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+        <h2
+          id="training-heading"
+          className="font-display max-w-3xl text-4xl leading-[1.02] tracking-[-0.04em] sm:text-5xl md:text-6xl"
+        >
           What the space supports.
         </h2>
 
@@ -37,12 +44,12 @@ export default function GymFacilities() {
           {facilities.map((facility) => (
             <article
               key={facility.title}
-              className={`${facility.className} min-h-48 border-t border-(--ora-burgundy-dark)/22 py-7 md:min-h-56`}
+              className={`${facility.className} min-h-40 border-t border-(--ora-burgundy-dark)/22 py-7 md:min-h-48`}
             >
               <h3 className="font-display text-3xl tracking-[-0.03em] md:text-4xl">
                 {facility.title}
               </h3>
-              <p className="mt-5 max-w-md text-sm leading-6 text-(--ora-burgundy-dark)/72">
+              <p className="mt-4 max-w-md text-sm leading-6 text-(--ora-burgundy-dark)/80">
                 {facility.description}
               </p>
             </article>

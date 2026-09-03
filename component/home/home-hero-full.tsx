@@ -6,7 +6,7 @@ import { bookingHref } from "@/lib/contact";
 
 export default function HomeHero() {
   return (
-    <section className="ora-home-hero relative isolate min-h-dvh overflow-hidden bg-(--ora-ink) text-white lg:aspect-video lg:min-h-0">
+    <section aria-labelledby="hero-heading" className="ora-home-hero relative isolate min-h-dvh overflow-hidden bg-(--ora-ink) text-white lg:aspect-video lg:min-h-0">
       <Image
         src="/images/hero-image/ora-building-hero.jpg"
         alt="ORA Wellness building in Douala"
@@ -38,25 +38,23 @@ export default function HomeHero() {
             Open daily · Hydrocarbures, Douala
           </p>
 
-          <h1 className="ora-home-hero__heading font-display ora-page-intro ora-page-intro-delay-1 mt-5 text-[clamp(3.2rem,10.5vw,7.8rem)] leading-[0.87] tracking-[-0.055em] text-white sm:text-[clamp(4.5rem,8vw,7.8rem)]">
+          <h1 id="hero-heading" className="ora-home-hero__heading font-display ora-page-intro ora-page-intro-delay-1 mt-5 text-[clamp(3.2rem,10.5vw,7.8rem)] leading-[0.87] tracking-[-0.055em] text-white sm:text-[clamp(4.5rem,8vw,7.8rem)]">
             Move. Nourish.
             <br />
             Connect.
           </h1>
 
-          <p className="ora-home-hero__body ora-page-intro ora-page-intro-delay-2 mt-6 max-w-lg text-[0.95rem] leading-7 text-white/88 md:mt-8 md:text-base">
-            One destination for Fitness, Padel, Pilates, Yoga, Studio and Café.
-            Start with what you need today, then build a routine you will want
-            to keep.
+          <p className="ora-home-hero__body ora-page-intro ora-page-intro-delay-2 mt-5 max-w-lg text-[0.95rem] leading-7 text-white/88 md:mt-6 md:text-base">
+            Fitness, Padel, Pilates, Yoga, Studio and Café in Douala.
           </p>
 
-          <div className="ora-home-hero__actions ora-page-intro ora-page-intro-delay-2 mt-7 flex flex-wrap items-center gap-3 md:mt-9">
+          <div className="ora-home-hero__actions ora-page-intro ora-page-intro-delay-2 mt-7 flex flex-wrap items-center gap-3 md:mt-8">
             <Link href={bookingHref} className="ora-button ora-button-light">
-              Book your first visit
+              Book a visit
               <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
             <Link href="#experiences" className="ora-button ora-button-outline-light">
-              Choose your experience
+              Explore experiences
               <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
           </div>

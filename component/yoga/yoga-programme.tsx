@@ -29,23 +29,15 @@ export default function YogaProgramme() {
           </div>
 
           <div className="lg:col-span-7 lg:pl-6">
-            <p className="text-xs font-semibold text-(--ora-burgundy)">
-              Meet your instructor
-            </p>
-            <h2 className="font-display mt-4 max-w-3xl text-4xl leading-[1.02] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              A warmer way to find your balance.
+            <span className="text-xs font-semibold uppercase tracking-wider text-(--ora-burgundy)">
+              Instructor & Practice
+            </span>
+            <h2 className="font-display mt-3 max-w-3xl text-3xl sm:text-4xl lg:text-5xl tracking-tight">
+              A calmer flow for mind and body.
             </h2>
-            <div className="mt-6 grid gap-5 text-base leading-7 text-(--ora-text-secondary) sm:grid-cols-2">
-              <p>
-                Despina brings experience across Hatha, Vinyasa, Yin and
-                Restorative Yoga, with sessions designed for different ages and
-                levels.
-              </p>
-              <p>
-                Her practice combines alignment, breathwork and relaxation in
-                an approachable space for calm, strength and connection.
-              </p>
-            </div>
+            <p className="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-(--ora-text-secondary)">
+              Hatha, Vinyasa, Yin and Restorative flows led by Despina for all experience levels.
+            </p>
 
             <div className="mt-10">
               <ProgrammeCard programme={weeklyYoga} showLink={false} />

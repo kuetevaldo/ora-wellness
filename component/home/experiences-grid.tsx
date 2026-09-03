@@ -100,39 +100,34 @@ export default function ExperiencesGrid() {
           <h2 className="font-display mt-4 text-[clamp(3.25rem,7vw,6.75rem)] font-normal leading-[0.9] tracking-tighter text-(--ora-burgundy-dark)">
             Start with what brings you in.
           </h2>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-(--ora-text-secondary)">
-            Choose one experience for today. ORA makes it easy to add another
-            when you are ready.
-          </p>
+        
         </div>
 
         {/* Fitness */}
-        <Link
-          href={experiences.fitness.href}
-          className="group ora-editorial-link mt-14 grid gap-6 rounded-(--ora-radius-panel) bg-(--ora-surface-raised) p-4 sm:p-6 md:grid-cols-[1.35fr_0.65fr] md:items-stretch lg:mt-18 lg:gap-10 lg:p-8"
-        >
-          <div className="relative aspect-4/3 min-h-44 overflow-hidden rounded-(--ora-radius-media) sm:min-h-56 md:aspect-16/10">
-            <Image
-              src="/images/hero-image/fitness.jpg"
-              alt="ORA Fitness"
-              fill
-              sizes="(max-width: 767px) 100vw, 60vw"
-              className="object-cover object-[center_30%] transition-transform duration-500 ease-out group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-            />
+{/* Fitness */}
+<Link
+  href={experiences.fitness.href}
+  className="group ora-editorial-link mt-14 grid grid-cols-[0.9fr_1.1fr] items-center gap-5 border-t border-(--ora-border) pt-6 sm:grid-cols-[0.95fr_1.05fr] md:grid-cols-[1.3fr_0.7fr] md:items-stretch md:gap-8 md:border-0 md:rounded-(--ora-radius-panel) md:bg-(--ora-surface-raised) md:p-6 lg:mt-18 lg:grid-cols-[1.4fr_0.6fr] lg:gap-10 lg:p-8"
+>
+  <div className="relative aspect-4/5 min-h-44 overflow-hidden rounded-(--ora-radius-media) sm:aspect-square sm:min-h-56 md:aspect-16/10 md:min-h-0">
+    <Image
+      src="/images/hero-image/fitness.jpg"
+      alt="ORA Fitness"
+      fill
+      sizes="(max-width: 767px) 45vw, (max-width: 1023px) 60vw, 65vw"
+      className="object-contain object-center transition-transform duration-500 ease-out md:object-cover md:object-[center_30%] group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+    />
 
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent"
-            />
-          </div>
+    <div
+      aria-hidden="true"
+      className="absolute inset-0 bg-linear-to-t from-black/10 via-transparent to-transparent md:from-black/20"
+    />
+  </div>
 
-          <div className="p-2 md:py-4 lg:p-5">
-            <ExperienceCopy
-              {...experiences.fitness}
-            />
-          </div>
-        </Link>
-
+  <div className="md:flex md:items-center md:p-2 lg:p-5">
+    <ExperienceCopy {...experiences.fitness} />
+  </div>
+</Link>
         {/* Café + Padel */}
         <div className="mt-8 grid gap-8 md:grid-cols-12">
           <Link
@@ -162,7 +157,7 @@ export default function ExperiencesGrid() {
           >
             <div className="relative aspect-4/5 overflow-hidden rounded-(--ora-radius-media) sm:aspect-square">
   <Image
-    src="/images/hero-image/padel1.webp"
+    src="/images/hero-image/padel-image.jpg"
     alt="ORA Padel"
     fill
     sizes="(max-width: 767px) 45vw, 30vw"

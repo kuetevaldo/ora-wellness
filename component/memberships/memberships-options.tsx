@@ -51,7 +51,7 @@ export default function MembershipsOptions() {
                     {option.title}
                   </h3>
 
-                  <p className="mt-4 text-sm leading-6 text-(--ora-burgundy-dark)/60">
+                  <p className="mt-4 text-sm leading-6 text-(--ora-text-secondary)">
                     {option.description}
                   </p>
 

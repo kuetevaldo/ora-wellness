@@ -25,10 +25,10 @@ export default function Footer() {
           <Link href="/" className="text-2xl font-semibold tracking-[0.2em]">
             ORA
           </Link>
-          <p className="mt-5 max-w-sm text-sm leading-6 text-white/78">
+          <p className="mt-5 max-w-sm text-sm leading-6 text-white/90">
             Café, movement, wellness and community in Douala.
           </p>
-          <div className="mt-8 text-sm leading-6 text-white/78">
+          <div className="mt-8 text-sm leading-6 text-white/90">
             <p>Hydrocarbures, Douala</p>
             <p>Daily, 6:00 AM - 10:00 PM</p>
           </div>
@@ -38,7 +38,7 @@ export default function Footer() {
           <p className="text-xs font-semibold text-(--ora-pink-light)">
             Experiences
           </p>
-          <div className="mt-4 grid gap-3 text-sm text-white/82">
+          <div className="mt-4 grid gap-3 text-sm text-white/90">
             {experienceLinks.map(([label, href]) => (
               <Link key={href} href={href} className="w-fit hover:text-white">
                 {label}
@@ -51,7 +51,7 @@ export default function Footer() {
           <p className="text-xs font-semibold text-(--ora-pink-light)">
             Explore
           </p>
-          <div className="mt-4 grid gap-3 text-sm text-white/82">
+          <div className="mt-4 grid gap-3 text-sm text-white/90">
             {exploreLinks.map(([label, href]) => (
               <Link key={href} href={href} className="w-fit hover:text-white">
                 {label}
@@ -61,6 +61,7 @@ export default function Footer() {
               href="https://www.instagram.com/ora.cameroon"
               target="_blank"
               rel="noreferrer"
+              aria-label="@ora.cameroon on Instagram (opens in new tab)"
               className="w-fit hover:text-white"
             >
               Instagram

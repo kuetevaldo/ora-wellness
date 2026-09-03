@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-import { bookingHref } from "@/lib/contact";
-
 const programmeHighlights = [
   {
     title: "Yoga with Despina",
@@ -33,55 +31,52 @@ const programmeHighlights = [
 
 export default function HomeSchedule() {
   return (
-    <section className="ora-section bg-(--ora-cream) text-(--ora-burgundy-dark)">
-      <div className="ora-container grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-20">
-        <div className="lg:sticky lg:top-30">
-          <p className="text-xs font-semibold text-(--ora-burgundy)">
-            Classes and movement
-          </p>
-          <h2 className="font-display mt-4 max-w-2xl text-[clamp(3.25rem,6vw,6rem)] font-normal leading-[0.9] tracking-[-0.045em]">
-            Find the way you want to move.
-          </h2>
-          <p className="mt-6 max-w-lg text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
-            Published Yoga, Mat Pilates, Padel and Dance times make it easier to
-            plan movement into the week. Contact ORA to confirm your place.
-          </p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <Link href={bookingHref} className="ora-button ora-button-primary">
-              Reserve your place
+    <section
+      aria-labelledby="schedule-heading"
+      className="ora-section bg-(--ora-cream) text-(--ora-burgundy-dark)"
+    >
+      <div className="ora-container">
+        <div className="rounded-(--ora-radius-panel) border border-(--ora-border) bg-(--ora-surface-raised) p-6 sm:p-10 lg:p-12">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-(--ora-border) pb-6">
+            <div>
+              <h2
+                id="schedule-heading"
+                className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-tight text-(--ora-burgundy-dark)"
+              >
+                Schedule
+              </h2>
+              <p className="mt-2 text-sm text-(--ora-text-secondary) max-w-md">
+                Confirmed weekly sessions across Yoga, Pilates, Padel and Dance.
+              </p>
+            </div>
+            <Link href="/schedule" className="ora-button ora-button-primary shrink-0">
+              View full schedule
               <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
-            <Link href="/schedule" className="ora-button ora-button-secondary">
-              View all times
-            </Link>
           </div>
-        </div>
 
-        <div className="rounded-(--ora-radius-panel) bg-(--ora-sage-light) p-5 sm:p-8 md:p-10">
-          <p className="text-xs font-semibold text-(--ora-burgundy)">
-            Programme highlights
-          </p>
-          <h3 className="font-display mt-3 text-3xl tracking-[-0.035em] text-(--ora-burgundy-dark) sm:text-4xl">
-            A week with more ways to move.
-          </h3>
-          <div className="mt-8 border-t border-(--ora-border-strong)">
+          <div className="mt-8 divide-y divide-(--ora-border)">
             {programmeHighlights.map((programme) => (
-              <article
+              <div
                 key={programme.title}
-                className="grid gap-2 border-b border-(--ora-border) py-5 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-6"
+                className="grid gap-2 py-4.5 sm:grid-cols-12 sm:items-center"
               >
-                <div>
-                  <h4 className="text-sm font-semibold text-(--ora-burgundy-dark)">
+                <div className="sm:col-span-6">
+                  <p className="text-base font-semibold text-(--ora-burgundy-dark)">
                     {programme.title}
-                  </h4>
-                  <p className="mt-1 text-xs text-(--ora-text-secondary)">
+                  </p>
+                </div>
+                <div className="sm:col-span-3">
+                  <p className="text-xs sm:text-sm text-(--ora-text-secondary)">
                     {programme.detail}
                   </p>
                 </div>
-                <p className="text-sm font-semibold tabular-nums text-(--ora-burgundy-dark)">
-                  {programme.time}
-                </p>
-              </article>
+                <div className="sm:col-span-3 sm:text-right">
+                  <span className="inline-block rounded-full bg-(--ora-pink-light)/50 px-3 py-1 text-xs font-semibold text-(--ora-burgundy-dark) tabular-nums">
+                    {programme.time}
+                  </span>
+                </div>
+              </div>
             ))}
           </div>
         </div>

@@ -22,13 +22,13 @@ const communityItems = [
 
 export default function HomeCommunity() {
   return (
-    <section className="ora-section bg-(--ora-cream) text-(--ora-burgundy-dark)">
+    <section aria-labelledby="community-heading" className="ora-section bg-(--ora-cream) text-(--ora-burgundy-dark)">
       <div className="ora-container">
         <div className="max-w-4xl">
           <p className="text-xs font-semibold text-(--ora-burgundy)">
             Community and events
           </p>
-          <h2 className="font-display mt-4 text-[clamp(3.25rem,6.5vw,6.5rem)] font-normal leading-[0.9] tracking-[-0.05em]">
+          <h2 id="community-heading" className="font-display mt-4 text-[clamp(3.25rem,6.5vw,6.5rem)] font-normal leading-[0.9] tracking-[-0.05em]">
             More reasons to come together.
           </h2>
         </div>
