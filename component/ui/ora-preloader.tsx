@@ -16,14 +16,14 @@ export default function OraPreloader() {
 
     setVisible(true);
 
-    const leaveTimer = window.setTimeout(() => {
+const leaveTimer = window.setTimeout(() => {
   setLeaving(true);
-}, 1000);
+}, 1650);
 
 const removeTimer = window.setTimeout(() => {
   setVisible(false);
   sessionStorage.setItem("ora-preloader-seen", "true");
-}, 1300);
+}, 2000);
 
     return () => {
       window.clearTimeout(leaveTimer);
@@ -49,7 +49,7 @@ const removeTimer = window.setTimeout(() => {
       >
         <div className="relative h-24 w-44 sm:h-28 sm:w-52">
           <Image
-            src="/images/footer-image/ora.PNG"
+            src="/images/logos/ora.PNG"
             alt=""
             fill
             priority
