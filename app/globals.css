@@ -593,3 +593,34 @@ textarea {
     animation: none !important;
   }
 }
+@keyframes oraPreloaderLine {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  55% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  56% {
+    transform-origin: right;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+.ora-preloader-line {
+  animation: oraPreloaderLine 1000ms cubic-bezier(.23, 1, .32, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ora-preloader-line {
+    animation: none;
+    transform: scaleX(1);
+  }
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Newsreader } from "next/font/google";
 import { siteDescription, siteName, siteUrl } from "@/lib/seo";
 import "./globals.css";
+import OraPreloader from "@/component/ui/ora-preloader";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -48,9 +49,12 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className={`${dmSans.variable} ${newsreader.variable}`}>
+        <OraPreloader />
+
         <a className="ora-skip-link" href="#main-content">
           Skip to content
         </a>
+
         <main id="main-content" tabIndex={-1}>
           {children}
         </main>

@@ -40,7 +40,7 @@ export default function ContactHero() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="relative min-h-[24rem] overflow-hidden rounded-(--ora-radius-media) sm:min-h-[30rem] lg:min-h-[36rem]">
+            <div className="relative min-h-96 overflow-hidden rounded-(--ora-radius-media) sm:min-h-120 lg:min-h-144">
               <Image
                 src="/images/hero-image/ora-building-hero.jpg"
                 alt="ORA Wellness in Douala"
