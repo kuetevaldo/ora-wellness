@@ -32,9 +32,9 @@ export default function HomeHero() {
 
       <div className="ora-home-hero__shell ora-container relative z-20 flex min-h-dvh items-end pb-32 pt-28 md:pb-16 lg:min-h-0 lg:h-full lg:pb-[8%]">
         <div className="relative z-10 max-w-4xl">
-          <p className="ora-page-intro text-xs font-semibold tracking-widest text-white/88">
-            Open daily · Hydrocarbures, Douala
-          </p>
+          <p className="ora-page-intro text-xs font-semibold uppercase tracking-[0.18em] text-white/88">
+  ORA Wellness · Douala
+</p>
 
           <h1 id="hero-heading" className="ora-home-hero__heading font-display ora-page-intro ora-page-intro-delay-1 mt-5 text-[clamp(3.2rem,10.5vw,7.8rem)] leading-[0.87] tracking-[-0.055em] text-white sm:text-[clamp(4.5rem,8vw,7.8rem)]">
             Move. Nourish.
@@ -43,7 +43,7 @@ export default function HomeHero() {
           </h1>
 
           <p className="ora-home-hero__body ora-page-intro ora-page-intro-delay-2 mt-5 max-w-lg text-[0.95rem] leading-7 text-white/88 md:mt-6 md:text-base">
-            Fitness, Padel, Pilates, Yoga, Studio and Café in Douala.
+           Fitness. Padel. Pilates. Yoga. Studio. Café. In Douala.
           </p>
 
           <div className="ora-home-hero__actions ora-page-intro ora-page-intro-delay-2 mt-7 flex flex-wrap items-center gap-3 md:mt-8">

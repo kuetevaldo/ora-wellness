@@ -1,32 +1,51 @@
+import Image from "next/image";
+
 export default function AboutPhilosophy() {
   return (
-    <section className="bg-(--ora-burgundy) px-6 py-24 text-(--ora-cream) md:px-10 md:py-32 lg:px-14">
-      <div className="mx-auto max-w-375">
-        <div className="grid gap-12 lg:grid-cols-[0.55fr_1.45fr]">
-          <div>
-            <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-(--ora-pink-light)">
+    <section
+      id="about-ora"
+      className="scroll-mt-24 bg-white text-(--ora-burgundy-dark)"
+    >
+      <div className="ora-container py-20 md:py-28 lg:py-32">
+        <div className="grid gap-8 border-t border-(--ora-burgundy-dark)/15 pt-7 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
               The idea
             </p>
-          </div>
 
-          <div>
-            <h2 className="max-w-5xl text-5xl font-normal leading-[0.98] tracking-[-0.04em] sm:text-6xl lg:text-8xl">
+            <h2 className="font-display mt-4 max-w-3xl text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
               More than
               <br />
               a fitness space.
             </h2>
+          </div>
 
-            <div className="mt-12 grid gap-8 border-t border-white/15 pt-8 md:grid-cols-2">
-              <p className="max-w-md text-[15px] leading-7 text-white/82">
-                ORA connects different parts of everyday wellbeing in one
-                place — movement, food, recovery and social connection.
-              </p>
+          <div className="lg:col-span-4 lg:col-start-9">
+            <p className="max-w-md text-sm leading-6 text-(--ora-text-secondary)">
+              Movement, food and social connection come together as one ORA
+              experience.
+            </p>
+          </div>
+        </div>
 
-              <p className="max-w-md text-[15px] leading-7 text-white/82">
-                The experience is designed to feel balanced, intentional and
-                part of a wider lifestyle rather than a single activity.
-              </p>
-            </div>
+        <div className="relative mt-12 min-h-128 overflow-hidden rounded-(--ora-radius-media) sm:min-h-160 lg:min-h-184">
+          <Image
+            src="/images/hero-image/ora-interior.jpg"
+            alt="Inside ORA Wellness in Douala"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-linear-to-t from-black/75 via-black/10 to-transparent"
+          />
+
+          <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8 md:p-10">
+            <p className="max-w-xl text-sm leading-6 text-white/80 sm:text-base sm:leading-7">
+              A place to train, move, pause, eat and spend time together.
+            </p>
           </div>
         </div>
       </div>

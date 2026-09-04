@@ -6,39 +6,64 @@ import { bookingHref } from "@/lib/contact";
 export default function GymCTA() {
   return (
     <section className="relative overflow-hidden bg-(--ora-burgundy) text-(--ora-cream)">
-      <div className="ora-container ora-section relative z-10">
-        <h2 className="font-display max-w-4xl text-5xl leading-[0.96] tracking-[-0.045em] sm:text-6xl lg:text-8xl">
-          Make training part of your routine.
-        </h2>
-        <p className="mt-7 max-w-xl text-[0.9375rem] leading-7 text-white/82">
-          Visit ORA and speak with the team about the training option that fits
-          your goals.
-        </p>
-        <div className="mt-9 flex flex-wrap gap-3">
-          <Link href={bookingHref} className="ora-button ora-button-light">
-            Book a Fitness visit
-            <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
-          </Link>
-          <Link href="/memberships" className="ora-button ora-button-outline-light">
-            Explore memberships
-            <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
-          </Link>
+      <div className="ora-container py-20 md:py-28 lg:py-32">
+        
+        {/* Main conversion */}
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-pink-light)">
+              ORA Fitness
+            </p>
+
+            <h2 className="font-display mt-5 max-w-4xl text-5xl leading-[0.96] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
+              Make training part of your routine.
+            </h2>
+
+            <p className="mt-6 max-w-lg text-[0.9375rem] leading-7 text-white/80">
+              Visit ORA and discover the training experience that works for you.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-3 lg:col-span-4 lg:justify-end">
+            <Link
+              href={bookingHref}
+              className="ora-button ora-button-light"
+            >
+              Plan your visit
+              <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
+            </Link>
+
+            <Link
+              href="/memberships"
+              className="ora-button ora-button-outline-light"
+            >
+              Explore memberships
+              <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
+            </Link>
+          </div>
         </div>
 
-        <div className="mt-14 border-t border-white/18 pt-8">
-          <p className="text-xs uppercase tracking-wider text-(--ora-pink-light)">
-            Next experience
+        {/* Next ORA experience */}
+        <div className="mt-16 border-t border-white/18 pt-8 md:mt-20">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-pink-light)">
+            Next at ORA
           </p>
-          <div className="mt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+
+          <div className="mt-5 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <h3 className="font-display text-2xl text-white">
+              <h3 className="font-display text-3xl tracking-[-0.03em] text-white sm:text-4xl">
                 ORA Café
               </h3>
-              <p className="mt-1 text-sm text-white/80">
-                Post-workout protein shakes, specialty coffee and nourishing meals.
+
+              <p className="mt-2 max-w-md text-sm leading-6 text-white/75">
+                Coffee, food and recovery after your session.
               </p>
             </div>
-            <Link href="/cafe" className="ora-button ora-button-outline-light shrink-0">
+
+            <Link
+              href="/cafe"
+              className="ora-button ora-button-outline-light shrink-0"
+            >
               View Café
               <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>

@@ -20,7 +20,7 @@ export default function ProgrammeCard({
   showLink = true,
 }: ProgrammeCardProps) {
   return (
-    <article className="flex h-full flex-col rounded-[1.5rem] border border-(--ora-border) bg-(--ora-surface-raised) p-5 sm:p-7">
+    <article className="flex h-full flex-col rounded-3xl border border-(--ora-border) bg-(--ora-surface-raised) p-5 sm:p-7">
       <div className="flex items-start justify-between gap-5">
         <div>
           <p className="text-xs font-semibold text-(--ora-burgundy)">

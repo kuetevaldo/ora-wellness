@@ -9,43 +9,50 @@ export default function PilatesProgramme() {
   const weeklyPilates = pilatesProgrammes[0];
 
   return (
-    <section
-      id="pilates"
-      className="scroll-mt-18 bg-(--ora-pink-light) text-(--ora-burgundy-dark)"
-    >
-      <div className="ora-container py-20 md:py-28">
-        <div className="grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-8">
+    <section className="bg-(--ora-cream) text-(--ora-burgundy-dark)">
+      <div className="ora-container py-20 md:py-28 lg:py-32">
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-16">
+          {/* Programme information */}
           <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-(--ora-radius-media) bg-(--ora-cream)">
-              <Image
-                src="/images/IMG_E5270.JPG"
-                alt="The ORA Reformer Pilates studio in Douala"
-                fill
-                sizes="(max-width: 1023px) calc(100vw - 2.5rem), 40vw"
-                className="object-cover object-center"
-              />
-            </div>
-          </div>
-
-          <div className="lg:col-span-7 lg:pl-6">
-            <span className="text-xs font-semibold uppercase tracking-wider text-(--ora-burgundy)">
-              Mat work and recovery
-            </span>
-            <h2 className="font-display mt-3 max-w-3xl text-3xl sm:text-4xl lg:text-5xl tracking-tight">
-              Control, balance and mobility.
-            </h2>
-            <p className="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-(--ora-text-secondary)">
-              Morning and evening mat sessions plus dedicated mobility and recovery flows.
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
+              Pilates programme
             </p>
 
-            <div className="mt-10">
-              <ProgrammeCard programme={weeklyPilates} showLink={false} />
+            <h2 className="font-display mt-5 max-w-xl text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+              Control, balance and mobility.
+            </h2>
+
+            <p className="mt-6 max-w-md text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
+              Explore the current Pilates programme and find the session that
+              fits your rhythm.
+            </p>
+
+            <div className="mt-9">
+              <ProgrammeCard
+                programme={weeklyPilates}
+                showLink={false}
+              />
             </div>
 
-            <Link href="/schedule" className="ora-text-link mt-6">
+            <Link href="/schedule" className="ora-text-link mt-7">
               View the full programme
-              <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
+              <ArrowUpRight
+                size={15}
+                strokeWidth={1.5}
+                aria-hidden="true"
+              />
             </Link>
+          </div>
+
+          {/* Pilates image */}
+          <div className="relative min-h-128 overflow-hidden rounded-(--ora-radius-media) sm:min-h-152 lg:col-span-7 lg:min-h-176">
+            <Image
+              src="/images/IMG_E5270.JPG"
+              alt="The ORA Reformer Pilates studio in Douala"
+              fill
+              sizes="(max-width: 1023px) 100vw, 58vw"
+              className="object-cover object-center"
+            />
           </div>
         </div>
       </div>

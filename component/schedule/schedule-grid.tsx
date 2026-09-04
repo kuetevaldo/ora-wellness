@@ -1,11 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 
 import ProgrammeCard from "@/component/shared/programme-card";
-import { bookingHref } from "@/lib/contact";
 import {
   programmes,
   type ProgrammeCategory,
@@ -13,108 +10,109 @@ import {
 
 type ProgrammeFilter = "all" | ProgrammeCategory;
 
-const filters: { value: ProgrammeFilter; label: string }[] = [
-  { value: "all", label: "All programmes" },
+const filters: {
+  value: ProgrammeFilter;
+  label: string;
+}[] = [
+  { value: "all", label: "All" },
   { value: "padel", label: "Padel" },
   { value: "pilates", label: "Pilates" },
   { value: "yoga", label: "Yoga" },
-  { value: "studio", label: "Dance & Studio" },
+  { value: "studio", label: "Studio" },
 ];
 
-const enquiryExperiences = ["Fitness", "Reformer Pilates", "Studio classes"];
-
 export default function ScheduleGrid() {
-  const [activeFilter, setActiveFilter] = useState<ProgrammeFilter>("all");
+  const [activeFilter, setActiveFilter] =
+    useState<ProgrammeFilter>("all");
+
   const visibleProgrammes =
     activeFilter === "all"
       ? programmes
       : programmes.filter(
-          (programme) => programme.category === activeFilter,
+          (programme) =>
+            programme.category === activeFilter
         );
 
   return (
-    <section className="bg-(--ora-cream) text-(--ora-burgundy-dark)">
-      <div className="ora-container py-20 md:py-28">
-        <div className="flex flex-col gap-7 border-t border-(--ora-border-strong) pt-7 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-xs font-semibold text-(--ora-burgundy)">
-              Published weekly programmes
+    <section
+      id="programme-list"
+      className="scroll-mt-24 bg-white text-(--ora-burgundy-dark)"
+    >
+      <div className="ora-container py-20 md:py-28 lg:py-32">
+        {/* Header */}
+        <div className="grid gap-8 border-t border-(--ora-burgundy-dark)/15 pt-7 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
+              Programme
             </p>
-            <h2 className="font-display mt-4 max-w-3xl text-4xl leading-[1.02] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              A schedule you can actually plan around.
+
+            <h2 className="font-display mt-4 max-w-3xl text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+              Choose how you
+              <br className="hidden sm:block" />
+              want to move.
             </h2>
           </div>
-          <p className="max-w-md text-sm leading-6 text-(--ora-text-secondary)">
-            These times come from ORA programme announcements. Availability can
-            change, so confirm your place before visiting.
-          </p>
+
+          <div className="lg:col-span-4 lg:col-start-9">
+            <p className="max-w-md text-sm leading-6 text-(--ora-text-secondary)">
+              Browse the published ORA programme and find the sessions that fit
+              your week.
+            </p>
+          </div>
         </div>
 
+        {/* Filters */}
         <div
-          className="mt-10 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-3"
+          className="mt-10 flex gap-2 overflow-x-auto pb-2"
           role="group"
           aria-label="Filter programmes"
         >
-          {filters.map((filter) => (
-            <button
-              key={filter.value}
-              type="button"
-              onClick={() => setActiveFilter(filter.value)}
-              aria-pressed={activeFilter === filter.value}
-              aria-controls="programme-results"
-              className={`min-h-11 rounded-full px-3 py-2.5 text-[0.8125rem] font-semibold transition sm:w-auto sm:px-5 sm:text-sm ${
-                filter.value === "all" ? "col-span-2" : ""
-              } ${
-                activeFilter === filter.value
-                  ? "bg-(--ora-burgundy) text-white"
-                  : "border border-(--ora-border-strong) text-(--ora-burgundy) hover:border-(--ora-burgundy)"
-              }`}
-            >
-              {filter.label}
-            </button>
-          ))}
+          {filters.map((filter) => {
+            const active =
+              activeFilter === filter.value;
+
+            return (
+              <button
+                key={filter.value}
+                type="button"
+                onClick={() =>
+                  setActiveFilter(filter.value)
+                }
+                aria-pressed={active}
+                aria-controls="programme-results"
+                className={`min-h-11 shrink-0 rounded-full px-5 text-sm font-semibold transition-[background-color,color,border-color,transform] duration-150 active:scale-[0.97] motion-reduce:transition-none ${
+                  active
+                    ? "border border-(--ora-burgundy) bg-(--ora-burgundy) text-white"
+                    : "border border-(--ora-burgundy-dark)/15 bg-transparent text-(--ora-burgundy-dark) hover:border-(--ora-burgundy)"
+                }`}
+              >
+                {filter.label}
+              </button>
+            );
+          })}
         </div>
 
-        <p className="sr-only" aria-live="polite">
+        <p
+          className="sr-only"
+          aria-live="polite"
+        >
           Showing {visibleProgrammes.length} programme
           {visibleProgrammes.length === 1 ? "" : "s"}.
         </p>
 
+        {/* Programmes */}
         <div
           id="programme-results"
-          className="mt-8 grid gap-6 lg:grid-cols-2"
+          className="mt-10 grid gap-5 lg:grid-cols-2"
         >
-          {visibleProgrammes.map((programme) => (
-            <ProgrammeCard key={programme.id} programme={programme} />
-          ))}
-        </div>
-
-        <div className="mt-14 rounded-[1.5rem] bg-(--ora-sage-light) p-6 sm:p-8 md:flex md:items-end md:justify-between md:gap-10 md:p-10">
-          <div>
-            <p className="text-xs font-semibold text-(--ora-burgundy)">
-              More movement at ORA
-            </p>
-            <h3 className="font-display mt-4 text-3xl tracking-[-0.035em] sm:text-4xl">
-              Ask about the latest class timetable.
-            </h3>
-            <ul
-              className="mt-5 flex flex-wrap gap-2"
-              aria-label="Other ORA experiences"
-            >
-              {enquiryExperiences.map((experience) => (
-                <li
-                  key={experience}
-                  className="rounded-full border border-(--ora-border-strong) px-4 py-2 text-xs font-semibold"
-                >
-                  {experience}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <Link href={bookingHref} className="ora-button ora-button-primary mt-7 md:mt-0">
-            Reserve your place
-            <ArrowUpRight size={16} strokeWidth={1.6} aria-hidden="true" />
-          </Link>
+          {visibleProgrammes.map(
+            (programme) => (
+              <ProgrammeCard
+                key={programme.id}
+                programme={programme}
+              />
+            )
+          )}
         </div>
       </div>
     </section>

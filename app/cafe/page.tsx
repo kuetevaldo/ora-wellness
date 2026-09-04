@@ -1,9 +1,10 @@
 import Header from "@/component/layout/header";
 import Footer from "@/component/layout/footer";
 import CafeHero from "@/component/cafe/cafe-hero";
+import CafeCraft from "@/component/cafe/cafe-craft";
 import CafeMenu from "@/component/cafe/cafe-menu";
 import CafeClosing from "@/component/cafe/cafe-closing";
-import CafeLocation from "@/component/cafe/cafe-location";
+
 import {
   cafeJsonLd,
   createPageMetadata,
@@ -25,11 +26,17 @@ export default function CafePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(cafeJsonLd) }}
       />
+
       <Header />
+
       <CafeHero />
+
+      <CafeCraft />
+
       <CafeMenu />
+
       <CafeClosing />
-      <CafeLocation />
+
       <Footer />
     </main>
   );

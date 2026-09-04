@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowDown } from "lucide-react";
+
 import ExperienceMedia from "@/component/shared/experience-media";
 
 export default function GymHero() {
@@ -23,7 +24,7 @@ export default function GymHero() {
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-28 bg-linear-to-b from-(--ora-cream)/80 via-(--ora-cream)/20 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 z-5 h-28 bg-linear-to-b from-(--ora-cream)/80 via-(--ora-cream)/20 to-transparent"
       />
 
       <div className="ora-container relative z-10 flex min-h-dvh items-end pb-12 pt-32 md:pb-16 lg:pb-20">
@@ -31,17 +32,21 @@ export default function GymHero() {
           <p className="text-xs font-semibold tracking-[0.12em] text-white/88">
             ORA Fitness, Douala
           </p>
+
           <h1 className="font-display mt-5 text-[clamp(3.5rem,8vw,7.5rem)] leading-[0.88] tracking-[-0.055em]">
             Train with purpose.
           </h1>
+
           <p className="mt-6 max-w-lg text-[0.9375rem] leading-7 text-white/88 md:text-base">
-            Dedicated space for strength, cardio and progressive conditioning.
+            Strength, cardio and progressive conditioning in a focused training
+            environment.
           </p>
+
           <Link
             href="#training"
             className="ora-button ora-button-light mt-8"
           >
-            Explore training space
+            Explore the space
             <ArrowDown size={15} strokeWidth={1.5} aria-hidden="true" />
           </Link>
         </div>

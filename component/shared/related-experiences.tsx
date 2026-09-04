@@ -51,7 +51,7 @@ export default function RelatedExperiences({
                 size={20}
                 strokeWidth={1.5}
                 aria-hidden="true"
-                className="shrink-0 transition-transform duration-180 [transition-timing-function:var(--ora-ease-out)]"
+                className="shrink-0 transition-transform duration-180 ease-(--ora-ease-out)"
               />
             </Link>
           ))}

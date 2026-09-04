@@ -1,57 +1,91 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-
-import { bookingHref } from "@/lib/contact";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function HomeActionBlock() {
   return (
     <section
       aria-labelledby="action-heading"
-      className="bg-(--ora-burgundy-dark) text-white"
+      className="overflow-hidden bg-(--ora-burgundy-dark) text-white"
     >
-      <div className="ora-container py-16 md:py-24">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-8 border-b border-white/18 pb-8 md:pb-12">
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-(--ora-pink-light)">
-              Begin at ORA
-            </p>
+      <div className="ora-container py-16 md:py-20 lg:py-24">
+        {/* Label */}
+        <div className="flex items-center gap-4">
+          <span
+            aria-hidden="true"
+            className="h-px w-10 bg-(--ora-pink-light)/60"
+          />
+
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-pink-light)">
+            Begin at ORA
+          </p>
+        </div>
+
+        {/* Main message */}
+        <div className="mt-7 grid gap-8 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-8">
             <h2
               id="action-heading"
-              className="font-display mt-3 text-3xl sm:text-4xl lg:text-5xl tracking-tight text-white"
+              className="font-display max-w-4xl text-5xl leading-[0.95] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl"
             >
-              Ready to experience ORA?
+              Your next ORA
+              <br />
+              experience starts here.
             </h2>
-            <p className="mt-3 text-sm sm:text-base leading-relaxed text-white/80 max-w-lg">
-              Check weekly class and court times, or get in touch with our team in Douala.
-            </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <Link
-              href="/schedule"
-              className="ora-button ora-button-light"
-            >
-              View schedule
-              <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
-            </Link>
-            <Link
-              href="/contact"
-              className="ora-button ora-button-outline-light"
-            >
-              Contact ORA
-              <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
-            </Link>
+          <div className="lg:col-span-4 lg:pb-1">
+            <p className="max-w-sm text-sm leading-6 text-white/65 sm:text-base">
+              Find your next session or get in touch with the ORA team.
+            </p>
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-white/65">
-          <p>Open daily · 6:00 AM – 10:00 PM · Hydrocarbures, Douala</p>
+        {/* Actions */}
+        <div className="mt-10 border-t border-white/15 md:mt-12">
           <Link
-            href={bookingHref}
-            className="ora-text-link text-(--ora-pink-light) hover:text-white"
+            href="/schedule"
+            className="group flex items-center justify-between gap-6 border-b border-white/15 py-5 transition-colors duration-200 hover:bg-white/4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white/70 sm:px-4 sm:py-6"
           >
-            Direct booking enquiry
-            <ArrowUpRight size={14} strokeWidth={1.5} aria-hidden="true" />
+            <div className="flex items-baseline gap-5 sm:gap-8">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40">
+                01
+              </span>
+
+              <span className="font-display text-2xl tracking-tight text-white sm:text-3xl">
+                View schedule
+              </span>
+            </div>
+
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-white/25 text-white transition-[transform,background-color,color] duration-200 group-hover:translate-x-1 group-hover:bg-white group-hover:text-(--ora-burgundy-dark) motion-reduce:transition-none sm:size-11">
+              <ArrowRight
+                size={17}
+                strokeWidth={1.5}
+                aria-hidden="true"
+              />
+            </span>
+          </Link>
+
+          <Link
+            href="/contact"
+            className="group flex items-center justify-between gap-6 border-b border-white/15 py-5 transition-colors duration-200 hover:bg-white/4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white/70 sm:px-4 sm:py-6"
+          >
+            <div className="flex items-baseline gap-5 sm:gap-8">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40">
+                02
+              </span>
+
+              <span className="font-display text-2xl tracking-tight text-white sm:text-3xl">
+                Contact ORA
+              </span>
+            </div>
+
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-white/25 text-white transition-[transform,background-color,color] duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:bg-white group-hover:text-(--ora-burgundy-dark) motion-reduce:transition-none sm:size-11">
+              <ArrowUpRight
+                size={17}
+                strokeWidth={1.5}
+                aria-hidden="true"
+              />
+            </span>
           </Link>
         </div>
       </div>

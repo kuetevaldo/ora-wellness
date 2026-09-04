@@ -1,23 +1,35 @@
+import Image from "next/image";
+
 export default function YogaIntro() {
   return (
-    <section id="yoga" className="scroll-mt-24 bg-white text-(--ora-burgundy-dark)">
-      <div className="ora-container py-20 md:py-28">
-        <div className="mx-auto max-w-4xl">
-          <p className="text-sm font-medium text-(--ora-text-secondary)">
-            The practice
-          </p>
-          <h2 className="font-display mt-5 text-4xl leading-[1.02] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-            Movement with more awareness.
-          </h2>
-          <div className="mt-9 grid gap-6 border-t border-(--ora-border-strong) pt-7 md:grid-cols-2">
-            <p className="max-w-md text-base leading-7 text-(--ora-text-secondary)">
-              ORA Yoga brings together movement, breathing and focus in a calmer
-              training environment.
+    <section
+      id="yoga"
+      className="scroll-mt-24 bg-white text-(--ora-burgundy-dark)"
+    >
+      <div className="ora-container py-20 md:py-28 lg:py-32">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
+              The practice
             </p>
-            <p className="max-w-md text-base leading-7 text-(--ora-text-secondary)">
-              The experience is designed around balance, mobility and creating
-              space to reconnect with how your body feels.
+
+            <h2 className="font-display mt-5 text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+              Movement with more awareness.
+            </h2>
+
+            <p className="mt-6 max-w-sm text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
+              A calmer practice built around movement, breathing and focus.
             </p>
+          </div>
+
+          <div className="relative min-h-120 overflow-hidden rounded-(--ora-radius-media) sm:min-h-152 lg:col-span-7 lg:col-start-6 lg:min-h-176">
+            <Image
+              src="/images/hero-image/yoga2.png"
+              alt="Yoga practice at ORA"
+              fill
+              sizes="(max-width: 1023px) 100vw, 58vw"
+              className="object-cover object-center"
+            />
           </div>
         </div>
       </div>

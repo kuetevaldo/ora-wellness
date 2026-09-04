@@ -536,3 +536,60 @@ textarea {
     margin-top: 1rem;
   }
 }
+@keyframes ora-clock-move {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(8deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes ora-location-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.ora-clock-icon svg {
+  animation: ora-clock-move 3.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.ora-location-icon svg {
+  animation: ora-location-bounce 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ora-clock-icon svg,
+  .ora-location-icon svg {
+    animation: none;
+  }
+}
+@keyframes oraFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [class*="oraFadeUp"] {
+    animation: none !important;
+  }
+}

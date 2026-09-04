@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 import { cafeMenu } from "@/data/cafe-menu";
+import Image from "next/image";
+
 
 const groups = [
   { id: "breakfast", label: "Breakfast" },
@@ -63,31 +65,56 @@ export default function CafeMenu() {
   }, [activeGroup]);
 
   return (
-    <section
-      id="menu"
-      className="bg-(--ora-cream) text-(--ora-burgundy-dark)"
-    >
-      <div className="ora-container pt-36 pb-20 md:pt-48 md:pb-28">
-        <div className="grid gap-10 border-b border-(--ora-burgundy)/15 pb-12 lg:grid-cols-[0.55fr_1.45fr]">
-          <div>
-            <p className="text-sm font-medium text-(--ora-text-secondary)">
-              ORA Café
-            </p>
-          </div>
 
-          <div>
-            <h2 className="font-display max-w-4xl text-4xl leading-[1.03] tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-7xl">
-              Made for mornings,
-              <br />
-              workouts and everything
-              <br />
-              <span className="text-(--ora-burgundy)">
-                in between.
-              </span>
-            </h2>
-          </div>
+<section
+  id="menu"
+  className="bg-(--ora-cream) text-(--ora-burgundy-dark)"
+>
+  <div className="ora-container pt-24 pb-20 md:pt-32 md:pb-28">
+    <div className="border-b border-(--ora-burgundy)/15 pb-12">
+      <div className="grid items-center gap-4 md:grid-cols-[1fr_auto_1fr] md:gap-6">
+        
+        {/* Left image */}
+        <div className="relative mx-auto aspect-square w-full max-w-64 md:max-w-80">
+          <Image
+            src="/images/section-image/menu-image1.png"
+            alt=""
+            fill
+            sizes="(max-width: 767px) 65vw, 28vw"
+            className="object-contain"
+          />
         </div>
 
+        {/* Title */}
+       <div className="text-center">
+  <div className="relative mx-auto h-12 w-32 sm:h-14 sm:w-36 md:h-20 md:w-48">
+    <Image
+      src="/images/logos/ora-cafe.png"
+      alt="ORA Café"
+      fill
+      sizes="160px"
+      className="object-contain"
+    />
+  </div>
+
+  <h2 className="font-display mt-5 text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-7xl">
+    What&apos;s on the menu.
+  </h2>
+</div>
+
+        {/* Right image */}
+        <div className="relative mx-auto aspect-square w-full max-w-64 md:max-w-80">
+          <Image
+            src="/images/section-image/menu-image2.png"
+            alt=""
+            fill
+            sizes="(max-width: 767px) 65vw, 28vw"
+            className="object-contain"
+          />
+        </div>
+
+      </div>
+    </div>
         <div
           className="sticky top-18 z-30 -mx-5 overflow-x-auto overscroll-x-contain border-b border-(--ora-border) bg-(--ora-cream)/95 px-5 py-5 backdrop-blur md:-mx-8 md:px-8 lg:-mx-12 lg:px-12"
           aria-label="Café menu sections"

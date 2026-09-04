@@ -1,24 +1,39 @@
+import Image from "next/image";
+
 export default function GymIntro() {
   return (
     <section
       id="training"
       className="scroll-mt-18 bg-(--ora-cream) text-(--ora-burgundy-dark)"
     >
-      <div className="ora-container ora-section">
-        <h2 className="font-display max-w-5xl text-5xl leading-[0.96] tracking-[-0.045em] sm:text-6xl md:text-7xl lg:text-8xl">
-          A space designed for consistent progress.
-        </h2>
+      <div className="ora-container py-20 md:py-28 lg:py-32">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+          
+          {/* Main Fitness space */}
+          <div className="relative min-h-120 overflow-hidden rounded-(--ora-radius-media) sm:min-h-152 lg:col-span-7 lg:min-h-176">
+            <Image
+              src="/images/section-image/gym.JPG"
+              alt="ORA Fitness training space in Douala"
+              fill
+              sizes="(max-width: 1023px) 100vw, 58vw"
+              className="object-cover object-center"
+            />
+          </div>
 
-        <div className="mt-12 grid gap-8 border-t border-(--ora-border-strong) pt-8 md:grid-cols-2 md:gap-14 lg:ml-[18%]">
-          <p className="max-w-md text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
-            ORA Fitness is built around a focused training experience:
-            strength, cardio, movement and personal progress in one
-            environment.
-          </p>
-          <p className="max-w-md text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
-            The goal is simple: make every session feel intentional, balanced
-            and part of the broader ORA wellness experience.
-          </p>
+          {/* Copy */}
+          <div className="lg:col-span-4 lg:col-start-9">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-pink)">
+              The space
+            </p>
+
+            <h2 className="font-display mt-5 text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+              Built to train.
+            </h2>
+
+            <p className="mt-6 max-w-sm text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
+              Strength, cardio and conditioning in one focused environment.
+            </p>
+          </div>
         </div>
       </div>
     </section>

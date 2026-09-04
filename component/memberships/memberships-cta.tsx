@@ -5,30 +5,41 @@ import { bookingHref } from "@/lib/contact";
 
 export default function MembershipsCTA() {
   return (
-    <section className="relative overflow-hidden bg-(--ora-burgundy) px-6 py-24 text-(--ora-cream) md:px-10 md:py-32 lg:px-14">
-      <div className="relative z-10 mx-auto max-w-375">
-        <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-(--ora-pink-light)">
-          Join ORA
-        </p>
+    <section className="bg-(--ora-burgundy) text-(--ora-cream)">
+      <div className="ora-container py-16 md:py-20 lg:py-24">
+        <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-pink-light)">
+              Join ORA
+            </p>
 
-        <h2 className="mt-7 max-w-4xl text-5xl font-normal leading-[0.98] tracking-[-0.04em] sm:text-6xl lg:text-8xl">
-          Start with
-          <br />
-          a conversation.
-        </h2>
+            <h2 className="font-display mt-5 max-w-4xl text-5xl leading-[0.95] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
+              Start with
+              <br />
+              a conversation.
+            </h2>
+          </div>
 
-        <p className="mt-8 max-w-xl text-[15px] leading-7 text-white/82">
-          Contact the ORA team to learn about current membership plans,
-          access and availability.
-        </p>
+          <div className="lg:col-span-4">
+            <p className="max-w-sm text-sm leading-6 text-white/70">
+              Contact the ORA team for current membership options, access and
+              availability.
+            </p>
 
-        <Link
-          href={bookingHref}
-          className="ora-button ora-button-light mt-10"
-        >
-          Enquire about memberships
-          <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
-        </Link>
+            <Link
+              href={bookingHref}
+              className="ora-button ora-button-light mt-7 inline-flex"
+            >
+              Enquire about memberships
+
+              <ArrowUpRight
+                size={15}
+                strokeWidth={1.5}
+                aria-hidden="true"
+              />
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );
