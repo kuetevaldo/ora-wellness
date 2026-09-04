@@ -75,7 +75,7 @@ export default function CafeMenu() {
       <div className="grid items-center gap-4 md:grid-cols-[1fr_auto_1fr] md:gap-6">
         
         {/* Left image */}
-        <div className="relative mx-auto aspect-square w-full max-w-64 md:max-w-80">
+        <div className="relative mx-auto aspect-square w-full max-w-96 md:max-w-md lg:max-w-136">
           <Image
             src="/images/section-image/menu-image2.PNG"
             alt=""
@@ -87,7 +87,7 @@ export default function CafeMenu() {
 
         {/* Title */}
        <div className="text-center">
-  <div className="relative mx-auto h-12 w-32 sm:h-14 sm:w-36 md:h-20 md:w-48">
+  <div className="relative mx-auto h-14 w-35 sm:h-14 sm:w-36 md:h-20 md:w-48">
     <Image
       src="/images/logos/ora-cafe.png"
       alt="ORA Café"
@@ -103,7 +103,7 @@ export default function CafeMenu() {
 </div>
 
         {/* Right image */}
-        <div className="relative mx-auto aspect-square w-full max-w-64 md:max-w-80">
+       <div className="relative mx-auto aspect-square w-full max-w-96 md:max-w-md lg:max-w-136">
           <Image
             src="/images/section-image/menu-image1.PNG"
             alt=""

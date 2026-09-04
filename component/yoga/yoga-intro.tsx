@@ -24,7 +24,7 @@ export default function YogaIntro() {
 
           <div className="relative min-h-120 overflow-hidden rounded-(--ora-radius-media) sm:min-h-152 lg:col-span-7 lg:col-start-6 lg:min-h-176">
             <Image
-              src="/images/hero-image/yoga2.png"
+              src="/images/hero-image/yoga2.PNG"
               alt="Yoga practice at ORA"
               fill
               sizes="(max-width: 1023px) 100vw, 58vw"

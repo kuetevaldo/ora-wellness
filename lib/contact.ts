@@ -1,6 +1,6 @@
 export const bookingHref = "/contact#booking";
 
 export const oraBookingPhone = {
-  display: "+237 6 97 00 90 75",
-  href: "tel:+237697009075",
+  display: "+237 6 74 15 00 00",
+  href: "tel:+237674150000",
 };
