@@ -69,11 +69,11 @@ export default function HomeLocation() {
                   />
                 </div>
 
-                <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-white/65">
+                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/65">
                   Douala, Cameroon
                 </p>
 
-                <h3 className="font-display mt-2 text-4xl leading-none tracking-[-0.04em] text-white sm:text-5xl">
+                <h3 className="font-display mt-2 text-2xl leading-none tracking-[-0.04em] text-white sm:text-5xl">
                   Hydrocarbures
                 </h3>
 
@@ -82,7 +82,7 @@ export default function HomeLocation() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Get directions to ORA Wellness and Café"
-                  className="group/link mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white transition-opacity hover:opacity-80"
+                  className="group/link mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white transition-opacity hover:opacity-80"
                 >
                   Get directions
 

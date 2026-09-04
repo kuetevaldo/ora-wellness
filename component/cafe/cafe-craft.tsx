@@ -7,7 +7,7 @@ export default function CafeCraft() {
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="relative min-h-136 overflow-hidden rounded-(--ora-radius-media) lg:col-span-7">
             <Image
-              src="/images/section-image/cafe-section.jpg"
+              src="/images/section-image/cafe-section.JPG"
               alt="ORA Café barista preparing coffee in Douala"
               fill
               sizes="(max-width: 1023px) 100vw, 58vw"

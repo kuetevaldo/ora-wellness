@@ -77,7 +77,7 @@ export default function CafeMenu() {
         {/* Left image */}
         <div className="relative mx-auto aspect-square w-full max-w-64 md:max-w-80">
           <Image
-            src="/images/section-image/menu-image1.png"
+            src="/images/section-image/menu-image2.PNG"
             alt=""
             fill
             sizes="(max-width: 767px) 65vw, 28vw"
@@ -105,7 +105,7 @@ export default function CafeMenu() {
         {/* Right image */}
         <div className="relative mx-auto aspect-square w-full max-w-64 md:max-w-80">
           <Image
-            src="/images/section-image/menu-image2.png"
+            src="/images/section-image/menu-image1.PNG"
             alt=""
             fill
             sizes="(max-width: 767px) 65vw, 28vw"
