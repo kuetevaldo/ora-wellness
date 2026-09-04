@@ -8,10 +8,12 @@ import ContactForm from "@/component/contact/contact-form";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Contact ORA",
+  title: "Contact ORA Wellness Douala",
   description:
-    "Contact ORA Wellness in Douala for visits, classes, Padel, Café and membership enquiries.",
+    "Contact ORA Wellness in Douala for information about Fitness, Padel, Pilates, Yoga, Studio, Café and planning your visit.",
   path: "/contact",
+  imagePath: "/images/hero-image/ora-building-hero.jpg",
+  imageAlt: "ORA Wellness in Douala, Cameroon",
 });
 
 export default function ContactPage() {

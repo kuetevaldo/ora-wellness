@@ -11,15 +11,17 @@ import HomeActionBlock from "@/component/home/home-action-block";
 import {
   createPageMetadata,
   serializeJsonLd,
-  siteDescription,
-  siteName,
   wellnessJsonLd,
 } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: siteName,
-  description: siteDescription,
+  title:
+    "ORA Wellness Douala | Fitness, Padel, Pilates, Yoga & Café",
+  description:
+    "Discover ORA Wellness in Douala: Fitness, Padel, Pilates, Yoga, Studio and Café in one premium wellness destination at Hydrocarbures.",
   path: "/",
+  imagePath: "/images/hero-image/ora-building-hero.jpg",
+  imageAlt: "ORA Wellness destination in Douala, Cameroon",
   absoluteTitle: true,
 });
 

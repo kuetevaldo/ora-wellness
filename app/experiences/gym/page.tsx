@@ -7,11 +7,12 @@ import GymCTA from "@/component/gym/gym-cta";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "ORA Fitness",
+  title: "Fitness & Gym in Douala",
   description:
-    "Explore focused strength, cardio and conditioning at ORA Fitness in Douala.",
+    "Train at ORA Fitness in Douala with strength, cardio, functional training and coaching in a premium wellness environment.",
   path: "/experiences/gym",
-  imagePath: "/images/hero-image/fitness.JPG",
+  imagePath: "/images/hero-image/fitness.jpg",
+  imageAlt: "ORA Fitness gym in Douala, Cameroon",
 });
 
 export default function GymPage() {

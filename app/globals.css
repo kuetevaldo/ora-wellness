@@ -615,7 +615,7 @@ textarea {
 }
 
 .ora-preloader-line {
-  animation: oraPreloaderLine 1650ms cubic-bezier(.23, 1, .32, 1) both;
+  animation: oraPreloaderLine 3050ms cubic-bezier(.23, 1, .32, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

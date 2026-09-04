@@ -18,12 +18,12 @@ export default function OraPreloader() {
 
 const leaveTimer = window.setTimeout(() => {
   setLeaving(true);
-}, 1650);
+}, 3050);
 
 const removeTimer = window.setTimeout(() => {
   setVisible(false);
   sessionStorage.setItem("ora-preloader-seen", "true");
-}, 2000);
+}, 3500);
 
     return () => {
       window.clearTimeout(leaveTimer);

@@ -6,17 +6,19 @@ import CafeMenu from "@/component/cafe/cafe-menu";
 import CafeClosing from "@/component/cafe/cafe-closing";
 
 import {
-  cafeJsonLd,
   createPageMetadata,
+  cafeJsonLd,
   serializeJsonLd,
 } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "ORA Café",
+  title: "ORA Café Douala | Coffee, Breakfast & Wellness Food",
   description:
-    "Discover breakfast, specialty coffee, nourishing meals, fresh juices and protein shakes at ORA Café in Douala.",
+    "Visit ORA Café in Douala for specialty coffee, breakfast, nourishing food and wellness drinks at ORA Wellness, Hydrocarbures.",
   path: "/cafe",
-  imagePath: "/images/hero-image/ora-interior.jpg",
+  imagePath: "/images/section-image/cafe-section.jpg",
+  imageAlt: "ORA Café in Douala, Cameroon",
+  absoluteTitle: true,
 });
 
 export default function CafePage() {

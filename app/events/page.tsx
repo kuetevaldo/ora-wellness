@@ -6,10 +6,12 @@ import EventsCTA from "@/component/events/events-cta";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Events & Community",
+  title: "ORA Events in Douala",
   description:
-    "Discover ORA academies, Padel tournaments, Fitness challenges and community experiences in Douala.",
+    "Discover events and community experiences at ORA Wellness in Douala across Padel, Studio and wellness activities.",
   path: "/events",
+  imagePath: "/images/section-image/tournament-women.JPG",
+  imageAlt: "ORA Wellness event in Douala, Cameroon",
 });
 
 export default function EventsPage() {

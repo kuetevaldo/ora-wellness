@@ -10,11 +10,12 @@ import YogaCTA from "@/component/yoga/yoga-cta";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "ORA Yoga",
+  title: "Yoga Classes in Douala",
   description:
-    "Discover movement, breath and balance designed to help you reset at ORA Yoga in Douala.",
+    "Practice yoga at ORA in Douala with guided sessions designed around breath, mobility, balance and mindful movement.",
   path: "/experiences/yoga",
-  imagePath: "/images/hero-image/yoga-image.JPG",
+  imagePath: "/images/hero-image/yoga1.jpg",
+  imageAlt: "ORA Yoga in Douala, Cameroon",
 });
 
 export default function YogaPage() {

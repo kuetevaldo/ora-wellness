@@ -11,10 +11,12 @@ import StudioCTA from "@/component/studio/studio-cta";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "ORA Studio",
+  title: "Group Fitness & Studio Classes in Douala",
   description:
-    "Explore guided group movement and the ORA Studio Dance Academy for children aged 2 to 11 in Douala.",
+    "Join ORA Studio in Douala for group fitness, movement and dance experiences in an energetic community setting.",
   path: "/experiences/studio",
+  imagePath: "/images/section-image/studio-workout.JPG",
+  imageAlt: "ORA Studio group fitness in Douala, Cameroon",
 });
 
 export default function StudioPage() {

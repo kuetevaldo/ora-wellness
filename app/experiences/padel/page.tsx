@@ -9,11 +9,12 @@ import PadelCTA from "@/component/padel/padel-cta";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "ORA Padel",
+  title: "Padel in Douala",
   description:
-    "Explore ORA Padel in Douala, including adult and kids academies, weekly training, social play and organised tournaments.",
+    "Play padel at ORA in Douala with courts, academy sessions and a welcoming community for adults and children.",
   path: "/experiences/padel",
-  imagePath: "/images/IMG_5268.JPG",
+  imagePath: "/images/hero-image/padel1.webp",
+  imageAlt: "ORA Padel in Douala, Cameroon",
 });
 
 export default function PadelPage() {

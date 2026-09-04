@@ -11,11 +11,12 @@ import PilatesCTA from "@/component/pilates/pilates-cta";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "ORA Pilates",
+  title: "Pilates in Douala",
   description:
-    "Discover deliberate Pilates movement focused on control, strength and mobility at ORA in Douala.",
+    "Discover Pilates at ORA in Douala with guided sessions focused on control, strength, mobility and intentional movement.",
   path: "/experiences/pilates",
-  imagePath: "/images/IMG_E5270.JPG",
+  imagePath: "/images/hero-image/pilates.jpg",
+  imageAlt: "ORA Pilates in Douala, Cameroon",
 });
 
 export default function PilatesPage() {

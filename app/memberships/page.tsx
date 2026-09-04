@@ -6,10 +6,12 @@ import MembershipsCTA from "@/component/memberships/memberships-cta";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Memberships",
+  title: "ORA Wellness Memberships",
   description:
-    "Explore ORA membership directions for Fitness, movement and the wider ORA wellness experience in Douala.",
+    "Explore ORA Wellness membership options and find the right way to make Fitness, movement and wellness part of your routine in Douala.",
   path: "/memberships",
+  imagePath: "/images/hero-image/ora-interior.jpg",
+  imageAlt: "ORA Wellness membership experience in Douala",
 });
 
 export default function MembershipsPage() {

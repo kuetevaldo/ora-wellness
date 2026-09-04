@@ -6,10 +6,12 @@ import ScheduleCTA from "@/component/schedule/schedule-cta";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Programme Schedule",
+  title: "ORA Class & Activity Schedule",
   description:
-    "View published weekly times for ORA adult and kids Padel academies and the 2026/27 Dance Academy in Douala.",
+    "Explore the ORA Wellness schedule for Yoga, Pilates, Padel and Studio activities in Douala.",
   path: "/schedule",
+  imagePath: "/images/section-image/studio-workout.JPG",
+  imageAlt: "ORA Wellness class and activity schedule in Douala",
 });
 
 export default function SchedulePage() {
