@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 const facilityKeys = [
-  { number: "01", key: "strength" as const },
-  { number: "02", key: "cardio" as const },
-  { number: "03", key: "functional" as const },
-  { number: "04", key: "coaching" as const },
+  { number: " ", key: "strength" as const },
+  { number: " ", key: "cardio" as const },
+  { number: " ", key: "functional" as const },
+  { number: " ", key: "coaching" as const },
 ];
 
 export default function GymFacilities() {

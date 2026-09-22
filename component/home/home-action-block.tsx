@@ -50,9 +50,6 @@ export default function HomeActionBlock() {
             className="group flex items-center justify-between gap-6 border-b border-white/15 py-5 transition-colors duration-200 hover:bg-white/4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white/70 sm:px-4 sm:py-6"
           >
             <div className="flex items-baseline gap-5 sm:gap-8">
-              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40">
-                01
-              </span>
 
               <span className="font-display text-2xl tracking-tight text-white sm:text-3xl">
                 {t("viewSchedule")}
@@ -73,9 +70,6 @@ export default function HomeActionBlock() {
             className="group flex items-center justify-between gap-6 border-b border-white/15 py-5 transition-colors duration-200 hover:bg-white/4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white/70 sm:px-4 sm:py-6"
           >
             <div className="flex items-baseline gap-5 sm:gap-8">
-              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40">
-                02
-              </span>
 
               <span className="font-display text-2xl tracking-tight text-white sm:text-3xl">
                 {t("contactOra")}

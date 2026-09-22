@@ -1,9 +1,9 @@
 import { getTranslations } from "next-intl/server";
 
 const practiceKeys = [
-  { number: "01", key: "breath" as const },
-  { number: "02", key: "mobility" as const },
-  { number: "03", key: "balance" as const },
+  { number: " ", key: "breath" as const },
+  { number: " ", key: "mobility" as const },
+  { number: " ", key: "balance" as const },
 ];
 
 type PracticeKey = (typeof practiceKeys)[number]["key"];

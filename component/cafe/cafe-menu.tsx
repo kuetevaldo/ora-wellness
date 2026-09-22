@@ -157,9 +157,6 @@ export default function CafeMenu() {
                 )}
 
                 <div className="flex items-start gap-5">
-                  <span className="pt-2 text-xs text-(--ora-pink)">
-                    {String(sectionIndex + 1).padStart(2, "0")}
-                  </span>
 
                   <h3 className="font-display text-3xl tracking-[-0.03em] sm:text-4xl">
                     {section.title}

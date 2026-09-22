@@ -29,9 +29,9 @@ const images = [
 ];
 
 const momentKeys = [
-  { number: "01", key: "play" as const },
-  { number: "02", key: "compete" as const },
-  { number: "03", key: "connect" as const },
+  { number: " ", key: "play" as const },
+  { number: " ", key: "compete" as const },
+  { number: " ", key: "connect" as const },
 ];
 
 export default function PadelExperience() {

@@ -1,9 +1,9 @@
 import { getTranslations } from "next-intl/server";
 
 const qualityKeys = [
-  { number: "01", key: "control" as const },
-  { number: "02", key: "strength" as const },
-  { number: "03", key: "mobility" as const },
+  { number: " ", key: "control" as const },
+  { number: " ", key: "strength" as const },
+  { number: " ", key: "mobility" as const },
 ];
 
 export default async function PilatesExperience() {
