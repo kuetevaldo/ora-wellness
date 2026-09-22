@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import {
   ArrowUpRight,
   Mail,
@@ -15,7 +16,9 @@ const mapHref =
 const instagramHref =
   "https://www.instagram.com/ora.cameroon?igsi=c2kxbThieWxqYWI4";
 
-export default function ContactDetails() {
+export default async function ContactDetails() {
+  const t = await getTranslations("Contact");
+
   return (
     <section
       id="contact-details"
@@ -25,19 +28,17 @@ export default function ContactDetails() {
         <div className="grid gap-8 border-t border-(--ora-burgundy-dark)/15 pt-7 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              Visit & contact
+              {t("detailsEyebrow")}
             </p>
 
-            <h2 className="font-display mt-4 max-w-3xl text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              Everything you
-              <br />
-              need to reach ORA.
+            <h2 className="font-display mt-4 max-w-3xl whitespace-pre-line text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+              {t("detailsHeading")}
             </h2>
           </div>
 
           <div className="lg:col-span-4 lg:col-start-9">
             <p className="max-w-md text-sm leading-6 text-(--ora-text-secondary)">
-              Find ORA, check opening hours or speak directly with the team.
+              {t("detailsBody")}
             </p>
           </div>
         </div>
@@ -64,7 +65,7 @@ export default function ContactDetails() {
             </div>
 
             <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-(--ora-text-secondary)">
-              Location
+              {t("cards.location")}
             </p>
 
             <h3 className="font-display mt-3 text-3xl tracking-[-0.035em]">
@@ -74,7 +75,7 @@ export default function ContactDetails() {
             </h3>
 
             <p className="mt-5 text-sm font-semibold text-(--ora-burgundy)">
-              Get directions
+              {t("cards.getDirections")}
             </p>
           </a>
 
@@ -85,7 +86,7 @@ export default function ContactDetails() {
             </div>
 
             <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-(--ora-text-secondary)">
-              Opening hours
+              {t("cards.hours")}
             </p>
 
             <div className="mt-3">
@@ -112,7 +113,7 @@ export default function ContactDetails() {
             </div>
 
             <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-(--ora-text-secondary)">
-              Call ORA
+              {t("cards.callOra")}
             </p>
 
             <h3 className="font-display mt-3 text-3xl tracking-[-0.035em]">
@@ -120,7 +121,7 @@ export default function ContactDetails() {
             </h3>
 
             <p className="mt-5 text-sm text-(--ora-text-secondary)">
-              Visits, classes, Café, Padel and membership enquiries.
+              {t("cards.callCopy")}
             </p>
           </a>
 
@@ -143,7 +144,7 @@ export default function ContactDetails() {
             </div>
 
             <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-white/55">
-              Email
+              {t("cards.email")}
             </p>
 
             <h3 className="font-display mt-3 break-all text-2xl tracking-[-0.03em] sm:text-3xl">
@@ -151,14 +152,14 @@ export default function ContactDetails() {
             </h3>
 
             <p className="mt-5 text-sm text-white/65">
-              General enquiries
+              {t("cards.generalEnquiries")}
             </p>
           </a>
         </div>
 
         <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-(--ora-burgundy-dark)/15 pt-6">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-(--ora-text-secondary)">
-            Follow ORA
+            {t("cards.followOra")}
           </p>
 
           <a

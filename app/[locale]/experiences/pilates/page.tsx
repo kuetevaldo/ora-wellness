@@ -10,6 +10,8 @@ import PilatesCTA from "@/component/pilates/pilates-cta";
 
 import { createPageMetadata } from "@/lib/seo";
 
+import { setRequestLocale } from "next-intl/server";
+
 export const metadata = createPageMetadata({
   title: "Pilates in Douala",
   description:
@@ -19,7 +21,13 @@ export const metadata = createPageMetadata({
   imageAlt: "ORA Pilates in Douala, Cameroon",
 });
 
-export default function PilatesPage() {
+export default async function PilatesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <main>
       <Header />

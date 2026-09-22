@@ -1,7 +1,12 @@
-import Link from "next/link";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function HomeActionBlock() {
+  const t = useTranslations("ActionBlock");
+
   return (
     <section
       aria-labelledby="action-heading"
@@ -16,7 +21,7 @@ export default function HomeActionBlock() {
           />
 
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-pink-light)">
-            Begin at ORA
+            {t("eyebrow")}
           </p>
         </div>
 
@@ -25,17 +30,15 @@ export default function HomeActionBlock() {
           <div className="lg:col-span-8">
             <h2
               id="action-heading"
-              className="font-display max-w-4xl text-5xl leading-[0.95] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl"
+              className="font-display max-w-4xl whitespace-pre-line text-5xl leading-[0.95] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl"
             >
-              Your next ORA
-              <br />
-              experience starts here.
+              {t("heading")}
             </h2>
           </div>
 
           <div className="lg:col-span-4 lg:pb-1">
             <p className="max-w-sm text-sm leading-6 text-white/65 sm:text-base">
-              Find your next session or get in touch with the ORA team.
+              {t("tagline")}
             </p>
           </div>
         </div>
@@ -52,7 +55,7 @@ export default function HomeActionBlock() {
               </span>
 
               <span className="font-display text-2xl tracking-tight text-white sm:text-3xl">
-                View schedule
+                {t("viewSchedule")}
               </span>
             </div>
 
@@ -75,7 +78,7 @@ export default function HomeActionBlock() {
               </span>
 
               <span className="font-display text-2xl tracking-tight text-white sm:text-3xl">
-                Contact ORA
+                {t("contactOra")}
               </span>
             </div>
 

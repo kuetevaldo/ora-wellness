@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
-export default function AboutPhilosophy() {
+export default async function AboutPhilosophy() {
+  const t = await getTranslations("About");
+
   return (
     <section
       id="about-ora"
@@ -10,20 +13,17 @@ export default function AboutPhilosophy() {
         <div className="grid gap-8 border-t border-(--ora-burgundy-dark)/15 pt-7 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              The idea
+              {t("philosophyEyebrow")}
             </p>
 
-            <h2 className="font-display mt-4 max-w-3xl text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              More than
-              <br />
-              a fitness space.
+            <h2 className="font-display mt-4 max-w-3xl whitespace-pre-line text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+              {t("philosophyHeading")}
             </h2>
           </div>
 
           <div className="lg:col-span-4 lg:col-start-9">
             <p className="max-w-md text-sm leading-6 text-(--ora-text-secondary)">
-              Movement, food and social connection come together as one ORA
-              experience.
+              {t("philosophyBody")}
             </p>
           </div>
         </div>
@@ -44,7 +44,7 @@ export default function AboutPhilosophy() {
 
           <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8 md:p-10">
             <p className="max-w-xl text-sm leading-6 text-white/80 sm:text-base sm:leading-7">
-              A place to train, move, pause, eat and spend time together.
+              {t("philosophyCaption")}
             </p>
           </div>
         </div>

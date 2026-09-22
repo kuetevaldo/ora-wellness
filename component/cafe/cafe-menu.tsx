@@ -1,16 +1,18 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import { cafeMenu } from "@/data/cafe-menu";
 import Image from "next/image";
 
-
-const groups = [
-  { id: "breakfast", label: "Breakfast" },
-  { id: "food", label: "Food" },
-  { id: "coffee", label: "Coffee" },
-  { id: "wellness", label: "Wellness Drinks" },
+const groupKeys = [
+  { id: "breakfast", key: "breakfast" as const },
+  { id: "food", key: "food" as const },
+  { id: "coffee", key: "coffee" as const },
+  { id: "wellness", key: "wellness" as const },
 ];
+
+type GroupKey = (typeof groupKeys)[number]["key"];
 
 const breakfastSections = [
   "viennoiserie",
@@ -49,6 +51,7 @@ function formatPrice(price: number) {
 }
 
 export default function CafeMenu() {
+  const t = useTranslations("Cafe");
   const [activeGroup, setActiveGroup] = useState("breakfast");
 
   const visibleSections = useMemo(() => {
@@ -65,62 +68,60 @@ export default function CafeMenu() {
   }, [activeGroup]);
 
   return (
+    <section
+      id="menu"
+      className="bg-(--ora-cream) text-(--ora-burgundy-dark)"
+    >
+      <div className="ora-container pt-24 pb-20 md:pt-32 md:pb-28">
+        <div className="border-b border-(--ora-burgundy)/15 pb-12">
+          <div className="grid items-center gap-4 md:grid-cols-[1fr_auto_1fr] md:gap-6">
+            {/* Left image */}
+            <div className="relative mx-auto aspect-square w-full max-w-96 md:max-w-md lg:max-w-136">
+              <Image
+                src="/images/section-image/menu-image2.PNG"
+                alt=""
+                fill
+                sizes="(max-width: 767px) 65vw, 28vw"
+                className="object-contain"
+              />
+            </div>
 
-<section
-  id="menu"
-  className="bg-(--ora-cream) text-(--ora-burgundy-dark)"
->
-  <div className="ora-container pt-24 pb-20 md:pt-32 md:pb-28">
-    <div className="border-b border-(--ora-burgundy)/15 pb-12">
-      <div className="grid items-center gap-4 md:grid-cols-[1fr_auto_1fr] md:gap-6">
-        
-        {/* Left image */}
-        <div className="relative mx-auto aspect-square w-full max-w-96 md:max-w-md lg:max-w-136">
-          <Image
-            src="/images/section-image/menu-image2.PNG"
-            alt=""
-            fill
-            sizes="(max-width: 767px) 65vw, 28vw"
-            className="object-contain"
-          />
+            {/* Title */}
+            <div className="text-center">
+              <div className="relative mx-auto h-14 w-35 sm:h-14 sm:w-36 md:h-20 md:w-48">
+                <Image
+                  src="/images/logos/ora-cafe.png"
+                  alt="ORA Café"
+                  fill
+                  sizes="160px"
+                  className="object-contain"
+                />
+              </div>
+
+              <h2 className="font-display mt-5 text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-7xl">
+                {t("menuHeading")}
+              </h2>
+            </div>
+
+            {/* Right image */}
+            <div className="relative mx-auto aspect-square w-full max-w-96 md:max-w-md lg:max-w-136">
+              <Image
+                src="/images/section-image/menu-image1.PNG"
+                alt=""
+                fill
+                sizes="(max-width: 767px) 65vw, 28vw"
+                className="object-contain"
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Title */}
-       <div className="text-center">
-  <div className="relative mx-auto h-14 w-35 sm:h-14 sm:w-36 md:h-20 md:w-48">
-    <Image
-      src="/images/logos/ora-cafe.png"
-      alt="ORA Café"
-      fill
-      sizes="160px"
-      className="object-contain"
-    />
-  </div>
-
-  <h2 className="font-display mt-5 text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-7xl">
-    What&apos;s on the menu.
-  </h2>
-</div>
-
-        {/* Right image */}
-       <div className="relative mx-auto aspect-square w-full max-w-96 md:max-w-md lg:max-w-136">
-          <Image
-            src="/images/section-image/menu-image1.PNG"
-            alt=""
-            fill
-            sizes="(max-width: 767px) 65vw, 28vw"
-            className="object-contain"
-          />
-        </div>
-
-      </div>
-    </div>
         <div
           className="sticky top-18 z-30 -mx-5 overflow-x-auto overscroll-x-contain border-b border-(--ora-border) bg-(--ora-cream)/95 px-5 py-5 backdrop-blur md:-mx-8 md:px-8 lg:-mx-12 lg:px-12"
-          aria-label="Café menu sections"
+          aria-label={t("menuAriaLabel")}
         >
           <div className="mx-auto flex w-max min-w-full max-w-375 snap-x snap-mandatory scroll-px-5 gap-2 whitespace-nowrap">
-            {groups.map((group) => {
+            {groupKeys.map((group) => {
               const active = activeGroup === group.id;
 
               return (
@@ -135,7 +136,7 @@ export default function CafeMenu() {
                       : "border border-(--ora-burgundy)/20 text-(--ora-burgundy) hover:border-(--ora-burgundy)"
                   }`}
                 >
-                  {group.label}
+                  {t(`groups.${group.key}` as `groups.${GroupKey}`)}
                 </button>
               );
             })}

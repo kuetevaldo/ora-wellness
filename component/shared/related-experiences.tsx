@@ -1,4 +1,7 @@
-import Link from "next/link";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
 
 type RelatedExperience = {
@@ -16,6 +19,7 @@ export default function RelatedExperiences({
   experiences: [RelatedExperience, RelatedExperience];
   tone?: "cream" | "sage" | "pink";
 }) {
+  const t = useTranslations("Common");
   const toneClass = {
     cream: "bg-(--ora-cream)",
     sage: "bg-(--ora-sage-light)",
@@ -26,7 +30,7 @@ export default function RelatedExperiences({
     <section className={`${toneClass} text-(--ora-burgundy-dark)`}>
       <div className="ora-container py-18 md:py-24">
         <p className="text-sm font-medium text-(--ora-text-secondary)">
-          Continue at ORA
+          {t("continueAtOra")}
         </p>
         <h2 className="font-display mt-4 max-w-3xl text-4xl leading-[1.02] tracking-[-0.04em] sm:text-5xl md:text-6xl">
           {title}

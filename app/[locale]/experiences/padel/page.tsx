@@ -17,7 +17,15 @@ export const metadata = createPageMetadata({
   imageAlt: "ORA Padel in Douala, Cameroon",
 });
 
-export default function PadelPage() {
+import { setRequestLocale } from "next-intl/server";
+
+export default async function PadelPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <main>
       <Header />

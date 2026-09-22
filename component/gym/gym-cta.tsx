@@ -1,9 +1,14 @@
-import Link from "next/link";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
 
 import { bookingHref } from "@/lib/contact";
 
 export default function GymCTA() {
+  const t = useTranslations("Gym");
+
   return (
     <section className="relative overflow-hidden bg-(--ora-burgundy) text-(--ora-cream)">
       <div className="ora-container py-20 md:py-28 lg:py-32">
@@ -12,15 +17,15 @@ export default function GymCTA() {
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-pink-light)">
-              ORA Fitness
+              {t("ctaEyebrow")}
             </p>
 
             <h2 className="font-display mt-5 max-w-4xl text-5xl leading-[0.96] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
-              Make training part of your routine.
+              {t("ctaHeading")}
             </h2>
 
             <p className="mt-6 max-w-lg text-[0.9375rem] leading-7 text-white/80">
-              Visit ORA and discover the training experience that works for you.
+              {t("ctaBody")}
             </p>
           </div>
 
@@ -29,7 +34,7 @@ export default function GymCTA() {
               href={bookingHref}
               className="ora-button ora-button-light"
             >
-              Plan your visit
+              {t("planVisit")}
               <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
 
@@ -37,7 +42,7 @@ export default function GymCTA() {
               href="/memberships"
               className="ora-button ora-button-outline-light"
             >
-              Explore memberships
+              {t("exploreMemberships")}
               <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
           </div>
@@ -46,17 +51,17 @@ export default function GymCTA() {
         {/* Next ORA experience */}
         <div className="mt-16 border-t border-white/18 pt-8 md:mt-20">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-pink-light)">
-            Next at ORA
+            {t("nextEyebrow")}
           </p>
 
           <div className="mt-5 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h3 className="font-display text-3xl tracking-[-0.03em] text-white sm:text-4xl">
-                ORA Café
+                {t("nextTitle")}
               </h3>
 
               <p className="mt-2 max-w-md text-sm leading-6 text-white/75">
-                Coffee, food and recovery after your session.
+                {t("nextBody")}
               </p>
             </div>
 
@@ -64,7 +69,7 @@ export default function GymCTA() {
               href="/cafe"
               className="ora-button ora-button-outline-light shrink-0"
             >
-              View Café
+              {t("viewCafe")}
               <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
           </div>

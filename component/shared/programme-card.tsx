@@ -1,4 +1,7 @@
-import Link from "next/link";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { ArrowUpRight, CalendarDays } from "lucide-react";
 
 import type { OraProgramme } from "@/lib/programmes";
@@ -8,17 +11,15 @@ type ProgrammeCardProps = {
   showLink?: boolean;
 };
 
-const categoryLabels: Record<OraProgramme["category"], string> = {
-  padel: "Padel",
-  pilates: "Pilates",
-  yoga: "Yoga",
-  studio: "Studio",
-};
-
 export default function ProgrammeCard({
   programme,
   showLink = true,
 }: ProgrammeCardProps) {
+  const tCommon = useTranslations("Common");
+  const tData = useTranslations("ProgrammesData");
+
+  const categoryLabel = tData(`categories.${programme.category}`);
+
   return (
     <article className="flex h-full flex-col rounded-3xl border border-(--ora-border) bg-(--ora-surface-raised) p-5 sm:p-7">
       <div className="flex items-start justify-between gap-5">
@@ -46,18 +47,18 @@ export default function ProgrammeCard({
             className="rounded-2xl border border-(--ora-border) p-4"
           >
             <div>
-              <dt className="sr-only">Group and age</dt>
+              <dt className="sr-only">{tCommon("groupAndAge")}</dt>
               <dd className="text-sm font-semibold">
                 {entry.group} · {entry.age}
               </dd>
             </div>
             <div className="mt-4 grid grid-cols-2 gap-4 border-t border-(--ora-border) pt-4">
               <div>
-                <dt className="text-xs text-(--ora-text-secondary)">Day</dt>
+                <dt className="text-xs text-(--ora-text-secondary)">{tCommon("day")}</dt>
                 <dd className="mt-1 text-sm font-semibold">{entry.day}</dd>
               </div>
               <div>
-                <dt className="text-xs text-(--ora-text-secondary)">Time</dt>
+                <dt className="text-xs text-(--ora-text-secondary)">{tCommon("time")}</dt>
                 <dd className="mt-1 text-sm font-semibold tabular-nums">
                   {entry.time}
                 </dd>
@@ -70,21 +71,18 @@ export default function ProgrammeCard({
       <div className="mt-7 hidden overflow-x-auto rounded-2xl border border-(--ora-border) sm:block">
         <table className="w-full border-collapse text-left text-sm">
           <caption className="sr-only">
-            Weekly timetable for {programme.title}
+            {programme.title}
           </caption>
           <thead className="bg-(--ora-sage-light)/55 text-xs text-(--ora-text-secondary)">
             <tr>
               <th scope="col" className="px-4 py-3 font-semibold">
-                Group
+                {tCommon("groupAndAge")}
               </th>
               <th scope="col" className="px-4 py-3 font-semibold">
-                Age
+                {tCommon("day")}
               </th>
               <th scope="col" className="px-4 py-3 font-semibold">
-                Day
-              </th>
-              <th scope="col" className="px-4 py-3 font-semibold">
-                Time
+                {tCommon("time")}
               </th>
             </tr>
           </thead>
@@ -95,11 +93,8 @@ export default function ProgrammeCard({
                 className="border-t border-(--ora-border)"
               >
                 <th scope="row" className="px-4 py-3 font-semibold">
-                  {entry.group}
+                  {entry.group} ({entry.age})
                 </th>
-                <td className="px-4 py-3 text-(--ora-text-secondary)">
-                  {entry.age}
-                </td>
                 <td className="px-4 py-3 text-(--ora-text-secondary)">
                   {entry.day}
                 </td>
@@ -121,7 +116,7 @@ export default function ProgrammeCard({
         </p>
         {showLink ? (
           <Link href={programme.href} className="ora-text-link mt-4">
-            Explore {categoryLabels[programme.category]}
+            {tCommon("viewProgramme")} · {categoryLabel}
             <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
           </Link>
         ) : null}

@@ -1,22 +1,24 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
-export default function StudioAtmosphere() {
+export default async function StudioAtmosphere() {
+  const t = await getTranslations("Studio");
+
   return (
     <section className="bg-(--ora-cream) text-(--ora-burgundy-dark)">
       <div className="ora-container py-20 md:py-28 lg:py-32">
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-4 lg:pt-14">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              Studio in motion
+              {t("atmosphereEyebrow")}
             </p>
 
             <h2 className="font-display mt-5 max-w-md text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              More than a class.
+              {t("atmosphereHeading")}
             </h2>
 
             <p className="mt-6 max-w-sm text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
-              Coaching, movement and music come together to create a shared
-              Studio experience.
+              {t("atmosphereBody")}
             </p>
           </div>
 
@@ -44,7 +46,7 @@ export default function StudioAtmosphere() {
             </div>
 
             <p className="mt-4 max-w-xs text-xs leading-5 text-(--ora-text-secondary)">
-              Movement, coaching and atmosphere — experienced together.
+              {t("atmosphereCaption")}
             </p>
           </div>
         </div>

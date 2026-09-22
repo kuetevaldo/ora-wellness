@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
-export default function YogaIntro() {
+export default async function YogaIntro() {
+  const t = await getTranslations("Yoga");
+
   return (
     <section
       id="yoga"
@@ -10,15 +13,15 @@ export default function YogaIntro() {
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              The practice
+              {t("introEyebrow")}
             </p>
 
             <h2 className="font-display mt-5 text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              Movement with more awareness.
+              {t("introHeading")}
             </h2>
 
             <p className="mt-6 max-w-sm text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
-              A calmer practice built around movement, breathing and focus.
+              {t("introBody")}
             </p>
           </div>
 

@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 import { ArrowUpRight } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,6 +15,8 @@ const googleMapsUrl =
   "https://maps.app.goo.gl/N1TAxq6LhVsQkhHC8";
 
 export default function HomeLocation() {
+  const t = useTranslations("Location");
+
   return (
     <section
       aria-labelledby="location-heading"
@@ -22,33 +27,31 @@ export default function HomeLocation() {
         <div className="mb-10 flex flex-col gap-5 border-b border-(--ora-burgundy-dark)/15 pb-8 sm:flex-row sm:items-end sm:justify-between">
           <div className="animate-[oraFadeUp_700ms_cubic-bezier(.23,1,.32,1)_both]">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              Visit ORA
+              {t("eyebrow")}
             </p>
 
             <h2
               id="location-heading"
-              className="font-display mt-3 text-5xl leading-none tracking-[-0.045em] sm:text-6xl lg:text-7xl"
+              className="font-display mt-3 whitespace-pre-line text-5xl leading-none tracking-[-0.045em] sm:text-6xl lg:text-7xl"
             >
-              Find your way
-              <br />
-              to ORA.
+              {t("heading")}
             </h2>
           </div>
 
           <p className="max-w-sm text-sm leading-6 text-(--ora-text-secondary) animate-[oraFadeUp_700ms_cubic-bezier(.23,1,.32,1)_150ms_both]">
-            Movement. Wellness. Café. One destination in Douala.
+            {t("tagline")}
           </p>
         </div>
 
         {/* Destination image */}
         <div className="group relative min-h-144 overflow-hidden rounded-(--ora-radius-media) sm:min-h-176 lg:min-h-208">
           <Image
-  src="/images/hero-image/ora-building-hero.jpg"
-  alt="ORA Wellness and Café building in Douala"
-  fill
-  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
-  className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-/>
+            src="/images/hero-image/ora-building-hero.jpg"
+            alt={t("imageAlt")}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
+            className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+          />
 
           {/* Image overlay */}
           <div
@@ -70,7 +73,7 @@ export default function HomeLocation() {
                 </div>
 
                 <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/65">
-                  Douala, Cameroon
+                  {t("country")}
                 </p>
 
                 <h3 className="font-display mt-2 text-2xl leading-none tracking-[-0.04em] text-white sm:text-5xl">
@@ -81,10 +84,10 @@ export default function HomeLocation() {
                   href={googleMapsUrl}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="Get directions to ORA Wellness and Café"
+                  aria-label={t("getDirectionsLabel")}
                   className="group/link mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white transition-opacity hover:opacity-80"
                 >
-                  Get directions
+                  {t("getDirections")}
 
                   <ArrowUpRight
                     size={15}
@@ -104,27 +107,27 @@ export default function HomeLocation() {
                   </div>
 
                   <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/55">
-                    Opening hours
+                    {t("openingHours")}
                   </p>
 
-                 <LiveOpeningHours dark />
+                  <LiveOpeningHours dark />
                 </div>
 
                 {/* Contact */}
                 <div className="group/card rounded-2xl border border-white/15 bg-black/20 p-5 backdrop-blur-md transition-[transform,background-color] duration-200 hover:-translate-y-1 hover:bg-black/30 motion-reduce:transition-none sm:p-6 animate-[oraFadeUp_700ms_cubic-bezier(.23,1,.32,1)_400ms_both]">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/55">
-                    Plan your visit
+                    {t("planYourVisit")}
                   </p>
 
                   <p className="mt-3 max-w-xs text-sm leading-6 text-white/80">
-                    Questions or enquiries before your visit?
+                    {t("enquiry")}
                   </p>
 
                   <Link
                     href="/contact"
                     className="group/link mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white transition-opacity hover:opacity-80"
                   >
-                    Contact ORA
+                    {t("contactOra")}
 
                     <ArrowUpRight
                       size={15}
@@ -142,7 +145,7 @@ export default function HomeLocation() {
         {/* Instagram */}
         <div className="mt-6 flex items-center justify-between border-t border-(--ora-burgundy-dark)/10 pt-6 animate-[oraFadeUp_700ms_cubic-bezier(.23,1,.32,1)_500ms_both]">
           <p className="text-xs text-(--ora-text-secondary)">
-            Follow life at ORA
+            {t("followLife")}
           </p>
 
           <a

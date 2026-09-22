@@ -1,4 +1,25 @@
 {
+  "Common": {
+    "skipToContent": "Skip to content",
+    "continueAtOra": "Continue at ORA",
+    "day": "Day",
+    "time": "Time",
+    "groupAndAge": "Group and age",
+    "viewProgramme": "Explore programme"
+  },
+  "NotFound": {
+    "heading": "Page not found",
+    "body": "The page you're looking for doesn't exist, or may have moved.",
+    "cta": "Return to ORA",
+    "experiences": "Explore experiences"
+  },
+  "OpeningHours": {
+    "dailyHours": "Daily · 6:00 AM – 10:00 PM",
+    "openNow": "Open now",
+    "closed": "Closed",
+    "closesIn": "Closes in",
+    "opensIn": "Opens in"
+  },
   "Header": {
     "primary": {
       "cafe": "Café",
@@ -201,5 +222,533 @@
     "tagline": "Find your next session or get in touch with the ORA team.",
     "viewSchedule": "View schedule",
     "contactOra": "Contact ORA"
+  },
+  "Gym": {
+    "heroEyebrow": "ORA Fitness, Douala",
+    "heroHeading": "Train with purpose.",
+    "heroBody": "Strength, cardio and progressive conditioning in a focused training environment.",
+    "exploreSpace": "Explore the space",
+    "introEyebrow": "The space",
+    "introHeading": "Built to train.",
+    "introBody": "Strength, cardio and conditioning in one focused environment.",
+    "facilitiesEyebrow": "ORA Fitness",
+    "facilitiesHeading": "Train your way.",
+    "facilities": {
+      "strength": {
+        "title": "Strength",
+        "description": "Free weights and resistance equipment for progressive strength training."
+      },
+      "cardio": {
+        "title": "Cardio",
+        "description": "Treadmills, rowers and bikes for endurance and conditioning."
+      },
+      "functional": {
+        "title": "Functional training",
+        "description": "Space and equipment for agility, stability and dynamic movement."
+      },
+      "coaching": {
+        "title": "Coaching",
+        "description": "Personal guidance and technique support aligned with your training goals."
+      }
+    },
+    "ctaEyebrow": "ORA Fitness",
+    "ctaHeading": "Make training part of your routine.",
+    "ctaBody": "Visit ORA and discover the training experience that works for you.",
+    "planVisit": "Plan your visit",
+    "exploreMemberships": "Explore memberships",
+    "nextEyebrow": "Next at ORA",
+    "nextTitle": "ORA Café",
+    "nextBody": "Coffee, food and recovery after your session.",
+    "viewCafe": "View Café"
+  },
+  "Padel": {
+    "heroEyebrow": "ORA Padel, Douala",
+    "heroHeading": "Play. Compete. Connect.",
+    "heroBody": "Social play, coaching and organised competition for every stage of your game.",
+    "discoverPadel": "Discover Padel",
+    "introEyebrow": "The game",
+    "introHeading": "Made to play.",
+    "introBody": "Movement, competition and social energy on the same court.",
+    "academiesEyebrow": "Padel Academies",
+    "academiesHeading": "Coaching for every stage.",
+    "academiesBody": "Weekly group sessions for adults and children aged 4 to 13.",
+    "viewFullProgramme": "View the full programme",
+    "competitionEyebrow": "Competition",
+    "competitionHeading": "Play for more.",
+    "competitionBody": "From social matches to organised competition, every match brings another level of energy to the court.",
+    "viewSchedule": "View the schedule",
+    "experienceEyebrow": "The experience",
+    "experienceHeading": "Built for the game.",
+    "experienceTagline": "A closer look at life on and off the court at ORA Padel.",
+    "moments": {
+      "play": {
+        "title": "Play",
+        "copy": "Friendly matches, practice sessions and social rallies."
+      },
+      "compete": {
+        "title": "Compete",
+        "copy": "Organised competition that brings another level of energy to the court."
+      },
+      "connect": {
+        "title": "Connect",
+        "copy": "A social experience built around people, movement and the game."
+      }
+    },
+    "ctaEyebrow": "ORA Padel",
+    "ctaHeading": "Ready for your next match?",
+    "ctaBody": "Contact ORA for court availability and the current Padel programme.",
+    "planMatch": "Plan your match",
+    "nextEyebrow": "Next at ORA",
+    "nextTitle": "ORA Café",
+    "nextBody": "Coffee, fresh drinks and food after your match.",
+    "viewCafe": "View Café"
+  },
+  "Pilates": {
+    "heroEyebrow": "ORA Pilates, Douala",
+    "heroHeading": "Move with intention.",
+    "heroBody": "Reformer-led movement for greater control, balance and strength.",
+    "explorePilates": "Explore Pilates",
+    "introEyebrow": "The practice",
+    "introHeading": "Precision in every movement.",
+    "introBody": "Focused movement designed around strength, stability, control and alignment.",
+    "experienceEyebrow": "The experience",
+    "experienceHeading": "Built around quality of movement.",
+    "qualities": {
+      "control": {
+        "title": "Control",
+        "copy": "Build a steadier connection between breath, alignment and movement."
+      },
+      "strength": {
+        "title": "Strength",
+        "copy": "Develop support from the centre through deliberate, progressive movement."
+      },
+      "mobility": {
+        "title": "Mobility",
+        "copy": "Create space and ease through a balanced range of guided movement."
+      }
+    },
+    "lifestyleEyebrow": "The ritual",
+    "lifestyleHeading": "More than the session.",
+    "lifestyleBody": "Movement, routine and the small rituals that make Pilates part of your day.",
+    "programmeEyebrow": "Pilates programme",
+    "programmeHeading": "Control, balance and mobility.",
+    "programmeBody": "Explore the current Pilates programme and find the session that fits your rhythm.",
+    "viewFullProgramme": "View the full programme",
+    "ctaEyebrow": "ORA Pilates",
+    "ctaHeading": "Find your rhythm.",
+    "ctaBody": "Contact ORA to learn more about Pilates sessions and current availability.",
+    "planSession": "Plan your session",
+    "nextEyebrow": "Next at ORA",
+    "nextTitle": "ORA Yoga",
+    "nextBody": "Continue with breath, mobility and restorative movement.",
+    "exploreYoga": "Explore Yoga"
+  },
+  "Yoga": {
+    "heroEyebrow": "ORA Yoga, Douala",
+    "heroHeading": "Breathe. Move. Reset.",
+    "heroBody": "Guided movement and breath designed to restore balance, mobility and calm.",
+    "discoverYoga": "Discover Yoga",
+    "introEyebrow": "The practice",
+    "introHeading": "Movement with more awareness.",
+    "introBody": "A calmer practice built around movement, breathing and focus.",
+    "experienceEyebrow": "The experience",
+    "experienceHeading": "Find balance through movement.",
+    "practices": {
+      "breath": {
+        "title": "Breath",
+        "copy": "A calmer practice built around breathing, focus and presence."
+      },
+      "mobility": {
+        "title": "Mobility",
+        "copy": "Movement that supports flexibility, control and everyday comfort."
+      },
+      "balance": {
+        "title": "Balance",
+        "copy": "A thoughtful approach to strength, stability and body awareness."
+      }
+    },
+    "programmeEyebrow": "Instructor & Practice",
+    "programmeHeading": "A calmer flow for mind and body.",
+    "programmeBody": "Hatha, Vinyasa, Yin and Restorative flows led by Despina for all experience levels.",
+    "viewFullProgramme": "View the full programme",
+    "ctaEyebrow": "ORA Yoga",
+    "ctaHeading": "Make space for yourself.",
+    "ctaBody": "Contact ORA to learn more about Yoga sessions and the current programme.",
+    "planPractice": "Plan your practice",
+    "nextEyebrow": "Next at ORA",
+    "nextTitle": "ORA Pilates",
+    "nextBody": "Continue with focused movement for control, strength and mobility.",
+    "explorePilates": "Explore Pilates"
+  },
+  "Studio": {
+    "heroEyebrow": "ORA Studio, Douala",
+    "heroHeading": "Move together.",
+    "heroBody": "Guided group sessions built around shared energy, variety and progress.",
+    "exploreStudio": "Explore Studio",
+    "introEyebrow": "The studio",
+    "introHeading": "Shared energy.\nGuided movement.",
+    "introBody": "Group movement designed around variety, motivation and the energy of training together.",
+    "classesEyebrow": "Class energy",
+    "classesHeading": "Different ways to move together.",
+    "classes": {
+      "strength": {
+        "title": "Strength",
+        "copy": "Guided sessions focused on controlled strength, movement and consistency."
+      },
+      "cardio": {
+        "title": "Cardio",
+        "copy": "Higher-energy group movement designed around endurance and conditioning."
+      },
+      "mobility": {
+        "title": "Mobility",
+        "copy": "Sessions designed to support flexibility, movement quality and recovery."
+      }
+    },
+    "academyEyebrow": "Dance Academy",
+    "academyHeading": "Movement starts young.",
+    "academyBody": "Four age-based groups for children from 2 to 11, designed to build confidence, coordination and a lasting relationship with movement.",
+    "viewAllProgrammes": "View all programmes",
+    "atmosphereEyebrow": "Studio in motion",
+    "atmosphereHeading": "More than a class.",
+    "atmosphereBody": "Coaching, movement and music come together to create a shared Studio experience.",
+    "atmosphereCaption": "Movement, coaching and atmosphere — experienced together.",
+    "ctaEyebrow": "ORA Studio",
+    "ctaHeading": "Join the energy.",
+    "ctaBody": "Contact ORA to learn more about Studio classes and the Dance Academy.",
+    "exploreSessions": "Explore Studio sessions",
+    "nextEyebrow": "Next at ORA",
+    "nextTitle": "ORA Fitness",
+    "nextBody": "Continue with strength, cardio and individual conditioning.",
+    "exploreFitness": "Explore Fitness"
+  },
+  "Cafe": {
+    "heroHeading": "A better pause in your day.",
+    "heroBody": "Coffee, breakfast and something good after your session.",
+    "exploreMenu": "Explore the menu",
+    "planVisit": "Plan your visit",
+    "menuHeading": "What's on the menu.",
+    "menuAriaLabel": "Café menu sections",
+    "groups": {
+      "breakfast": "Breakfast",
+      "food": "Food",
+      "coffee": "Coffee",
+      "wellness": "Wellness Drinks"
+    },
+    "craftEyebrow": "Made at ORA",
+    "craftHeading": "Coffee with intention.",
+    "craftBody": "Freshly prepared, from the first grind to your cup.",
+    "craftImageAlt": "ORA Café barista preparing coffee in Douala",
+    "closingEyebrow": "Next experience",
+    "closingHeading": "Pair your coffee with movement.",
+    "closingBody": "Explore the training floor at Fitness or book a court at Padel.",
+    "exploreFitness": "Explore Fitness",
+    "explorePadel": "Explore Padel"
+  },
+  "SchedulePage": {
+    "heroEyebrow": "This week at ORA",
+    "heroHeading": "Find your\nrhythm.",
+    "heroBody": "Explore published sessions across Yoga, Pilates, Padel and Studio in Douala.",
+    "exploreProgramme": "Explore the programme",
+    "gridEyebrow": "Programme",
+    "gridHeading": "Choose how you\nwant to move.",
+    "gridBody": "Browse the published ORA programme and find the sessions that fit your week.",
+    "filters": {
+      "all": "All",
+      "padel": "Padel",
+      "pilates": "Pilates",
+      "yoga": "Yoga",
+      "studio": "Studio"
+    },
+    "ctaEyebrow": "Need help?",
+    "ctaHeading": "Find the session\nthat fits your day.",
+    "ctaBody": "Contact the ORA team for current availability and class information.",
+    "contactOra": "Contact ORA"
+  },
+  "MembershipsPage": {
+    "heroEyebrow": "ORA Memberships",
+    "heroHeading": "Make ORA\npart of your\nroutine.",
+    "heroBody": "Explore ways to make training, movement and the wider ORA experience part of your week.",
+    "exploreOptions": "Explore options",
+    "motto": "Move · Train · Connect",
+    "optionsEyebrow": "Membership options",
+    "optionsHeading": "Find the routine\nthat fits you.",
+    "optionsBody": "Speak with the ORA team to understand current membership availability and the options that match your routine.",
+    "options": {
+      "fitness": {
+        "title": "Fitness",
+        "description": "For members focused on strength, cardio and consistent training."
+      },
+      "movement": {
+        "title": "Movement",
+        "description": "Explore Pilates, Yoga and guided Studio movement at ORA."
+      },
+      "oraExperience": {
+        "title": "ORA Experience",
+        "description": "Ask ORA about combining different experiences into your weekly routine."
+      }
+    },
+    "ctaEyebrow": "Join ORA",
+    "ctaHeading": "Start with\na conversation.",
+    "ctaBody": "Contact the ORA team for current membership options, access and availability.",
+    "enquire": "Enquire about memberships",
+    "note": "Membership details, access and availability are provided directly by ORA."
+  },
+  "About": {
+    "heroEyebrow": "About ORA",
+    "heroHeading": "Wellness,\nreimagined\nas a lifestyle.",
+    "heroBody": "ORA brings movement, nourishment and community together in one destination in Douala.",
+    "discoverOra": "Discover ORA",
+    "philosophyEyebrow": "The idea",
+    "philosophyHeading": "More than\na fitness space.",
+    "philosophyBody": "Movement, food and social connection come together as one ORA experience.",
+    "philosophyCaption": "A place to train, move, pause, eat and spend time together.",
+    "experiencesEyebrow": "The ORA experience",
+    "experiencesHeading": "Different experiences.\nOne rhythm.",
+    "experiencesBody": "Discover the different ways ORA fits into your day.",
+    "pillars": {
+      "move": {
+        "title": "Move",
+        "description": "Fitness, Pilates, Yoga and Studio."
+      },
+      "play": {
+        "title": "Play",
+        "description": "Padel and shared moments on court."
+      },
+      "nourish": {
+        "title": "Nourish",
+        "description": "Coffee, food, juices and wellness drinks."
+      },
+      "connect": {
+        "title": "Connect",
+        "description": "Movement, programmes and community."
+      }
+    },
+    "ctaEyebrow": "Discover ORA",
+    "ctaHeading": "Experience ORA\nfor yourself.",
+    "ctaBody": "Explore the experiences or contact the ORA team to plan your visit.",
+    "planVisit": "Plan your visit",
+    "exploreExperiences": "Explore experiences"
+  },
+  "Events": {
+    "heroEyebrow": "ORA Events",
+    "heroHeading": "Move.\nMeet.\nConnect.",
+    "heroBody": "Discover the community side of ORA through Padel, movement, programmes and shared moments in Douala.",
+    "exploreEvents": "Explore ORA events",
+    "listEyebrow": "Events & community",
+    "listHeading": "ORA comes\nalive together.",
+    "listBody": "From the court to the Studio, ORA creates space for movement, participation and connection.",
+    "moments": {
+      "padel": {
+        "title": "Padel",
+        "description": "Competition, play and shared moments around the ORA courts."
+      },
+      "academies": {
+        "title": "Academies",
+        "description": "Programmes designed to bring children, adults and families into movement."
+      },
+      "studio": {
+        "title": "Studio",
+        "description": "Group movement shaped by shared energy and the ORA community."
+      }
+    },
+    "ctaEyebrow": "Stay connected",
+    "ctaHeading": "Be part of\nwhat's next.",
+    "ctaBody": "Follow ORA or contact the team for upcoming events and community activities.",
+    "followOra": "Follow ORA",
+    "contactOra": "Contact ORA",
+    "communityBadge": "Community at ORA",
+    "padelFeatureEyebrow": "Padel at ORA",
+    "padelFeatureHeading": "More than\nthe match.",
+    "padelFeatureBody": "Follow ORA for upcoming Padel activities and community moments.",
+    "nextEyebrow": "What's next",
+    "nextHeading": "Explore the current ORA programme.",
+    "viewProgramme": "View programme"
+  },
+  "Contact": {
+    "heroEyebrow": "Contact ORA",
+    "heroHeading": "Plan your\nnext visit.",
+    "heroBody": "Tell the ORA team what you would like to try and when you want to visit.",
+    "contactOra": "Contact ORA",
+    "detailsEyebrow": "Visit & contact",
+    "detailsHeading": "Everything you\nneed to reach ORA.",
+    "detailsBody": "Find ORA, check opening hours or speak directly with the team.",
+    "cards": {
+      "location": "Location",
+      "address": "Hydrocarbures, Douala",
+      "directions": "Directions",
+      "hours": "Opening hours",
+      "daily": "Daily · 6:00 AM – 10:00 PM",
+      "phone": "Phone",
+      "callDirect": "Call directly",
+      "instagram": "Instagram",
+      "followLife": "Follow life at ORA",
+      "getDirections": "Get directions",
+      "callOra": "Call ORA",
+      "callCopy": "Visits, classes, Café, Padel and membership enquiries.",
+      "email": "Email",
+      "generalEnquiries": "General enquiries",
+      "followOra": "Follow ORA"
+    },
+    "formEyebrow": "Plan your visit",
+    "formHeading": "Keep it\nsimple.",
+    "formBody": "You do not need to know the exact programme before contacting ORA.",
+    "howItWorks": "How it works",
+    "steps": {
+      "choose": {
+        "title": "Choose",
+        "copy": "Tell ORA which experience you are interested in."
+      },
+      "plan": {
+        "title": "Plan",
+        "copy": "Share the day or time that works best for you."
+      },
+      "confirm": {
+        "title": "Confirm",
+        "copy": "The ORA team confirms current availability."
+      }
+    },
+    "callOra": "Call ORA",
+    "viewProgramme": "View programme",
+    "confirmedNotice": "Current availability is confirmed directly by the ORA team."
+  },
+  "ProgrammesData": {
+    "categories": {
+      "padel": "Padel",
+      "pilates": "Pilates",
+      "yoga": "Yoga",
+      "studio": "Studio"
+    },
+    "labels": {
+      "day": "Day",
+      "time": "Time",
+      "groupAndAge": "Group and age",
+      "viewProgramme": "Explore programme",
+      "availabilityNotice": "Places and session dates can change. Confirm availability with ORA before visiting."
+    },
+    "items": {
+      "adultPadel": {
+        "eyebrow": "Adult programme",
+        "title": "Adult Padel Academy",
+        "description": "A regular training rhythm for adults who want to develop their game with guided court time.",
+        "status": "Published academy timetable",
+        "group": "Adult academy",
+        "age": "Adults",
+        "day": "Monday & Friday",
+        "time": "17:00–18:30"
+      },
+      "kidsPadel": {
+        "eyebrow": "Youth programme",
+        "title": "Kids Padel Academy",
+        "description": "Age-based groups give younger players an appropriate weekly entry point into Padel.",
+        "status": "Published academy timetable",
+        "schedules": {
+          "mini": {
+            "group": "Mini",
+            "age": "4–6 years",
+            "day": "Monday",
+            "time": "16:00–17:00"
+          },
+          "junior": {
+            "group": "Junior",
+            "age": "7–9 years",
+            "day": "Tuesday and/or Thursday",
+            "time": "17:00–18:00"
+          },
+          "youth": {
+            "group": "Youth",
+            "age": "10–13 years",
+            "day": "Friday",
+            "time": "16:00–17:00"
+          }
+        }
+      },
+      "danceAcademy": {
+        "eyebrow": "2026/27 registrations",
+        "title": "Dance Academy",
+        "description": "A progressive dance programme for children aged 2 to 11, organised into age-appropriate groups.",
+        "status": "2026/27 registrations announced",
+        "group": "Dance group",
+        "schedules": {
+          "g1": {
+            "age": "2–4 years",
+            "day": "Monday",
+            "time": "16:00"
+          },
+          "g2": {
+            "age": "4–6 years",
+            "day": "Wednesday",
+            "time": "16:00"
+          },
+          "g3": {
+            "age": "7–9 years",
+            "day": "Wednesday & Friday",
+            "time": "17:00"
+          },
+          "g4": {
+            "age": "9–11 years",
+            "day": "Saturday",
+            "time": "09:00"
+          }
+        }
+      },
+      "matPilates": {
+        "eyebrow": "Weekly movement",
+        "title": "Mat Pilates & Stretching",
+        "description": "Mat Pilates builds control and core strength, with a dedicated weekly stretching session for mobility and recovery.",
+        "status": "Published weekly timetable",
+        "schedules": {
+          "s1": {
+            "group": "Mat Pilates",
+            "age": "All levels",
+            "day": "Monday",
+            "time": "08:30"
+          },
+          "s2": {
+            "group": "Mat Pilates",
+            "age": "All levels",
+            "day": "Tuesday",
+            "time": "09:00"
+          },
+          "s3": {
+            "group": "Mat Pilates",
+            "age": "All levels",
+            "day": "Thursday",
+            "time": "18:00"
+          },
+          "s4": {
+            "group": "Stretching",
+            "age": "All levels",
+            "day": "Thursday",
+            "time": "19:15"
+          }
+        }
+      },
+      "yogaDespina": {
+        "eyebrow": "Weekly practice",
+        "title": "Yoga with Despina",
+        "description": "A welcoming weekly programme blending alignment, breathwork and relaxation across beginner-friendly, Vinyasa and mindful-flow sessions.",
+        "status": "Published weekly timetable",
+        "schedules": {
+          "s1": {
+            "group": "Beginner Friendly Yoga",
+            "age": "Beginner friendly",
+            "day": "Wednesday",
+            "time": "10:00"
+          },
+          "s2": {
+            "group": "Vinyasa Yoga",
+            "age": "All levels",
+            "day": "Friday",
+            "time": "18:30"
+          },
+          "s3": {
+            "group": "Mindful Flow",
+            "age": "All levels",
+            "day": "Saturday",
+            "time": "17:30"
+          }
+        }
+      }
+    }
   }
 }

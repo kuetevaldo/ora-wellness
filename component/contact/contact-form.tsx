@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import {
   ArrowUpRight,
   Check,
@@ -7,25 +8,26 @@ import {
 
 import { oraBookingPhone } from "@/lib/contact";
 
-const steps = [
+const stepConfig = [
   {
     number: "01",
-    title: "Choose",
-    copy: "Tell ORA which experience you are interested in.",
+    key: "choose" as const,
   },
   {
     number: "02",
-    title: "Plan",
-    copy: "Share the day or time that works best for you.",
+    key: "plan" as const,
   },
   {
     number: "03",
-    title: "Confirm",
-    copy: "The ORA team confirms current availability.",
+    key: "confirm" as const,
   },
 ];
 
-export default function ContactForm() {
+type StepKey = (typeof stepConfig)[number]["key"];
+
+export default async function ContactForm() {
+  const t = await getTranslations("Contact");
+
   return (
     <section
       id="booking"
@@ -35,28 +37,26 @@ export default function ContactForm() {
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              Plan your visit
+              {t("formEyebrow")}
             </p>
 
-            <h2 className="font-display mt-4 max-w-lg text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              Keep it
-              <br />
-              simple.
+            <h2 className="font-display mt-4 max-w-lg whitespace-pre-line text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+              {t("formHeading")}
             </h2>
 
             <p className="mt-6 max-w-md text-sm leading-6 text-(--ora-text-secondary)">
-              You do not need to know the exact programme before contacting ORA.
+              {t("formBody")}
             </p>
           </div>
 
           <div className="lg:col-span-6 lg:col-start-7">
             <div className="rounded-(--ora-radius-panel) bg-white p-6 sm:p-8 md:p-10">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-(--ora-text-secondary)">
-                How it works
+                {t("howItWorks")}
               </p>
 
               <div className="mt-7 border-t border-(--ora-burgundy-dark)/15">
-                {steps.map((step) => (
+                {stepConfig.map((step) => (
                   <div
                     key={step.number}
                     className="grid gap-4 border-b border-(--ora-burgundy-dark)/15 py-6 sm:grid-cols-[3rem_1fr]"
@@ -67,11 +67,11 @@ export default function ContactForm() {
 
                     <div>
                       <h3 className="font-display text-2xl tracking-[-0.03em]">
-                        {step.title}
+                        {t(`steps.${step.key}.title` as `steps.${StepKey}.title`)}
                       </h3>
 
                       <p className="mt-2 max-w-md text-sm leading-6 text-(--ora-text-secondary)">
-                        {step.copy}
+                        {t(`steps.${step.key}.copy` as `steps.${StepKey}.copy`)}
                       </p>
                     </div>
                   </div>
@@ -88,14 +88,14 @@ export default function ContactForm() {
                     strokeWidth={1.6}
                     aria-hidden="true"
                   />
-                  Call ORA
+                  {t("callOra")}
                 </a>
 
                 <Link
                   href="/schedule"
                   className="ora-button ora-button-secondary"
                 >
-                  View programme
+                  {t("viewProgramme")}
 
                   <ArrowUpRight
                     size={15}
@@ -113,7 +113,7 @@ export default function ContactForm() {
                   aria-hidden="true"
                 />
 
-                Current availability is confirmed directly by the ORA team.
+                {t("confirmedNotice")}
               </p>
             </div>
           </div>

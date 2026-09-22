@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function PadelIntro() {
+  const t = useTranslations("Padel");
+
   return (
     <section
       id="padel"
@@ -23,15 +28,15 @@ export default function PadelIntro() {
           {/* Copy */}
           <div className="lg:col-span-4 lg:col-start-9">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              The game
+              {t("introEyebrow")}
             </p>
 
             <h2 className="font-display mt-5 text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              Made to play.
+              {t("introHeading")}
             </h2>
 
             <p className="mt-6 max-w-sm text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
-              Movement, competition and social energy on the same court.
+              {t("introBody")}
             </p>
           </div>
         </div>

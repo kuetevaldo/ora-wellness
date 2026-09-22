@@ -5,6 +5,8 @@ import MembershipsOptions from "@/component/memberships/memberships-options";
 import MembershipsCTA from "@/component/memberships/memberships-cta";
 import { createPageMetadata } from "@/lib/seo";
 
+import { setRequestLocale } from "next-intl/server";
+
 export const metadata = createPageMetadata({
   title: "ORA Wellness Memberships",
   description:
@@ -14,7 +16,13 @@ export const metadata = createPageMetadata({
   imageAlt: "ORA Wellness membership experience in Douala",
 });
 
-export default function MembershipsPage() {
+export default async function MembershipsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <main>
       <Header />

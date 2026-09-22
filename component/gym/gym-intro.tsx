@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function GymIntro() {
+  const t = useTranslations("Gym");
+
   return (
     <section
       id="training"
@@ -23,15 +28,15 @@ export default function GymIntro() {
           {/* Copy */}
           <div className="lg:col-span-4 lg:col-start-9">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-pink)">
-              The space
+              {t("introEyebrow")}
             </p>
 
             <h2 className="font-display mt-5 text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              Built to train.
+              {t("introHeading")}
             </h2>
 
             <p className="mt-6 max-w-sm text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
-              Strength, cardio and conditioning in one focused environment.
+              {t("introBody")}
             </p>
           </div>
         </div>

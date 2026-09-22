@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 import ProgrammeCard from "@/component/shared/programme-card";
 import {
@@ -10,18 +11,21 @@ import {
 
 type ProgrammeFilter = "all" | ProgrammeCategory;
 
-const filters: {
+type FilterKey = "all" | "padel" | "pilates" | "yoga" | "studio";
+
+const filterKeys: {
   value: ProgrammeFilter;
-  label: string;
+  key: FilterKey;
 }[] = [
-  { value: "all", label: "All" },
-  { value: "padel", label: "Padel" },
-  { value: "pilates", label: "Pilates" },
-  { value: "yoga", label: "Yoga" },
-  { value: "studio", label: "Studio" },
+  { value: "all", key: "all" },
+  { value: "padel", key: "padel" },
+  { value: "pilates", key: "pilates" },
+  { value: "yoga", key: "yoga" },
+  { value: "studio", key: "studio" },
 ];
 
 export default function ScheduleGrid() {
+  const t = useTranslations("SchedulePage");
   const [activeFilter, setActiveFilter] =
     useState<ProgrammeFilter>("all");
 
@@ -43,20 +47,17 @@ export default function ScheduleGrid() {
         <div className="grid gap-8 border-t border-(--ora-burgundy-dark)/15 pt-7 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              Programme
+              {t("gridEyebrow")}
             </p>
 
-            <h2 className="font-display mt-4 max-w-3xl text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              Choose how you
-              <br className="hidden sm:block" />
-              want to move.
+            <h2 className="font-display mt-4 max-w-3xl whitespace-pre-line text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+              {t("gridHeading")}
             </h2>
           </div>
 
           <div className="lg:col-span-4 lg:col-start-9">
             <p className="max-w-md text-sm leading-6 text-(--ora-text-secondary)">
-              Browse the published ORA programme and find the sessions that fit
-              your week.
+              {t("gridBody")}
             </p>
           </div>
         </div>
@@ -67,7 +68,7 @@ export default function ScheduleGrid() {
           role="group"
           aria-label="Filter programmes"
         >
-          {filters.map((filter) => {
+          {filterKeys.map((filter) => {
             const active =
               activeFilter === filter.value;
 
@@ -86,7 +87,7 @@ export default function ScheduleGrid() {
                     : "border border-(--ora-burgundy-dark)/15 bg-transparent text-(--ora-burgundy-dark) hover:border-(--ora-burgundy)"
                 }`}
               >
-                {filter.label}
+                {t(`filters.${filter.key}` as `filters.${FilterKey}`)}
               </button>
             );
           })}

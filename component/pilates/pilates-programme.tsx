@@ -1,11 +1,13 @@
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 
 import ProgrammeCard from "@/component/shared/programme-card";
 import { pilatesProgrammes } from "@/lib/programmes";
 
-export default function PilatesProgramme() {
+export default async function PilatesProgramme() {
+  const t = await getTranslations("Pilates");
   const weeklyPilates = pilatesProgrammes[0];
 
   return (
@@ -15,16 +17,15 @@ export default function PilatesProgramme() {
           {/* Programme information */}
           <div className="lg:col-span-5">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              Pilates programme
+              {t("programmeEyebrow")}
             </p>
 
             <h2 className="font-display mt-5 max-w-xl text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              Control, balance and mobility.
+              {t("programmeHeading")}
             </h2>
 
             <p className="mt-6 max-w-md text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
-              Explore the current Pilates programme and find the session that
-              fits your rhythm.
+              {t("programmeBody")}
             </p>
 
             <div className="mt-9">
@@ -35,7 +36,7 @@ export default function PilatesProgramme() {
             </div>
 
             <Link href="/schedule" className="ora-text-link mt-7">
-              View the full programme
+              {t("viewFullProgramme")}
               <ArrowUpRight
                 size={15}
                 strokeWidth={1.5}

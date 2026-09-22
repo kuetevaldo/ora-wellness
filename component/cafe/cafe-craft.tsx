@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
-export default function CafeCraft() {
+export default async function CafeCraft() {
+  const t = await getTranslations("Cafe");
+
   return (
     <section className="bg-white text-(--ora-burgundy-dark)">
       <div className="ora-container py-20 md:py-28 lg:py-32">
@@ -8,7 +11,7 @@ export default function CafeCraft() {
           <div className="relative min-h-136 overflow-hidden rounded-(--ora-radius-media) lg:col-span-7">
             <Image
               src="/images/section-image/cafe-section.JPG"
-              alt="ORA Café barista preparing coffee in Douala"
+              alt={t("craftImageAlt")}
               fill
               sizes="(max-width: 1023px) 100vw, 58vw"
               className="object-cover object-center"
@@ -17,15 +20,15 @@ export default function CafeCraft() {
 
           <div className="lg:col-span-4 lg:col-start-9">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-pink)">
-              Made at ORA
+              {t("craftEyebrow")}
             </p>
 
             <h2 className="font-display mt-5 text-4xl leading-none tracking-[-0.04em] sm:text-5xl lg:text-6xl">
-              Coffee with intention.
+              {t("craftHeading")}
             </h2>
 
             <p className="mt-6 max-w-sm text-sm leading-7 text-(--ora-text-secondary)">
-              Freshly prepared, from the first grind to your cup.
+              {t("craftBody")}
             </p>
           </div>
         </div>

@@ -9,6 +9,8 @@ import YogaCTA from "@/component/yoga/yoga-cta";
 
 import { createPageMetadata } from "@/lib/seo";
 
+import { setRequestLocale } from "next-intl/server";
+
 export const metadata = createPageMetadata({
   title: "Yoga Classes in Douala",
   description:
@@ -18,7 +20,13 @@ export const metadata = createPageMetadata({
   imageAlt: "ORA Yoga in Douala, Cameroon",
 });
 
-export default function YogaPage() {
+export default async function YogaPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <main>
       <Header />

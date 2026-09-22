@@ -10,6 +10,8 @@ import StudioCTA from "@/component/studio/studio-cta";
 
 import { createPageMetadata } from "@/lib/seo";
 
+import { setRequestLocale } from "next-intl/server";
+
 export const metadata = createPageMetadata({
   title: "Group Fitness & Studio Classes in Douala",
   description:
@@ -19,7 +21,13 @@ export const metadata = createPageMetadata({
   imageAlt: "ORA Studio group fitness in Douala, Cameroon",
 });
 
-export default function StudioPage() {
+export default async function StudioPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <main>
       <Header />

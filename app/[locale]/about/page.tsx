@@ -6,6 +6,8 @@ import AboutExperiences from "@/component/about/about-experiences";
 import AboutCTA from "@/component/about/about-cta";
 import { createPageMetadata } from "@/lib/seo";
 
+import { setRequestLocale } from "next-intl/server";
+
 export const metadata = createPageMetadata({
   title: "About ORA Wellness",
   description:
@@ -15,7 +17,14 @@ export const metadata = createPageMetadata({
   imageAlt: "ORA Wellness building in Douala, Cameroon",
 });
 
-export default function AboutPage() {
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <main>
       <Header />

@@ -1,10 +1,12 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
 
 import ProgrammeCard from "@/component/shared/programme-card";
 import { studioProgrammes } from "@/lib/programmes";
 
-export default function DanceAcademy() {
+export default async function DanceAcademy() {
+  const t = await getTranslations("Studio");
   const danceAcademy = studioProgrammes[0];
 
   return (
@@ -13,17 +15,15 @@ export default function DanceAcademy() {
         <div className="grid gap-12 lg:grid-cols-12 lg:items-start lg:gap-16">
           <div className="lg:col-span-5">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              Dance Academy
+              {t("academyEyebrow")}
             </p>
 
             <h2 className="font-display mt-5 max-w-xl text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              Movement starts young.
+              {t("academyHeading")}
             </h2>
 
             <p className="mt-6 max-w-md text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
-              Four age-based groups for children from 2 to 11, designed to
-              build confidence, coordination and a lasting relationship with
-              movement.
+              {t("academyBody")}
             </p>
 
             <div className="mt-8 flex items-center gap-4">
@@ -39,7 +39,7 @@ export default function DanceAcademy() {
             </div>
 
             <Link href="/schedule" className="ora-text-link mt-8">
-              View all programmes
+              {t("viewAllProgrammes")}
               <ArrowUpRight
                 size={15}
                 strokeWidth={1.5}

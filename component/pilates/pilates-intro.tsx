@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
-export default function PilatesIntro() {
+export default async function PilatesIntro() {
+  const t = await getTranslations("Pilates");
+
   return (
     <section
       id="pilates"
@@ -22,16 +25,15 @@ export default function PilatesIntro() {
           {/* Copy */}
           <div className="lg:col-span-4 lg:col-start-9">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              The practice
+              {t("introEyebrow")}
             </p>
 
             <h2 className="font-display mt-5 text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              Precision in every movement.
+              {t("introHeading")}
             </h2>
 
             <p className="mt-6 max-w-sm text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
-              Focused movement designed around strength, stability, control and
-              alignment.
+              {t("introBody")}
             </p>
           </div>
         </div>

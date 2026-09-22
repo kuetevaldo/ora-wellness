@@ -5,6 +5,8 @@ import ScheduleGrid from "@/component/schedule/schedule-grid";
 import ScheduleCTA from "@/component/schedule/schedule-cta";
 import { createPageMetadata } from "@/lib/seo";
 
+import { setRequestLocale } from "next-intl/server";
+
 export const metadata = createPageMetadata({
   title: "ORA Class & Activity Schedule",
   description:
@@ -14,7 +16,13 @@ export const metadata = createPageMetadata({
   imageAlt: "ORA Wellness class and activity schedule in Douala",
 });
 
-export default function SchedulePage() {
+export default async function SchedulePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <main>
       <Header />

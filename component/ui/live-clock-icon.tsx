@@ -38,14 +38,21 @@ export default function LiveClockIcon() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    setTime(getDoualaTime());
+    let active = true;
 
-    const interval = window.setInterval(() => {
-      setTime(getDoualaTime());
-    }, 1000);
+    const update = () => {
+      if (active) {
+        setMounted(true);
+        setTime(getDoualaTime());
+      }
+    };
+
+    const initialTimer = window.setTimeout(update, 0);
+    const interval = window.setInterval(update, 1000);
 
     return () => {
+      active = false;
+      window.clearTimeout(initialTimer);
       window.clearInterval(interval);
     };
   }, []);

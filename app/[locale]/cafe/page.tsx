@@ -11,6 +11,8 @@ import {
   serializeJsonLd,
 } from "@/lib/seo";
 
+import { setRequestLocale } from "next-intl/server";
+
 export const metadata = createPageMetadata({
   title: "ORA Café Douala | Coffee, Breakfast & Wellness Food",
   description:
@@ -21,7 +23,13 @@ export const metadata = createPageMetadata({
   absoluteTitle: true,
 });
 
-export default function CafePage() {
+export default async function CafePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <main>
       <script

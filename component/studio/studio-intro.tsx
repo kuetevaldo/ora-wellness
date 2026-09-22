@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
-export default function StudioIntro() {
+export default async function StudioIntro() {
+  const t = await getTranslations("Studio");
+
   return (
     <section
       id="studio"
@@ -10,18 +13,15 @@ export default function StudioIntro() {
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              The studio
+              {t("introEyebrow")}
             </p>
 
-            <h2 className="font-display mt-5 text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              Shared energy.
-              <br />
-              Guided movement.
+            <h2 className="font-display mt-5 whitespace-pre-line text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+              {t("introHeading")}
             </h2>
 
             <p className="mt-6 max-w-sm text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
-              Group movement designed around variety, motivation and the
-              energy of training together.
+              {t("introBody")}
             </p>
           </div>
 

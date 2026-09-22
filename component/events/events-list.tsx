@@ -1,35 +1,34 @@
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
 
-const eventMoments = [
+const momentConfig = [
   {
     number: "01",
-    title: "Padel",
-    description:
-      "Competition, play and shared moments around the ORA courts.",
+    key: "padel" as const,
     image: "/images/section-image/compete.JPG",
     alt: "Padel activity at ORA",
   },
   {
     number: "02",
-    title: "Academies",
-    description:
-      "Programmes designed to bring children, adults and families into movement.",
+    key: "academies" as const,
     image: "/images/section-image/padel-kid.JPG",
     alt: "Young Padel player at ORA",
   },
   {
     number: "03",
-    title: "Studio",
-    description:
-      "Group movement shaped by shared energy and the ORA community.",
+    key: "studio" as const,
     image: "/images/section-image/studio-workout.JPG",
     alt: "Group movement session at ORA",
   },
 ];
 
-export default function EventsList() {
+type MomentKey = (typeof momentConfig)[number]["key"];
+
+export default async function EventsList() {
+  const t = await getTranslations("Events");
+
   return (
     <section
       id="events-community"
@@ -40,20 +39,17 @@ export default function EventsList() {
         <div className="grid gap-8 border-t border-(--ora-burgundy-dark)/15 pt-7 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              Events & community
+              {t("listEyebrow")}
             </p>
 
-            <h2 className="font-display mt-4 max-w-3xl text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              ORA comes
-              <br />
-              alive together.
+            <h2 className="font-display mt-4 max-w-3xl whitespace-pre-line text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+              {t("listHeading")}
             </h2>
           </div>
 
           <div className="lg:col-span-4 lg:col-start-9">
             <p className="max-w-md text-sm leading-6 text-(--ora-text-secondary)">
-              From the court to the Studio, ORA creates space for movement,
-              participation and connection.
+              {t("listBody")}
             </p>
           </div>
         </div>
@@ -64,8 +60,8 @@ export default function EventsList() {
           <article className="group lg:col-span-7">
             <div className="relative min-h-120 overflow-hidden rounded-(--ora-radius-media) sm:min-h-152 lg:min-h-176">
               <Image
-                src={eventMoments[0].image}
-                alt={eventMoments[0].alt}
+                src={momentConfig[0].image}
+                alt={momentConfig[0].alt}
                 fill
                 sizes="(min-width: 1024px) 58vw, 100vw"
                 className="object-cover transition-transform duration-500 ease-(--ora-ease-out) group-hover:scale-[1.02] motion-reduce:transition-none"
@@ -78,15 +74,15 @@ export default function EventsList() {
 
               <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60">
-                  {eventMoments[0].number}
+                  {momentConfig[0].number}
                 </p>
 
                 <h3 className="font-display mt-3 text-4xl tracking-[-0.04em] sm:text-5xl">
-                  {eventMoments[0].title}
+                  {t(`moments.${momentConfig[0].key}.title` as `moments.${MomentKey}.title`)}
                 </h3>
 
                 <p className="mt-3 max-w-md text-sm leading-6 text-white/80">
-                  {eventMoments[0].description}
+                  {t(`moments.${momentConfig[0].key}.description` as `moments.${MomentKey}.description`)}
                 </p>
               </div>
             </div>
@@ -94,7 +90,7 @@ export default function EventsList() {
 
           {/* Smaller stories */}
           <div className="grid gap-5 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
-            {eventMoments.slice(1).map((item) => (
+            {momentConfig.slice(1).map((item) => (
               <article key={item.number} className="group">
                 <div className="relative min-h-88 overflow-hidden rounded-(--ora-radius-media) lg:min-h-86">
                   <Image
@@ -116,11 +112,11 @@ export default function EventsList() {
                     </p>
 
                     <h3 className="font-display mt-2 text-3xl tracking-[-0.035em]">
-                      {item.title}
+                      {t(`moments.${item.key}.title` as `moments.${MomentKey}.title`)}
                     </h3>
 
                     <p className="mt-2 max-w-sm text-sm leading-6 text-white/80">
-                      {item.description}
+                      {t(`moments.${item.key}.description` as `moments.${MomentKey}.description`)}
                     </p>
                   </div>
                 </div>
@@ -144,17 +140,15 @@ export default function EventsList() {
           <div className="flex items-end p-7 sm:p-10 lg:p-12">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-                Padel at ORA
+                {t("padelFeatureEyebrow")}
               </p>
 
-              <h3 className="font-display mt-4 max-w-xl text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl">
-                More than
-                <br />
-                the match.
+              <h3 className="font-display mt-4 max-w-xl whitespace-pre-line text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl">
+                {t("padelFeatureHeading")}
               </h3>
 
               <p className="mt-5 max-w-md text-sm leading-6 text-(--ora-text-secondary)">
-                Follow ORA for upcoming Padel activities and community moments.
+                {t("padelFeatureBody")}
               </p>
             </div>
           </div>
@@ -164,11 +158,11 @@ export default function EventsList() {
         <div className="mt-16 flex flex-col gap-6 border-t border-(--ora-burgundy-dark)/15 pt-7 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              What&apos;s next
+              {t("nextEyebrow")}
             </p>
 
             <h3 className="font-display mt-3 max-w-2xl text-3xl tracking-[-0.035em] sm:text-4xl">
-              Explore the current ORA programme.
+              {t("nextHeading")}
             </h3>
           </div>
 
@@ -176,7 +170,7 @@ export default function EventsList() {
             href="/schedule"
             className="ora-button ora-button-primary"
           >
-            View programme
+            {t("viewProgramme")}
 
             <ArrowUpRight
               size={16}

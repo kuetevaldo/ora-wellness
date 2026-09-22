@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Newsreader } from "next/font/google";
 import { hasLocale } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { routing } from "@/i18n/routing";
@@ -84,7 +84,10 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
 
-  const messages = await getMessages();
+  const [messages, t] = await Promise.all([
+    getMessages(),
+    getTranslations({ locale, namespace: "Common" }),
+  ]);
 
   return (
     <html lang={locale} data-scroll-behavior="smooth">
@@ -93,7 +96,7 @@ export default async function LocaleLayout({
           <OraPreloader />
 
           <a className="ora-skip-link" href="#main-content">
-            Skip to content
+            {t("skipToContent")}
           </a>
 
           <main id="main-content" tabIndex={-1}>

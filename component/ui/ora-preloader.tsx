@@ -14,18 +14,21 @@ export default function OraPreloader() {
       return;
     }
 
-    setVisible(true);
+    const showTimer = window.setTimeout(() => {
+      setVisible(true);
+    }, 0);
 
-const leaveTimer = window.setTimeout(() => {
-  setLeaving(true);
-}, 3050);
+    const leaveTimer = window.setTimeout(() => {
+      setLeaving(true);
+    }, 1800);
 
-const removeTimer = window.setTimeout(() => {
-  setVisible(false);
-  sessionStorage.setItem("ora-preloader-seen", "true");
-}, 3500);
+    const removeTimer = window.setTimeout(() => {
+      setVisible(false);
+      sessionStorage.setItem("ora-preloader-seen", "true");
+    }, 2200);
 
     return () => {
+      window.clearTimeout(showTimer);
       window.clearTimeout(leaveTimer);
       window.clearTimeout(removeTimer);
     };

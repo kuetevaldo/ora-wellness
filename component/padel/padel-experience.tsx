@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
@@ -27,25 +28,14 @@ const images = [
   },
 ];
 
-const moments = [
-  {
-    number: "01",
-    title: "Play",
-    copy: "Friendly matches, practice sessions and social rallies.",
-  },
-  {
-    number: "02",
-    title: "Compete",
-    copy: "Organised competition that brings another level of energy to the court.",
-  },
-  {
-    number: "03",
-    title: "Connect",
-    copy: "A social experience built around people, movement and the game.",
-  },
+const momentKeys = [
+  { number: "01", key: "play" as const },
+  { number: "02", key: "compete" as const },
+  { number: "03", key: "connect" as const },
 ];
 
 export default function PadelExperience() {
+  const t = useTranslations("Padel");
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
@@ -105,14 +95,14 @@ export default function PadelExperience() {
         {/* Heading */}
         <div className="grid gap-6 border-b border-(--ora-burgundy-dark)/20 pb-10 lg:grid-cols-12">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy-dark)/65 lg:col-span-3">
-            Around the court
+            {t("experienceEyebrow")}
           </p>
 
           <h2
             id="padel-experience-heading"
             className="font-display max-w-3xl text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl lg:col-span-8"
           >
-            Built around the social side of sport.
+            {t("experienceHeading")}
           </h2>
         </div>
 
@@ -222,9 +212,9 @@ export default function PadelExperience() {
 
         {/* Play / Compete / Connect */}
         <div className="mt-14 grid border-t border-(--ora-burgundy-dark)/20 md:grid-cols-3">
-          {moments.map((moment) => (
+          {momentKeys.map((moment) => (
             <article
-              key={moment.title}
+              key={moment.key}
               className="border-b border-(--ora-burgundy-dark)/20 py-7 md:border-b-0 md:border-r md:px-7 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
             >
               <span className="text-xs text-(--ora-burgundy-dark)/55">
@@ -232,11 +222,11 @@ export default function PadelExperience() {
               </span>
 
               <h3 className="font-display mt-5 text-3xl tracking-[-0.03em] md:text-4xl">
-                {moment.title}
+                {t(`moments.${moment.key}.title`)}
               </h3>
 
               <p className="mt-3 max-w-sm text-sm leading-6 text-(--ora-burgundy-dark)/75">
-                {moment.copy}
+                {t(`moments.${moment.key}.copy`)}
               </p>
             </article>
           ))}

@@ -5,6 +5,8 @@ import EventsList from "@/component/events/events-list";
 import EventsCTA from "@/component/events/events-cta";
 import { createPageMetadata } from "@/lib/seo";
 
+import { setRequestLocale } from "next-intl/server";
+
 export const metadata = createPageMetadata({
   title: "ORA Events in Douala",
   description:
@@ -14,7 +16,13 @@ export const metadata = createPageMetadata({
   imageAlt: "ORA Wellness event in Douala, Cameroon",
 });
 
-export default function EventsPage() {
+export default async function EventsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <main>
       <Header />

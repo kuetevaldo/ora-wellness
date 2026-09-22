@@ -1,68 +1,67 @@
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
 
-const pillars = [
+const pillarConfig = [
   {
     number: "01",
-    title: "Move",
-    description: "Fitness, Pilates, Yoga and Studio.",
+    key: "move" as const,
     image: "/images/section-image/gym.JPG",
     alt: "Fitness training at ORA",
     href: "/experiences/gym",
   },
   {
     number: "02",
-    title: "Play",
-    description: "Padel and shared moments on court.",
+    key: "play" as const,
     image: "/images/section-image/padel-image.JPG",
     alt: "Padel at ORA",
     href: "/experiences/padel",
   },
   {
     number: "03",
-    title: "Nourish",
-    description: "Coffee, food, juices and wellness drinks.",
+    key: "nourish" as const,
     image: "/images/section-image/cafe-section.JPG",
     alt: "ORA Café",
     href: "/cafe",
   },
   {
     number: "04",
-    title: "Connect",
-    description: "Movement, programmes and community.",
+    key: "connect" as const,
     image: "/images/section-image/studio-workout.JPG",
     alt: "Group movement at ORA",
     href: "/experiences/studio",
   },
 ];
 
-export default function AboutExperiences() {
+type PillarKey = (typeof pillarConfig)[number]["key"];
+
+export default async function AboutExperiences() {
+  const t = await getTranslations("About");
+
   return (
     <section className="bg-(--ora-sage-light) text-(--ora-burgundy-dark)">
       <div className="ora-container py-20 md:py-28 lg:py-32">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              The ORA experience
+              {t("experiencesEyebrow")}
             </p>
 
-            <h2 className="font-display mt-4 max-w-3xl text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              Different experiences.
-              <br />
-              One rhythm.
+            <h2 className="font-display mt-4 max-w-3xl whitespace-pre-line text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
+              {t("experiencesHeading")}
             </h2>
           </div>
 
           <div className="lg:col-span-4 lg:col-start-9">
             <p className="max-w-md text-sm leading-6 text-(--ora-text-secondary)">
-              Discover the different ways ORA fits into your day.
+              {t("experiencesBody")}
             </p>
           </div>
         </div>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
-          {pillars.map((item) => (
+          {pillarConfig.map((item) => (
             <Link
               key={item.number}
               href={item.href}
@@ -88,11 +87,11 @@ export default function AboutExperiences() {
                   </p>
 
                   <h3 className="font-display mt-3 text-4xl tracking-[-0.04em]">
-                    {item.title}
+                    {t(`pillars.${item.key}.title` as `pillars.${PillarKey}.title`)}
                   </h3>
 
                   <p className="mt-2 max-w-xs text-sm leading-6 text-white/75">
-                    {item.description}
+                    {t(`pillars.${item.key}.description` as `pillars.${PillarKey}.description`)}
                   </p>
                 </div>
 

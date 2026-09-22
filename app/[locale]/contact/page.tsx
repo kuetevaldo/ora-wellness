@@ -7,6 +7,8 @@ import ContactForm from "@/component/contact/contact-form";
 
 import { createPageMetadata } from "@/lib/seo";
 
+import { setRequestLocale } from "next-intl/server";
+
 export const metadata = createPageMetadata({
   title: "Contact ORA Wellness Douala",
   description:
@@ -16,7 +18,13 @@ export const metadata = createPageMetadata({
   imageAlt: "ORA Wellness in Douala, Cameroon",
 });
 
-export default function ContactPage() {
+export default async function ContactPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <main>
       <Header />

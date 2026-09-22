@@ -1,11 +1,18 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { ArrowUpRight } from "lucide-react";
 
 import ProgrammeCard from "@/component/shared/programme-card";
-import { padelProgrammes } from "@/lib/programmes";
+import { getPadelProgrammes } from "@/lib/programmes";
 
 export default function PadelAcademies() {
+  const t = useTranslations("Padel");
+  const locale = useLocale();
+  const programmes = getPadelProgrammes(locale);
+
   return (
     <section className="bg-(--ora-cream) text-(--ora-burgundy-dark)">
       <div className="ora-container py-20 md:py-28 lg:py-32">
@@ -25,19 +32,19 @@ export default function PadelAcademies() {
 
           <div className="lg:col-span-4 lg:col-start-9">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              Padel Academies
+              {t("academiesEyebrow")}
             </p>
 
             <h2 className="font-display mt-5 text-4xl leading-[0.98] tracking-[-0.04em] sm:text-5xl md:text-6xl">
-              Coaching for every stage.
+              {t("academiesHeading")}
             </h2>
 
             <p className="mt-6 max-w-md text-[0.9375rem] leading-7 text-(--ora-text-secondary)">
-              Weekly group sessions for adults and children aged 4 to 13.
+              {t("academiesBody")}
             </p>
 
             <Link href="/schedule" className="ora-text-link mt-7">
-              View the full programme
+              {t("viewFullProgramme")}
               <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
           </div>
@@ -57,7 +64,7 @@ export default function PadelAcademies() {
 
           {/* Existing real programme information */}
           <div className="grid gap-6 lg:col-span-7 lg:grid-cols-2">
-            {padelProgrammes.map((programme) => (
+            {programmes.map((programme) => (
               <ProgrammeCard
                 key={programme.id}
                 programme={programme}

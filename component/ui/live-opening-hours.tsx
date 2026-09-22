@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 type OpeningStatus = {
   isOpen: boolean;
@@ -81,6 +82,7 @@ function calculateStatus(): OpeningStatus {
 export default function LiveOpeningHours({
   dark = false,
 }: LiveOpeningHoursProps) {
+  const t = useTranslations("OpeningHours");
   const [status, setStatus] =
     useState<OpeningStatus | null>(null);
 
@@ -111,7 +113,7 @@ export default function LiveOpeningHours({
               : "text-(--ora-burgundy-dark)"
           }`}
         >
-          Daily · 6:00 AM – 10:00 PM
+          {t("dailyHours")}
         </p>
       </div>
     );
@@ -140,8 +142,8 @@ export default function LiveOpeningHours({
           }`}
         >
           {status.isOpen
-            ? "Open now"
-            : "Closed"}
+            ? t("openNow")
+            : t("closed")}
         </span>
       </div>
 
@@ -154,8 +156,8 @@ export default function LiveOpeningHours({
         }`}
       >
         {status.isOpen
-          ? "Closes in"
-          : "Opens in"}{" "}
+          ? t("closesIn")
+          : t("opensIn")}{" "}
         {status.hours > 0
           ? `${status.hours}h `
           : ""}
@@ -174,7 +176,7 @@ export default function LiveOpeningHours({
             : "text-(--ora-burgundy)/75"
         }`}
       >
-        Daily · 6:00 AM – 10:00 PM
+        {t("dailyHours")}
       </p>
     </div>
   );
