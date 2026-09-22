@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import {
   ArrowUpRight,
   ChevronDown,
@@ -10,6 +8,12 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
+
+import {
+  Link,
+  usePathname,
+} from "@/i18n/navigation";
 
 import {
   bookingHref,
@@ -19,58 +23,58 @@ import {
 const mainNavigation = [
   {
     number: "01",
-    label: "Café",
+    key: "cafe",
     href: "/cafe",
   },
   {
     number: "02",
-    label: "Fitness",
+    key: "fitness",
     href: "/experiences/gym",
   },
   {
     number: "03",
-    label: "Padel",
+    key: "padel",
     href: "/experiences/padel",
   },
   {
     number: "04",
-    label: "Pilates",
+    key: "pilates",
     href: "/experiences/pilates",
   },
   {
     number: "05",
-    label: "Yoga",
+    key: "yoga",
     href: "/experiences/yoga",
   },
   {
     number: "06",
-    label: "Studio",
+    key: "studio",
     href: "/experiences/studio",
   },
-];
+] as const;
 
 const secondaryNavigation = [
   {
-    label: "Schedule",
+    key: "schedule",
     href: "/schedule",
   },
   {
-    label: "Memberships",
+    key: "memberships",
     href: "/memberships",
   },
   {
-    label: "Events",
+    key: "events",
     href: "/events",
   },
   {
-    label: "About",
+    key: "about",
     href: "/about",
   },
   {
-    label: "Contact",
+    key: "contact",
     href: "/contact",
   },
-];
+] as const;
 
 const headerLogos: Record<
   string,
@@ -134,10 +138,7 @@ function HeaderBrand({
   );
 }
 
-function isActiveRoute(
-  pathname: string,
-  href: string
-) {
+function isActiveRoute(pathname: string, href: string) {
   if (href === "/") {
     return pathname === "/";
   }
@@ -149,6 +150,8 @@ function isActiveRoute(
 }
 
 export default function Header() {
+  const t = useTranslations("Header");
+  const locale = useLocale();
   const pathname = usePathname();
 
   const defaultLogo = headerLogos["/"];
@@ -192,9 +195,7 @@ export default function Header() {
     const observer =
       new IntersectionObserver(
         ([entry]) => {
-          setScrolled(
-            !entry.isIntersecting
-          );
+          setScrolled(!entry.isIntersecting);
         },
         {
           threshold: 0,
@@ -225,11 +226,8 @@ export default function Header() {
     function handleKeyDown(
       event: KeyboardEvent
     ) {
-      if (
-        event.key === "Escape"
-      ) {
+      if (event.key === "Escape") {
         setMoreOpen(false);
-
         moreButtonRef.current?.focus();
       }
     }
@@ -282,9 +280,7 @@ export default function Header() {
     function handleKeyDown(
       event: KeyboardEvent
     ) {
-      if (
-        event.key === "Escape"
-      ) {
+      if (event.key === "Escape") {
         setMobileOpen(false);
         return;
       }
@@ -303,9 +299,7 @@ export default function Header() {
           )
         );
 
-      if (
-        focusable.length === 0
-      ) {
+      if (focusable.length === 0) {
         return;
       }
 
@@ -319,19 +313,15 @@ export default function Header() {
 
       if (
         event.shiftKey &&
-        document.activeElement ===
-          first
+        document.activeElement === first
       ) {
         event.preventDefault();
-
         last.focus();
       } else if (
         !event.shiftKey &&
-        document.activeElement ===
-          last
+        document.activeElement === last
       ) {
         event.preventDefault();
-
         first.focus();
       }
     }
@@ -386,11 +376,12 @@ export default function Header() {
         }`}
       >
         <div className="ora-container flex h-18 items-center justify-between">
+
           {/* Brand */}
           <Link
             href="/"
             className="block shrink-0 rounded-sm"
-            aria-label={`${headerLogo.alt}, home`}
+            aria-label={`${headerLogo.alt}, ${t("home")}`}
           >
             <HeaderBrand
               logo={headerLogo}
@@ -400,8 +391,8 @@ export default function Header() {
 
           {/* DESKTOP */}
           <nav
-            aria-label="Primary navigation"
-            className="hidden items-center gap-6 xl:flex"
+            aria-label={t("primaryNavigation")}
+            className="hidden items-center gap-5 xl:flex"
           >
             {mainNavigation.map(
               (item) => {
@@ -413,7 +404,7 @@ export default function Header() {
 
                 return (
                   <Link
-                    key={item.label}
+                    key={item.key}
                     href={item.href}
                     aria-current={
                       active
@@ -426,7 +417,7 @@ export default function Header() {
                         : "border-transparent text-(--ora-text-secondary) hover:text-(--ora-burgundy)"
                     }`}
                   >
-                    {item.label}
+                    {t(`primary.${item.key}`)}
                   </Link>
                 );
               }
@@ -440,15 +431,12 @@ export default function Header() {
               <button
                 ref={moreButtonRef}
                 type="button"
-                aria-expanded={
-                  moreOpen
-                }
+                aria-expanded={moreOpen}
                 aria-controls="ora-more-navigation"
                 aria-haspopup="true"
                 onClick={() =>
                   setMoreOpen(
-                    (open) =>
-                      !open
+                    (open) => !open
                   )
                 }
                 className={`flex min-h-11 items-center gap-1.5 border-b-2 px-0.5 text-[0.9rem] font-semibold tracking-[-0.01em] transition-[color,border-color] duration-180 ${
@@ -458,7 +446,7 @@ export default function Header() {
                     : "border-transparent text-(--ora-text-secondary) hover:text-(--ora-burgundy)"
                 }`}
               >
-                More
+                {t("more")}
 
                 <ChevronDown
                   size={15}
@@ -475,9 +463,7 @@ export default function Header() {
               <div
                 id="ora-more-navigation"
                 role="menu"
-                aria-hidden={
-                  !moreOpen
-                }
+                aria-hidden={!moreOpen}
                 className={`absolute right-0 top-[calc(100%+0.65rem)] w-56 origin-top-right rounded-[1.35rem] border border-(--ora-border) bg-(--ora-surface-raised) p-2.5 shadow-[0_24px_60px_rgba(99,51,65,0.14)] transition-[opacity,transform] duration-200 ease-(--ora-ease-out) ${
                   moreOpen
                     ? "pointer-events-auto translate-y-0 scale-100 opacity-100"
@@ -494,12 +480,8 @@ export default function Header() {
 
                     return (
                       <Link
-                        key={
-                          item.label
-                        }
-                        href={
-                          item.href
-                        }
+                        key={item.key}
+                        href={item.href}
                         role="menuitem"
                         tabIndex={
                           moreOpen
@@ -512,9 +494,7 @@ export default function Header() {
                             : undefined
                         }
                         onClick={() =>
-                          setMoreOpen(
-                            false
-                          )
+                          setMoreOpen(false)
                         }
                         className={`flex min-h-11 items-center justify-between rounded-xl px-3.5 text-sm font-medium transition-colors duration-180 ${
                           active
@@ -522,15 +502,13 @@ export default function Header() {
                             : "text-(--ora-text-secondary) hover:bg-(--ora-pink-light)/35 hover:text-(--ora-burgundy)"
                         }`}
                       >
-                        {
-                          item.label
-                        }
+                        {t(
+                          `secondary.${item.key}`
+                        )}
 
                         <ArrowUpRight
                           size={14}
-                          strokeWidth={
-                            1.5
-                          }
+                          strokeWidth={1.5}
                           aria-hidden="true"
                           className="opacity-45"
                         />
@@ -541,11 +519,51 @@ export default function Header() {
               </div>
             </div>
 
+            {/* LANGUAGE SWITCHER */}
+            <div
+              className="flex items-center rounded-full border border-(--ora-border) bg-white/55 p-1"
+              aria-label={t("language")}
+            >
+              <Link
+                href={pathname}
+                locale="en"
+                aria-current={
+                  locale === "en"
+                    ? "page"
+                    : undefined
+                }
+                className={`rounded-full px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] transition-colors ${
+                  locale === "en"
+                    ? "bg-(--ora-burgundy-dark) text-white"
+                    : "text-(--ora-text-secondary) hover:text-(--ora-burgundy)"
+                }`}
+              >
+                EN
+              </Link>
+
+              <Link
+                href={pathname}
+                locale="fr"
+                aria-current={
+                  locale === "fr"
+                    ? "page"
+                    : undefined
+                }
+                className={`rounded-full px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] transition-colors ${
+                  locale === "fr"
+                    ? "bg-(--ora-burgundy-dark) text-white"
+                    : "text-(--ora-text-secondary) hover:text-(--ora-burgundy)"
+                }`}
+              >
+                FR
+              </Link>
+            </div>
+
             <Link
               href={bookingHref}
               className="ora-button ora-button-primary ml-1"
             >
-              Book a visit
+              {t("bookVisit")}
             </Link>
           </nav>
 
@@ -553,10 +571,8 @@ export default function Header() {
           <button
             ref={menuButtonRef}
             type="button"
-            aria-label="Open navigation"
-            aria-expanded={
-              mobileOpen
-            }
+            aria-label={t("openNavigation")}
+            aria-expanded={mobileOpen}
             aria-controls="ora-mobile-navigation"
             onClick={() =>
               setMobileOpen(true)
@@ -564,7 +580,7 @@ export default function Header() {
             className="group flex min-h-11 items-center gap-3 rounded-full border border-(--ora-burgundy-dark)/15 bg-(--ora-cream)/75 px-4 text-(--ora-burgundy-dark) shadow-[0_8px_30px_rgba(99,51,65,0.06)] backdrop-blur-md transition-[background-color,border-color,transform] duration-180 active:scale-[0.97] xl:hidden"
           >
             <span className="text-[0.72rem] font-semibold uppercase tracking-[0.14em]">
-              Menu
+              {t("menu")}
             </span>
 
             <span
@@ -586,9 +602,7 @@ export default function Header() {
             ? "pointer-events-auto"
             : "pointer-events-none"
         }`}
-        aria-hidden={
-          !mobileOpen
-        }
+        aria-hidden={!mobileOpen}
         inert={
           !mobileOpen
             ? true
@@ -614,7 +628,7 @@ export default function Header() {
           id="ora-mobile-navigation"
           role="dialog"
           aria-modal="true"
-          aria-label="Site navigation"
+          aria-label={t("siteNavigation")}
           className={`absolute inset-y-0 right-0 flex w-[min(92vw,30rem)] flex-col overflow-hidden rounded-l-4xl bg-(--ora-cream) shadow-[-30px_0_80px_rgba(48,42,43,0.22)] transition-transform duration-350 ease-(--ora-ease-drawer) ${
             mobileOpen
               ? "translate-x-0"
@@ -628,7 +642,7 @@ export default function Header() {
               onClick={() =>
                 setMobileOpen(false)
               }
-              aria-label={`${headerLogo.alt}, home`}
+              aria-label={`${headerLogo.alt}, ${t("home")}`}
             >
               <HeaderBrand
                 logo={headerLogo}
@@ -638,7 +652,7 @@ export default function Header() {
             <button
               ref={closeButtonRef}
               type="button"
-              aria-label="Close navigation"
+              aria-label={t("closeNavigation")}
               onClick={() =>
                 setMobileOpen(false)
               }
@@ -655,13 +669,12 @@ export default function Header() {
           {/* Drawer navigation */}
           <nav
             className="flex flex-1 flex-col overflow-y-auto px-6 pb-7 pt-7 sm:px-8"
-            aria-label="Mobile navigation"
+            aria-label={t("mobileNavigation")}
           >
             <p className="mb-4 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-(--ora-text-secondary)">
-              Experiences
+              {t("experiences")}
             </p>
 
-            {/* Main experiences */}
             <div className="border-t border-(--ora-burgundy-dark)/15">
               {mainNavigation.map(
                 (item) => {
@@ -673,21 +686,15 @@ export default function Header() {
 
                   return (
                     <Link
-                      key={
-                        item.label
-                      }
-                      href={
-                        item.href
-                      }
+                      key={item.key}
+                      href={item.href}
                       aria-current={
                         active
                           ? "page"
                           : undefined
                       }
                       onClick={() =>
-                        setMobileOpen(
-                          false
-                        )
+                        setMobileOpen(false)
                       }
                       className="group flex min-h-18 items-center justify-between gap-5 border-b border-(--ora-burgundy-dark)/12"
                     >
@@ -699,9 +706,7 @@ export default function Header() {
                               : "text-(--ora-text-secondary)"
                           }`}
                         >
-                          {
-                            item.number
-                          }
+                          {item.number}
                         </span>
 
                         <span
@@ -711,17 +716,15 @@ export default function Header() {
                               : "text-(--ora-burgundy-dark) group-hover:text-(--ora-burgundy)"
                           }`}
                         >
-                          {
-                            item.label
-                          }
+                          {t(
+                            `primary.${item.key}`
+                          )}
                         </span>
                       </div>
 
                       <ArrowUpRight
                         size={17}
-                        strokeWidth={
-                          1.4
-                        }
+                        strokeWidth={1.4}
                         aria-hidden="true"
                         className={`transition-[transform,opacity] duration-180 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 ${
                           active
@@ -738,7 +741,7 @@ export default function Header() {
             {/* Explore */}
             <div className="mt-9">
               <p className="mb-4 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-(--ora-text-secondary)">
-                Explore ORA
+                {t("exploreOra")}
               </p>
 
               <div className="grid grid-cols-2 gap-x-5 border-t border-(--ora-burgundy-dark)/15">
@@ -752,21 +755,15 @@ export default function Header() {
 
                     return (
                       <Link
-                        key={
-                          item.label
-                        }
-                        href={
-                          item.href
-                        }
+                        key={item.key}
+                        href={item.href}
                         aria-current={
                           active
                             ? "page"
                             : undefined
                         }
                         onClick={() =>
-                          setMobileOpen(
-                            false
-                          )
+                          setMobileOpen(false)
                         }
                         className={`flex min-h-13 items-center border-b border-(--ora-burgundy-dark)/12 text-sm font-semibold ${
                           active
@@ -774,9 +771,9 @@ export default function Header() {
                             : "text-(--ora-text-secondary)"
                         }`}
                       >
-                        {
-                          item.label
-                        }
+                        {t(
+                          `secondary.${item.key}`
+                        )}
                       </Link>
                     );
                   }
@@ -784,11 +781,50 @@ export default function Header() {
               </div>
             </div>
 
+            {/* Language */}
+            <div className="mt-8">
+              <p className="mb-3 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-(--ora-text-secondary)">
+                {t("language")}
+              </p>
+
+              <div className="flex gap-2">
+                <Link
+                  href={pathname}
+                  locale="en"
+                  onClick={() =>
+                    setMobileOpen(false)
+                  }
+                  className={`flex min-h-11 flex-1 items-center justify-center rounded-full border text-sm font-semibold ${
+                    locale === "en"
+                      ? "border-(--ora-burgundy-dark) bg-(--ora-burgundy-dark) text-white"
+                      : "border-(--ora-border) text-(--ora-text-secondary)"
+                  }`}
+                >
+                  {t("english")}
+                </Link>
+
+                <Link
+                  href={pathname}
+                  locale="fr"
+                  onClick={() =>
+                    setMobileOpen(false)
+                  }
+                  className={`flex min-h-11 flex-1 items-center justify-center rounded-full border text-sm font-semibold ${
+                    locale === "fr"
+                      ? "border-(--ora-burgundy-dark) bg-(--ora-burgundy-dark) text-white"
+                      : "border-(--ora-border) text-(--ora-text-secondary)"
+                  }`}
+                >
+                  {t("french")}
+                </Link>
+              </div>
+            </div>
+
             {/* Bottom utility */}
             <div className="mt-auto pt-10">
               <div className="rounded-3xl bg-(--ora-burgundy-dark) p-5 text-white">
                 <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-white/55">
-                  Visit ORA
+                  {t("visitOra")}
                 </p>
 
                 <p className="font-display mt-3 text-2xl tracking-[-0.03em]">
@@ -799,31 +835,25 @@ export default function Header() {
 
                 <div className="mt-5 flex items-center gap-2">
                   <Link
-                    href={
-                      bookingHref
-                    }
+                    href={bookingHref}
                     onClick={() =>
-                      setMobileOpen(
-                        false
-                      )
+                      setMobileOpen(false)
                     }
                     className="ora-button ora-button-light min-w-0 flex-1"
                   >
-                    Plan your visit
+                    {t("planVisit")}
                   </Link>
 
                   <a
                     href={
                       oraBookingPhone.href
                     }
-                    aria-label={`Call ORA at ${oraBookingPhone.display}`}
+                    aria-label={`${t("callOra")} at ${oraBookingPhone.display}`}
                     className="flex size-11 shrink-0 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white/10"
                   >
                     <Phone
                       size={17}
-                      strokeWidth={
-                        1.5
-                      }
+                      strokeWidth={1.5}
                       aria-hidden="true"
                     />
                   </a>
@@ -836,7 +866,7 @@ export default function Header() {
 
       {/* MOBILE QUICK CTA */}
       <nav
-        aria-label="Quick booking actions"
+        aria-label={t("quickBookingActions")}
         className={`fixed inset-x-4 bottom-4 z-40 flex items-center gap-2 rounded-full border border-white/65 bg-[rgba(246,243,238,0.94)] p-1.5 shadow-[0_18px_55px_rgba(48,42,43,0.2)] backdrop-blur-md transition-[opacity,transform] duration-200 md:hidden ${
           mobileOpen
             ? "pointer-events-none translate-y-3 opacity-0"
@@ -847,14 +877,14 @@ export default function Header() {
           href={bookingHref}
           className="ora-button ora-button-primary min-w-0 flex-1"
         >
-          Plan your visit
+          {t("planVisit")}
         </Link>
 
         <a
           href={
             oraBookingPhone.href
           }
-          aria-label={`Call ORA at ${oraBookingPhone.display}`}
+          aria-label={`${t("callOra")} at ${oraBookingPhone.display}`}
           className="flex size-11 shrink-0 items-center justify-center rounded-full border border-(--ora-border-strong) text-(--ora-burgundy-dark)"
         >
           <Phone

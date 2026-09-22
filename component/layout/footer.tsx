@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 import { ArrowUpRight, Mail } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,21 +13,21 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const experienceLinks = [
-  ["Café", "/cafe"],
-  ["Fitness", "/experiences/gym"],
-  ["Padel", "/experiences/padel"],
-  ["Pilates", "/experiences/pilates"],
-  ["Yoga", "/experiences/yoga"],
-  ["Studio", "/experiences/studio"],
-];
+  { key: "cafe", href: "/cafe" },
+  { key: "fitness", href: "/experiences/gym" },
+  { key: "padel", href: "/experiences/padel" },
+  { key: "pilates", href: "/experiences/pilates" },
+  { key: "yoga", href: "/experiences/yoga" },
+  { key: "studio", href: "/experiences/studio" },
+] as const;
 
 const exploreLinks = [
-  ["Schedule", "/schedule"],
-  ["Memberships", "/memberships"],
-  ["Events", "/events"],
-  ["About", "/about"],
-  ["Contact", "/contact"],
-];
+  { key: "schedule", href: "/schedule" },
+  { key: "memberships", href: "/memberships" },
+  { key: "events", href: "/events" },
+  { key: "about", href: "/about" },
+  { key: "contact", href: "/contact" },
+] as const;
 
 const socialLinks = [
   {
@@ -53,6 +56,8 @@ const googleMapsUrl =
 const email = "info@oracomplex.com";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+
   return (
     <footer className="bg-(--ora-cream) text-(--ora-burgundy-dark)">
       <div className="ora-container py-12 md:py-14">
@@ -77,20 +82,20 @@ export default function Footer() {
             </Link>
 
             <p className="mt-4 max-w-xs text-sm leading-6 text-(--ora-text-secondary)">
-              Move, nourish and connect at ORA in Douala.
+              {t("tagline")}
             </p>
 
             {/* App */}
             <div className="mt-7">
               <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-                Download the ORA app
+                {t("downloadApp")}
               </p>
 
               <a
                 href={appStoreUrl}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Download the ORA app"
+                aria-label={t("downloadApp")}
                 className="group mt-3 block w-fit"
               >
                 <div className="relative aspect-3/2 w-52 overflow-hidden rounded-2xl sm:w-56">
@@ -108,21 +113,21 @@ export default function Footer() {
 
           {/* Experiences */}
           <nav
-            aria-label="Footer experiences"
+            aria-label={t("footerExperiences")}
             className="lg:col-span-2"
           >
             <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              Experiences
+              {t("experiences")}
             </p>
 
             <div className="mt-5 grid gap-2.5">
-              {experienceLinks.map(([label, href]) => (
+              {experienceLinks.map(({ key, href }) => (
                 <Link
                   key={href}
                   href={href}
                   className="w-fit text-sm text-(--ora-text-secondary) transition-colors duration-150 hover:text-(--ora-burgundy-dark)"
                 >
-                  {label}
+                  {t(`links.${key}`)}
                 </Link>
               ))}
             </div>
@@ -130,21 +135,21 @@ export default function Footer() {
 
           {/* Explore */}
           <nav
-            aria-label="Footer information"
+            aria-label={t("footerInformation")}
             className="lg:col-span-2"
           >
             <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              Explore
+              {t("explore")}
             </p>
 
             <div className="mt-5 grid gap-2.5">
-              {exploreLinks.map(([label, href]) => (
+              {exploreLinks.map(({ key, href }) => (
                 <Link
                   key={href}
                   href={href}
                   className="w-fit text-sm text-(--ora-text-secondary) transition-colors duration-150 hover:text-(--ora-burgundy-dark)"
                 >
-                  {label}
+                  {t(`links.${key}`)}
                 </Link>
               ))}
             </div>
@@ -153,7 +158,7 @@ export default function Footer() {
           {/* Visit */}
           <div className="lg:col-span-2">
             <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              Visit
+              {t("visit")}
             </p>
 
             <div className="mt-5 space-y-4 text-sm">
@@ -169,7 +174,7 @@ export default function Footer() {
 
               <div>
                 <p className="font-medium text-(--ora-burgundy-dark)">
-                  Daily
+                  {t("daily")}
                 </p>
 
                 <p className="mt-1 text-(--ora-text-secondary)">
@@ -183,7 +188,7 @@ export default function Footer() {
                 rel="noreferrer"
                 className="group inline-flex items-center gap-2 text-sm font-semibold text-(--ora-burgundy-dark) transition-opacity hover:opacity-65"
               >
-                Get directions
+                {t("getDirections")}
 
                 <ArrowUpRight
                   size={13}
@@ -198,7 +203,7 @@ export default function Footer() {
           {/* Connect */}
           <div className="lg:col-span-2">
             <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-(--ora-burgundy)">
-              Connect
+              {t("connect")}
             </p>
 
             {/* Email */}

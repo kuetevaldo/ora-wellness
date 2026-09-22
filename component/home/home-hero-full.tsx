@@ -1,13 +1,18 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function HomeHero() {
+  const t = useTranslations("Hero");
+
   return (
     <section aria-labelledby="hero-heading" className="ora-home-hero relative isolate min-h-dvh overflow-hidden bg-(--ora-ink) text-white lg:aspect-video lg:min-h-0">
       <Image
         src="/images/hero-image/ora-building-hero.jpg"
-        alt="ORA Wellness building in Douala"
+        alt={t("imageAlt")}
         fill
         sizes="100vw"
         className="z-0 hidden object-cover object-center md:block motion-reduce:block"
@@ -33,26 +38,29 @@ export default function HomeHero() {
       <div className="ora-home-hero__shell ora-container relative z-20 flex min-h-dvh items-end pb-32 pt-28 md:pb-16 lg:min-h-0 lg:h-full lg:pb-[8%]">
         <div className="relative z-10 max-w-4xl">
           <p className="ora-page-intro text-xs font-semibold uppercase tracking-[0.18em] text-white/88">
-  ORA Wellness · Douala
-</p>
+            {t("eyebrow")}
+          </p>
 
           <h1 id="hero-heading" className="ora-home-hero__heading font-display ora-page-intro ora-page-intro-delay-1 mt-5 text-[clamp(3.2rem,10.5vw,7.8rem)] leading-[0.87] tracking-[-0.055em] text-white sm:text-[clamp(4.5rem,8vw,7.8rem)]">
-            Move. Nourish.
-            <br />
-            Connect.
+            {t("heading").split("\n").map((line, i, arr) => (
+              <span key={i}>
+                {line}
+                {i < arr.length - 1 && <br />}
+              </span>
+            ))}
           </h1>
 
           <p className="ora-home-hero__body ora-page-intro ora-page-intro-delay-2 mt-5 max-w-lg text-[0.95rem] leading-7 text-white/88 md:mt-6 md:text-base">
-           Fitness. Padel. Pilates. Yoga. Studio. Café. In Douala.
+            {t("body")}
           </p>
 
           <div className="ora-home-hero__actions ora-page-intro ora-page-intro-delay-2 mt-7 flex flex-wrap items-center gap-3 md:mt-8">
             <Link href="#experiences" className="ora-button ora-button-light">
-              Explore experiences
+              {t("exploreExperiences")}
               <ArrowDown size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
             <Link href="/schedule" className="ora-button ora-button-outline-light">
-              View schedule
+              {t("viewSchedule")}
               <ArrowUpRight size={15} strokeWidth={1.5} aria-hidden="true" />
             </Link>
           </div>

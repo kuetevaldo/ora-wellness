@@ -1,0 +1,205 @@
+{
+  "Header": {
+    "primary": {
+      "cafe": "Café",
+      "fitness": "Fitness",
+      "padel": "Padel",
+      "pilates": "Pilates",
+      "yoga": "Yoga",
+      "studio": "Studio"
+    },
+    "secondary": {
+      "schedule": "Programme",
+      "memberships": "Abonnements",
+      "events": "Événements",
+      "about": "À propos",
+      "contact": "Contact"
+    },
+    "more": "Plus",
+    "bookVisit": "Réserver une visite",
+    "menu": "Menu",
+    "openNavigation": "Ouvrir la navigation",
+    "closeNavigation": "Fermer la navigation",
+    "primaryNavigation": "Navigation principale",
+    "siteNavigation": "Navigation du site",
+    "mobileNavigation": "Navigation mobile",
+    "experiences": "Expériences",
+    "exploreOra": "Découvrir ORA",
+    "visitOra": "Visiter ORA",
+    "planVisit": "Planifier votre visite",
+    "quickBookingActions": "Actions rapides",
+    "home": "Accueil",
+    "callOra": "Appeler ORA",
+    "language": "Langue",
+    "english": "Anglais",
+    "french": "Français"
+  },
+  "Footer": {
+    "tagline": "Bougez, nourrissez-vous et connectez-vous chez ORA à Douala.",
+    "downloadApp": "Télécharger l'app ORA",
+    "experiences": "Expériences",
+    "explore": "Explorer",
+    "visit": "Visiter",
+    "connect": "Contact",
+    "daily": "Quotidien",
+    "getDirections": "Obtenir l'itinéraire",
+    "footerExperiences": "Expériences",
+    "footerInformation": "Informations",
+    "links": {
+      "schedule": "Programme",
+      "memberships": "Abonnements",
+      "events": "Événements",
+      "about": "À propos",
+      "contact": "Contact",
+      "cafe": "Café",
+      "fitness": "Fitness",
+      "padel": "Padel",
+      "pilates": "Pilates",
+      "yoga": "Yoga",
+      "studio": "Studio"
+    }
+  },
+  "Hero": {
+    "eyebrow": "ORA Wellness · Douala",
+    "heading": "Bougez. Nourrissez.\nConnectez.",
+    "body": "Fitness. Padel. Pilates. Yoga. Studio. Café. À Douala.",
+    "exploreExperiences": "Découvrir les expériences",
+    "viewSchedule": "Voir le programme",
+    "imageAlt": "Bâtiment ORA Wellness à Douala"
+  },
+  "Experiences": {
+    "eyebrow": "Découvrir ORA",
+    "heading": "Expériences",
+    "tagline": "Bougez. Jouez. Nourrissez-vous. Connectez.",
+    "exploreLabel": "Découvrir ORA {title}",
+    "items": {
+      "fitness": {
+        "title": "Fitness",
+        "description": "Force, cardio et conditionnement ciblé.",
+        "alt": "Espace de fitness ORA à Douala"
+      },
+      "cafe": {
+        "title": "Café",
+        "description": "Café, petit-déjeuner et cuisine nourrissante.",
+        "alt": "Barista au travail au Café ORA à Douala"
+      },
+      "padel": {
+        "title": "Padel",
+        "description": "Jeu, coaching et compétition.",
+        "alt": "Joueurs ensemble au Padel ORA à Douala"
+      },
+      "pilates": {
+        "title": "Pilates",
+        "description": "Contrôle, force et mouvement intentionnel.",
+        "alt": "Espace Pilates ORA à Douala"
+      },
+      "yoga": {
+        "title": "Yoga",
+        "description": "Mouvement, souffle et équilibre.",
+        "alt": "Pratique de Yoga guidée chez ORA à Douala"
+      },
+      "studio": {
+        "title": "Studio",
+        "description": "Mouvement collectif et énergie partagée.",
+        "alt": "Séance de mouvement collectif au Studio ORA"
+      }
+    }
+  },
+  "Schedule": {
+    "eyebrow": "Cette semaine chez ORA",
+    "heading": "Trouvez votre\nprochaine séance.",
+    "tagline": "Yoga. Pilates. Padel. Studio.",
+    "viewFullSchedule": "Voir le programme complet",
+    "viewSchedule": "Voir le programme pour {title}",
+    "fitness": "Fitness",
+    "gymFloorOpen": "Salle de sport ouverte tous les jours",
+    "gymHours": "6h00 – 22h00",
+    "exploreFitness": "Découvrir le Fitness",
+    "items": {
+      "yoga": {
+        "category": "Yoga",
+        "title": "Yoga avec Despina",
+        "detail": "Mercredi, vendredi et samedi",
+        "time": "Trois cours hebdomadaires"
+      },
+      "pilates": {
+        "category": "Pilates",
+        "title": "Pilates au sol",
+        "detail": "Lundi, mardi et jeudi",
+        "time": "Trois cours hebdomadaires"
+      },
+      "padelAdult": {
+        "category": "Padel",
+        "title": "Académie Padel Adultes",
+        "detail": "Lundi et vendredi",
+        "time": "17h00–18h30"
+      },
+      "padelKids": {
+        "category": "Padel",
+        "title": "Académie Padel Enfants",
+        "detail": "Groupes hebdomadaires",
+        "time": "4–13 ans"
+      },
+      "studio": {
+        "category": "Studio",
+        "title": "Académie de Danse",
+        "detail": "Programme 2026/27",
+        "time": "2–11 ans"
+      }
+    }
+  },
+  "Location": {
+    "eyebrow": "Visiter ORA",
+    "heading": "Trouvez votre chemin\nvers ORA.",
+    "tagline": "Mouvement. Bien-être. Café. Une destination à Douala.",
+    "country": "Douala, Cameroun",
+    "getDirections": "Obtenir l'itinéraire",
+    "getDirectionsLabel": "Obtenir l'itinéraire vers ORA Wellness et Café",
+    "openingHours": "Horaires d'ouverture",
+    "planYourVisit": "Planifier votre visite",
+    "enquiry": "Des questions avant votre visite ?",
+    "contactOra": "Contacter ORA",
+    "followLife": "Suivez la vie chez ORA",
+    "imageAlt": "Bâtiment ORA Wellness et Café à Douala"
+  },
+  "Utility": {
+    "openingHours": "Horaires d'ouverture",
+    "findOra": "Trouver ORA",
+    "findOraValue": "Hydrocarbures, Douala",
+    "directions": "Itinéraire →",
+    "programme": "Programme",
+    "classesAndCourts": "Cours et horaires des terrains",
+    "viewProgramme": "Voir le programme →",
+    "planYourVisit": "Planifier votre visite",
+    "contactOra": "Contacter ORA",
+    "contactOraAction": "Contacter ORA →",
+    "practicalInfo": "Informations pratiques ORA"
+  },
+  "Membership": {
+    "eyebrow": "Abonnement",
+    "heading": "Engagez-vous dans votre routine.",
+    "tagline": "Accès structuré pour un entraînement, un mouvement et une récupération réguliers à Douala.",
+    "explore": "Découvrir les abonnements",
+    "items": {
+      "fitness": {
+        "title": "Fitness",
+        "detail": "Accès ciblé à la salle, entraînement progressif en force et cardio."
+      },
+      "movement": {
+        "title": "Mouvement",
+        "detail": "Pilates, Yoga et séances collectives guidées au Studio."
+      },
+      "oraExperience": {
+        "title": "ORA Expérience",
+        "detail": "Accès combiné à plusieurs expériences de bien-être."
+      }
+    }
+  },
+  "ActionBlock": {
+    "eyebrow": "Commencer chez ORA",
+    "heading": "Votre prochaine expérience ORA\ncommence ici.",
+    "tagline": "Trouvez votre prochaine séance ou contactez l'équipe ORA.",
+    "viewSchedule": "Voir le programme",
+    "contactOra": "Contacter ORA"
+  }
+}

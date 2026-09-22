@@ -1,4 +1,7 @@
-import Link from "next/link";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,49 +17,51 @@ import LiveOpeningHours from "@/component/ui/live-opening-hours";
 const googleMapsUrl =
   "https://maps.app.goo.gl/N1TAxq6LhVsQkhHC8";
 
-const practicalItems = [
-  {
-    type: "clock",
-    label: "Opening hours",
-    value: undefined,
-    href: undefined,
-    external: false,
-    icon: undefined,
-    action: undefined,
-  },
-  {
-    type: "location",
-    label: "Find ORA",
-    value: "Hydrocarbures, Douala",
-    href: googleMapsUrl,
-    external: true,
-    icon: faLocationDot,
-    action: "Directions →",
-  },
-  {
-    type: "schedule",
-    label: "Programme",
-    value: "Classes & court times",
-    href: "/schedule",
-    external: false,
-    icon: faCalendarDays,
-    action: "View programme →",
-  },
-  {
-    type: "visit",
-    label: "Plan your visit",
-    value: "Contact ORA",
-    href: bookingHref,
-    external: false,
-    icon: faCalendarCheck,
-    action: "Contact ORA →",
-  },
-];
-
 export default function HomeUtility() {
+  const t = useTranslations("Utility");
+
+  const practicalItems = [
+    {
+      type: "clock",
+      label: t("openingHours"),
+      value: undefined,
+      href: undefined,
+      external: false,
+      icon: undefined,
+      action: undefined,
+    },
+    {
+      type: "location",
+      label: t("findOra"),
+      value: t("findOraValue"),
+      href: googleMapsUrl,
+      external: true,
+      icon: faLocationDot,
+      action: t("directions"),
+    },
+    {
+      type: "schedule",
+      label: t("programme"),
+      value: t("classesAndCourts"),
+      href: "/schedule",
+      external: false,
+      icon: faCalendarDays,
+      action: t("viewProgramme"),
+    },
+    {
+      type: "visit",
+      label: t("planYourVisit"),
+      value: t("contactOra"),
+      href: bookingHref,
+      external: false,
+      icon: faCalendarCheck,
+      action: t("contactOraAction"),
+    },
+  ];
+
   return (
     <section
-      aria-label="ORA practical information"
+      aria-label={t("practicalInfo")}
       className="relative z-20 bg-white"
     >
       <div className="ora-container">
@@ -67,18 +72,18 @@ export default function HomeUtility() {
                 <div className="group/item flex min-h-36 items-start gap-4 p-5 sm:p-6 lg:min-h-40 lg:p-7">
                   {/* Icon */}
                   <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-(--ora-pink-light) text-(--ora-burgundy)">
-  {item.type === "clock" ? (
-    <LiveClockIcon />
-  ) : (
-    item.icon && (
-      <FontAwesomeIcon
-        icon={item.icon}
-        className="h-4.25 w-4.25"
-        aria-hidden="true"
-      />
-    )
-  )}
-</div>
+                    {item.type === "clock" ? (
+                      <LiveClockIcon />
+                    ) : (
+                      item.icon && (
+                        <FontAwesomeIcon
+                          icon={item.icon}
+                          className="h-4.25 w-4.25"
+                          aria-hidden="true"
+                        />
+                      )
+                    )}
+                  </div>
 
                   {/* Text */}
                   <div className="min-w-0 pt-0.5">
@@ -86,13 +91,13 @@ export default function HomeUtility() {
                       {item.label}
                     </p>
 
-                   {item.type === "clock" ? (
-  <LiveOpeningHours />
-) : (
-  <p className="mt-2 max-w-48 text-sm font-medium leading-6 text-(--ora-burgundy-dark)">
-    {item.value}
-  </p>
-)}
+                    {item.type === "clock" ? (
+                      <LiveOpeningHours />
+                    ) : (
+                      <p className="mt-2 max-w-48 text-sm font-medium leading-6 text-(--ora-burgundy-dark)">
+                        {item.value}
+                      </p>
+                    )}
 
                     {item.href && (
                       <span className="mt-3 inline-block text-xs font-semibold text-(--ora-burgundy) transition-transform duration-200 group-hover/item:translate-x-1 motion-reduce:transition-none">

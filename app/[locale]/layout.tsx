@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import { DM_Sans, Newsreader } from "next/font/google";
+import { hasLocale } from "next-intl";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
+
+import { routing } from "@/i18n/routing";
 import { siteDescription, siteName, siteUrl } from "@/lib/seo";
-import "./globals.css";
 import OraPreloader from "@/component/ui/ora-preloader";
+
+import "../globals.css";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -18,15 +25,12 @@ const newsreader = Newsreader({
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
-
   title: {
     default: siteName,
     template: "%s | ORA Wellness",
   },
-
   description: siteDescription,
   applicationName: siteName,
-
   openGraph: {
     type: "website",
     title: siteName,
@@ -42,14 +46,12 @@ export const metadata: Metadata = {
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
     title: siteName,
     description: siteDescription,
-    images: ["/images/logos/ora.PNG"],
+    images: ["/images/seo/ora-og.jpg"],
   },
-
   robots: {
     index: true,
     follow: true,
@@ -63,23 +65,41 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function LocaleLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+
+  const messages = await getMessages();
+
   return (
-    <html lang="en-CM" data-scroll-behavior="smooth">
+    <html lang={locale} data-scroll-behavior="smooth">
       <body className={`${dmSans.variable} ${newsreader.variable}`}>
-        <OraPreloader />
+        <NextIntlClientProvider messages={messages}>
+          <OraPreloader />
 
-        <a className="ora-skip-link" href="#main-content">
-          Skip to content
-        </a>
+          <a className="ora-skip-link" href="#main-content">
+            Skip to content
+          </a>
 
-        <main id="main-content" tabIndex={-1}>
-          {children}
-        </main>
+          <main id="main-content" tabIndex={-1}>
+            {children}
+          </main>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
